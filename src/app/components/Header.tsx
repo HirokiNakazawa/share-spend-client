@@ -5,6 +5,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { FC } from "react";
 import { APP_NAME } from "../../../config/config";
 import RegisterButton from "./RegisterButton";
+import LoginButton from "./LoginButton";
 
 const Header: FC = () => {
   return (
@@ -18,7 +19,7 @@ const Header: FC = () => {
             {APP_NAME}
           </Typography>
           <RegisterButton />
-          <Button color="inherit">ログイン</Button>
+          <LoginButton />
         </Toolbar>
       </AppBar>
     </>

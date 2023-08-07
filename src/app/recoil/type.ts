@@ -1,4 +1,5 @@
 export type ModalState = {
   isOpen: boolean;
-  isRegister: boolean;
+  title: string;
+  buttonText: string;
 };

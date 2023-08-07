@@ -4,13 +4,19 @@ import { Button } from "@mui/material";
 import { FC } from "react";
 import { useSetRecoilState } from "recoil";
 import { REGISTER_BUTTON } from "../../../config/config";
-import { modalState } from "../recoil/atom/modalState";
+import { isRegisterModal, modalState } from "../recoil/atom/modalState";
 
 const RegisterButton: FC = () => {
   const setModal = useSetRecoilState(modalState);
+  const setIsRegister = useSetRecoilState(isRegisterModal);
 
   const handleClick = () => {
-    setModal({ isOpen: true, isRegister: true });
+    setModal({
+      isOpen: true,
+      title: REGISTER_BUTTON,
+      buttonText: REGISTER_BUTTON,
+    });
+    setIsRegister(true);
   };
 
   return (
