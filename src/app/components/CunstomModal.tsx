@@ -4,6 +4,7 @@ import { Box, Modal } from "@mui/material";
 import { FC } from "react";
 import { useRecoilState } from "recoil";
 import { modalState } from "../recoil/atom/modalState";
+import ModalHeader from "./ModalHeader";
 
 const CustomModal: FC = () => {
   const [modal, setModal] = useRecoilState(modalState);
@@ -30,7 +31,9 @@ const CustomModal: FC = () => {
             p: 2,
             gap: 2,
           }}
-        ></Box>
+        >
+          <ModalHeader />
+        </Box>
       </Box>
     </Modal>
   );
