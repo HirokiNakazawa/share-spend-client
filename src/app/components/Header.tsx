@@ -3,6 +3,8 @@
 import { AppBar, Toolbar, IconButton, Typography, Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { FC } from "react";
+import { APP_NAME } from "../../../config/config";
+import RegisterButton from "./RegisterButton";
 
 const Header: FC = () => {
   return (
@@ -13,9 +15,9 @@ const Header: FC = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            家計簿
+            {APP_NAME}
           </Typography>
-          <Button color="inherit">新規登録</Button>
+          <RegisterButton />
           <Button color="inherit">ログイン</Button>
         </Toolbar>
       </AppBar>
