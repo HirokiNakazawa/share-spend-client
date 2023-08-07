@@ -6,14 +6,14 @@ const modalState = atom<ModalState>({
   default: { isOpen: false, title: "", buttonText: "" },
 });
 
-const isRegisterModalState = atom<boolean>({
+const isRegisterState = atom<boolean>({
   key: "isRegisterModal",
   default: false,
 });
 
-const isLoginModalState = atom<boolean>({
+const isLoginState = atom<boolean>({
   key: "isLoginModal",
   default: false,
 });
 
-export { modalState, isRegisterModalState, isLoginModalState };
+export { modalState, isRegisterState, isLoginState };

@@ -4,17 +4,18 @@ import { Box, Modal } from "@mui/material";
 import { FC } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import {
-  isLoginModalState,
-  isRegisterModalState,
+  isLoginState,
+  isRegisterState,
   modalState,
 } from "../recoil/atom/modalState";
 import ModalAuthContent from "./ModalAuthContent";
+import ModalFooter from "./ModalFooter";
 import ModalHeader from "./ModalHeader";
 
 const CustomModal: FC = () => {
   const [modal, setModal] = useRecoilState(modalState);
-  const isRegister = useRecoilValue(isRegisterModalState);
-  const isLogin = useRecoilValue(isLoginModalState);
+  const isRegister = useRecoilValue(isRegisterState);
+  const isLogin = useRecoilValue(isLoginState);
 
   return (
     <Modal open={modal.isOpen}>
@@ -41,6 +42,7 @@ const CustomModal: FC = () => {
         >
           <ModalHeader />
           {isRegister || isLogin ? <ModalAuthContent /> : null}
+          <ModalFooter />
         </Box>
       </Box>
     </Modal>
