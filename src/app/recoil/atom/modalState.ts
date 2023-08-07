@@ -1,17 +1,19 @@
 import { atom } from "recoil";
 import { ModalState } from "../type";
 
-export const modalState = atom<ModalState>({
+const modalState = atom<ModalState>({
   key: "modalState",
   default: { isOpen: false, title: "", buttonText: "" },
 });
 
-export const isRegisterModal = atom<boolean>({
+const isRegisterModalState = atom<boolean>({
   key: "isRegisterModal",
   default: false,
 });
 
-export const isLoginModal = atom<boolean>({
+const isLoginModalState = atom<boolean>({
   key: "isLoginModal",
   default: false,
 });
+
+export { modalState, isRegisterModalState, isLoginModalState };
