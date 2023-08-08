@@ -1,16 +1,13 @@
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { FC } from "react";
 import Header from "./components/Header";
-import CustomModal from "./components/CunstomModal";
+import DashBoard from "./components/DashBoard";
 
 const Home: FC = () => {
   return (
     <>
       <Header />
-      <Container>
-        <CustomModal />
-        <Typography>Hello</Typography>
-      </Container>
+      <DashBoard />
     </>
   );
 };

@@ -8,6 +8,7 @@ import RegisterButton from "./RegisterButton";
 import LoginButton from "./LoginButton";
 import { useRecoilValue } from "recoil";
 import { userState } from "../recoil/atom/userState";
+import LogoutButton from "./LogoutButton";
 
 const Header: FC = () => {
   const user = useRecoilValue(userState);
@@ -23,7 +24,10 @@ const Header: FC = () => {
             {APP_NAME}
           </Typography>
           {user.isLoggedIn ? (
-            <Typography>{user.name}</Typography>
+            <>
+              <Typography>{user.name}</Typography>
+              <LogoutButton />
+            </>
           ) : (
             <>
               <RegisterButton />
