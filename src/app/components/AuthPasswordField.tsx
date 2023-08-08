@@ -14,7 +14,8 @@ const AuthPasswordField: FC = () => {
 
   return (
     <TextField
-      label="名前"
+      label="パスワード"
+      type="password"
       name="authPassword"
       value={authPassword}
       onChange={handleChangePassword}

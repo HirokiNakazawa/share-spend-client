@@ -15,6 +15,7 @@ const AuthNameField: FC = () => {
   return (
     <TextField
       label="名前"
+      type="text"
       name="authName"
       value={authName}
       onChange={handleChangeName}

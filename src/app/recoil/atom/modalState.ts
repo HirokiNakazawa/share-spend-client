@@ -16,4 +16,9 @@ const isLoginState = atom<boolean>({
   default: false,
 });
 
-export { modalState, isRegisterState, isLoginState };
+const modalErrorMsgState = atom<string>({
+  key: "modalErrorMsgState",
+  default: "",
+});
+
+export { modalState, isRegisterState, isLoginState, modalErrorMsgState };
