@@ -15,7 +15,17 @@ const useApi = () => {
     }
   };
 
-  return { postRegister };
+  const postLogin = async (data: AuthFormData): Promise<PostAuthResponse> => {
+    try {
+      const url = `${API_BASE_URL}/login`;
+      const response = await axios.post(url, data);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  return { postRegister, postLogin };
 };
 
 export { useApi };

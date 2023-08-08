@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
 import { isLoginState, isRegisterState } from "../recoil/atom/modalState";
+import ModalCloseButton from "./ModalCloseButton";
 import ModalLoginButton from "./ModalLoginButton";
 import ModalRegisterButton from "./ModalRegisterButton";
 
@@ -23,6 +24,7 @@ const ModalFooter: FC = () => {
     >
       {isRegister ? <ModalRegisterButton /> : null}
       {isLogin ? <ModalLoginButton /> : null}
+      <ModalCloseButton />
     </Box>
   );
 };

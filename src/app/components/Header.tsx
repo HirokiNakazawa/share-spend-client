@@ -1,11 +1,17 @@
+"use client";
+
 import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { FC } from "react";
 import { APP_NAME } from "../../../config/config";
 import RegisterButton from "./RegisterButton";
 import LoginButton from "./LoginButton";
+import { useRecoilValue } from "recoil";
+import { userState } from "../recoil/atom/userState";
 
 const Header: FC = () => {
+  const user = useRecoilValue(userState);
+
   return (
     <>
       <AppBar position="static">
@@ -16,8 +22,14 @@ const Header: FC = () => {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             {APP_NAME}
           </Typography>
-          <RegisterButton />
-          <LoginButton />
+          {user.isLoggedIn ? (
+            <Typography>{user.name}</Typography>
+          ) : (
+            <>
+              <RegisterButton />
+              <LoginButton />
+            </>
+          )}
         </Toolbar>
       </AppBar>
     </>
