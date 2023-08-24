@@ -1,6 +1,15 @@
 import axios from "axios";
 import { API_BASE_URL } from "../../../config/config";
-import { AuthFormData, PostAuthResponse } from "../recoil/type";
+
+type AuthFormData = {
+  name: string;
+  password: string;
+};
+
+type PostAuthResponse = {
+  id: number;
+  name: string;
+};
 
 const useApi = () => {
   const postRegister = async (

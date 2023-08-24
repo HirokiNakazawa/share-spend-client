@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@mui/material";
 import { FC } from "react";
 import { useSetRecoilState } from "recoil";
@@ -7,6 +9,7 @@ const LogoutButton: FC = () => {
   const setUser = useSetRecoilState(userState);
 
   const handleClick = () => {
+    console.log("ログアウトがクリックされました");
     setUser({ id: null, name: "", isLoggedIn: false });
   };
 

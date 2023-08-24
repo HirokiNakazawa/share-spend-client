@@ -11,6 +11,7 @@ const LoginButton: FC = () => {
   const setIsLogin = useSetRecoilState(isLoginState);
 
   const handleClick = () => {
+    console.log("ログインがクリックされました");
     setModal({
       isOpen: true,
       title: LOGIN_BUTTON,

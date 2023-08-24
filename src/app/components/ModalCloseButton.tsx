@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@mui/material";
 import { FC } from "react";
 import { useSetRecoilState } from "recoil";

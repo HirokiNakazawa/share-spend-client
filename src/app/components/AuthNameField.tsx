@@ -5,7 +5,11 @@ import { FC, ChangeEvent } from "react";
 import { useRecoilState } from "recoil";
 import { authNameState } from "../recoil/atom/authState";
 
-const AuthNameField: FC = () => {
+type AuthNameFieldProps = {
+  id: string;
+};
+
+const AuthNameField: FC<AuthNameFieldProps> = (props) => {
   const [authName, setAuthName] = useRecoilState(authNameState);
 
   const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
@@ -14,6 +18,7 @@ const AuthNameField: FC = () => {
 
   return (
     <TextField
+      id={props.id}
       label="名前"
       type="text"
       name="authName"

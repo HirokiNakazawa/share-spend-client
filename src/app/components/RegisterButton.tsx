@@ -3,8 +3,8 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
 import { useSetRecoilState } from "recoil";
-import { REGISTER_BUTTON } from "../../../config/config";
 import { isRegisterState, modalState } from "../recoil/atom/modalState";
+import { REGISTER_BUTTON } from "../../../config/config";
 
 const RegisterButton: FC = () => {
   const setModal = useSetRecoilState(modalState);

@@ -1,5 +1,10 @@
 import { atom } from "recoil";
-import { UserState } from "../type";
+
+type UserState = {
+  id: number | null;
+  name: string;
+  isLoggedIn: boolean;
+};
 
 const userState = atom<UserState>({
   key: "userState",

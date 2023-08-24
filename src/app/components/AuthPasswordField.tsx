@@ -5,7 +5,11 @@ import { FC, ChangeEvent } from "react";
 import { useRecoilState } from "recoil";
 import { authPasswordState } from "../recoil/atom/authState";
 
-const AuthPasswordField: FC = () => {
+type AuthPasswordFieldProps = {
+  id: string;
+};
+
+const AuthPasswordField: FC<AuthPasswordFieldProps> = (props) => {
   const [authPassword, setAuthPassword] = useRecoilState(authPasswordState);
 
   const handleChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
@@ -14,6 +18,7 @@ const AuthPasswordField: FC = () => {
 
   return (
     <TextField
+      id={props.id}
       label="パスワード"
       type="password"
       name="authPassword"
