@@ -25,6 +25,7 @@ const TypeField: FC<TypeFieldProps> = (props) => {
       value={type}
       onChange={handleChangeType}
       required
+      size="small"
     />
   );
 };

@@ -7,8 +7,12 @@ import {
   modalState,
 } from "../recoil/atom/modalState";
 import { userState } from "../recoil/atom/userState";
-import { PostAuthResponse } from "../recoil/type";
 import { useApi } from "./useApi";
+
+type PostAuthResponse = {
+  id: number;
+  name: string;
+};
 
 const useAuthentication = () => {
   const authName = useRecoilValue(authNameState);
