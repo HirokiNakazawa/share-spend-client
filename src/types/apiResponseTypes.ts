@@ -8,6 +8,11 @@ export type GetTypeResponse = {
   type: string;
 };
 
+export type GetMonthlyCostByTypeResponse = {
+  id: number;
+  totalCost: number;
+};
+
 export type PostTypeResponse = {
   id: number;
   type: string;

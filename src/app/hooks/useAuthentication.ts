@@ -10,7 +10,7 @@ import { userState } from "../recoil/atom/userState";
 import { useApi } from "./useApi";
 import { PostAuthResponse } from "@/types";
 import { typeListState } from "../recoil/atom/typeState";
-import { useTypeManagement } from "./useTypeManagement";
+import { monthlyCostByTypeState } from "../recoil/atom/monthlyState";
 
 const useAuthentication = () => {
   const authName = useRecoilValue(authNameState);
@@ -21,6 +21,7 @@ const useAuthentication = () => {
   const setIsLogin = useSetRecoilState(isLoginState);
   const setUser = useSetRecoilState(userState);
   const setTypeList = useSetRecoilState(typeListState);
+  const setMonthlyCostByType = useSetRecoilState(monthlyCostByTypeState);
 
   const api = useApi();
 
@@ -61,6 +62,10 @@ const useAuthentication = () => {
     const typeList = await api.getTypes();
     console.log(typeList);
     setTypeList(typeList);
+
+    const monthlyCostByType = await api.getMonthlyCostByType();
+    console.log(monthlyCostByType);
+    setMonthlyCostByType(monthlyCostByType);
   };
 
   return { register, login };

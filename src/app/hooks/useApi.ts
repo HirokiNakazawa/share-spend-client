@@ -8,6 +8,7 @@ import {
   CreateCostFormData,
   PostCostResponse,
   PostTypeResponse,
+  GetMonthlyCostByTypeResponse,
 } from "@/types";
 
 const useApi = () => {
@@ -43,6 +44,22 @@ const useApi = () => {
     }
   };
 
+  const getMonthlyCostByType = async (): Promise<
+    GetMonthlyCostByTypeResponse[]
+  > => {
+    try {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = today.getMonth() + 1;
+
+      const url = `${API_BASE_URL}/costs/type?year=${year}&month=${month}`;
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
   const postCreateType = async (
     data: CreateTypeFormData
   ): Promise<PostTypeResponse> => {
@@ -67,7 +84,14 @@ const useApi = () => {
     }
   };
 
-  return { postRegister, postLogin, getTypes, postCreateType, postCreateCost };
+  return {
+    postRegister,
+    postLogin,
+    getTypes,
+    getMonthlyCostByType,
+    postCreateType,
+    postCreateCost,
+  };
 };
 
 export { useApi };

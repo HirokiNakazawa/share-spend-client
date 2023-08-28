@@ -8,3 +8,8 @@ export type Type = {
   id: number | null;
   type: string;
 };
+
+export type monthlyCostByType = {
+  id: number | null;
+  totalCost: number | null;
+};
