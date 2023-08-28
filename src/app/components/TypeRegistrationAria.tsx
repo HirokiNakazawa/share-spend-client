@@ -1,32 +1,14 @@
 import { Paper, FormControl, Box, Typography } from "@mui/material";
 import { FC } from "react";
-import { TYPE_REGISTRATION_ARIA } from "../../../config/config";
+import { TYPE_REGISTRATION_ARIA } from "../../config/config";
+import { paperStyles, ariaNameStyles } from "./styles";
 import TypeField from "./TypeField";
 import CreateTypeButton from "./CreateTypeButton";
 
 const TypeRegistrationAria: FC = () => {
   return (
-    <Paper
-      elevation={3}
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100%",
-        position: "relative",
-      }}
-    >
-      <Typography
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          padding: "16px",
-        }}
-      >
-        {TYPE_REGISTRATION_ARIA}
-      </Typography>
+    <Paper elevation={3} sx={paperStyles}>
+      <Typography sx={ariaNameStyles}>{TYPE_REGISTRATION_ARIA}</Typography>
       <FormControl>
         <Box
           sx={{

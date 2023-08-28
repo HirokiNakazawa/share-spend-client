@@ -8,11 +8,9 @@ import {
 } from "../recoil/atom/modalState";
 import { userState } from "../recoil/atom/userState";
 import { useApi } from "./useApi";
-
-type PostAuthResponse = {
-  id: number;
-  name: string;
-};
+import { PostAuthResponse } from "@/types";
+import { typeListState } from "../recoil/atom/typeState";
+import { useTypeManagement } from "./useTypeManagement";
 
 const useAuthentication = () => {
   const authName = useRecoilValue(authNameState);
@@ -22,6 +20,7 @@ const useAuthentication = () => {
   const setIsRegister = useSetRecoilState(isRegisterState);
   const setIsLogin = useSetRecoilState(isLoginState);
   const setUser = useSetRecoilState(userState);
+  const setTypeList = useSetRecoilState(typeListState);
 
   const api = useApi();
 
@@ -58,6 +57,10 @@ const useAuthentication = () => {
     setModal({ isOpen: false, title: "", buttonText: "" });
     setIsRegister(false);
     setIsLogin(false);
+
+    const typeList = await api.getTypes();
+    console.log(typeList);
+    setTypeList(typeList);
   };
 
   return { register, login };

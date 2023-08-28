@@ -1,10 +1,5 @@
 import { atom } from "recoil";
-
-type ModalState = {
-  isOpen: boolean;
-  title: string;
-  buttonText: string;
-};
+import { ModalState } from "@/types";
 
 const modalState = atom<ModalState>({
   key: "modalState",

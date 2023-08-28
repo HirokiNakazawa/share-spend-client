@@ -1,6 +1,7 @@
 import { Container, Grid, Paper, Typography } from "@mui/material";
 import { FC } from "react";
 import TypeRegistrationAria from "./TypeRegistrationAria";
+import CostRegistrationAria from "./CostRegistrationAria";
 
 const DashBoard: FC = () => {
   return (
@@ -21,9 +22,7 @@ const DashBoard: FC = () => {
             <TypeRegistrationAria />
           </Grid>
           <Grid item xs={8}>
-            <Paper elevation={3} sx={{ height: "100%" }}>
-              <Typography>支出登録エリア</Typography>
-            </Paper>
+            <CostRegistrationAria />
           </Grid>
         </Grid>
       </Container>

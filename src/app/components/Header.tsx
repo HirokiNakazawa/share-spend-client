@@ -3,7 +3,7 @@
 import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { FC } from "react";
-import { APP_NAME } from "../../../config/config";
+import { APP_NAME } from "../../config/config";
 import RegisterButton from "./RegisterButton";
 import LoginButton from "./LoginButton";
 import { useRecoilValue } from "recoil";

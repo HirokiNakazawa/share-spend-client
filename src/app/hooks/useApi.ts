@@ -1,24 +1,11 @@
 import axios from "axios";
-import { API_BASE_URL } from "../../../config/config";
-
-type AuthFormData = {
-  name: string;
-  password: string;
-};
-
-type PostAuthResponse = {
-  id: number;
-  name: string;
-};
-
-type TypeFormData = {
-  type: string;
-};
-
-type PostTypeResponse = {
-  id: number;
-  type: string;
-};
+import { API_BASE_URL } from "../../config/config";
+import {
+  AuthFormData,
+  GetTypeResponse,
+  PostAuthResponse,
+  CreateTypeFormData,
+} from "@/types";
 
 const useApi = () => {
   const postRegister = async (
@@ -43,9 +30,19 @@ const useApi = () => {
     }
   };
 
+  const getTypes = async (): Promise<GetTypeResponse[]> => {
+    try {
+      const url = `${API_BASE_URL}/types`;
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
   const postCreateType = async (
-    data: TypeFormData
-  ): Promise<PostTypeResponse> => {
+    data: CreateTypeFormData
+  ): Promise<PostAuthResponse> => {
     try {
       const url = `${API_BASE_URL}/types/create`;
       const response = await axios.post(url, data);
@@ -55,7 +52,7 @@ const useApi = () => {
     }
   };
 
-  return { postRegister, postLogin, postCreateType };
+  return { postRegister, postLogin, getTypes, postCreateType };
 };
 
 export { useApi };

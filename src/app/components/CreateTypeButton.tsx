@@ -2,7 +2,7 @@
 
 import { Button } from "@mui/material";
 import { FC } from "react";
-import { CREATE_BUTTON } from "../../../config/config";
+import { CREATE_BUTTON } from "../../config/config";
 import { useTypeManagement } from "../hooks/useTypeManagement";
 
 const CreateTypeButton: FC = () => {

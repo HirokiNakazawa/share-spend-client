@@ -1,9 +1,9 @@
 import { useRecoilValue } from "recoil";
-import { typeState } from "../recoil/atom/typeState";
+import { registerTypeState } from "../recoil/atom/typeState";
 import { useApi } from "./useApi";
 
 const useTypeManagement = () => {
-  const type = useRecoilValue(typeState);
+  const type = useRecoilValue(registerTypeState);
 
   const api = useApi();
 

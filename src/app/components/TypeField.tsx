@@ -3,14 +3,14 @@
 import { TextField } from "@mui/material";
 import { FC, ChangeEvent } from "react";
 import { useRecoilState } from "recoil";
-import { typeState } from "../recoil/atom/typeState";
+import { registerTypeState } from "../recoil/atom/typeState";
 
 type TypeFieldProps = {
   id: string;
 };
 
 const TypeField: FC<TypeFieldProps> = (props) => {
-  const [type, setType] = useRecoilState(typeState);
+  const [type, setType] = useRecoilState(registerTypeState);
 
   const handleChangeType = (e: ChangeEvent<HTMLInputElement>) => {
     setType(e.target.value);
@@ -25,7 +25,7 @@ const TypeField: FC<TypeFieldProps> = (props) => {
       value={type}
       onChange={handleChangeType}
       required
-      size="small"
+      sx={{ width: "15vw" }}
     />
   );
 };

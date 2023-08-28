@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import { FC } from "react";
 import { useSetRecoilState } from "recoil";
 import { userState } from "../recoil/atom/userState";
-import { LOGOUT_BUTTON } from "../../../config/config";
+import { LOGOUT_BUTTON } from "../../config/config";
 
 const LogoutButton: FC = () => {
   const setUser = useSetRecoilState(userState);
