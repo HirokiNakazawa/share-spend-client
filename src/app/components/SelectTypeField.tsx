@@ -9,15 +9,16 @@ import {
 } from "@mui/material";
 import { FC } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { selectTypeState, typeListState } from "../recoil/atom/typeState";
+import { typeListState } from "../recoil/atom/typeState";
+import { costTypeState } from "../recoil/atom/costState";
 
 const SelectTypeField: FC = () => {
   const id = "select-type-field";
   const typeList = useRecoilValue(typeListState);
-  const [selectType, setSelectType] = useRecoilState(selectTypeState);
+  const [costType, setCostType] = useRecoilState(costTypeState);
 
   const handleChangeType = (e: SelectChangeEvent<string>) => {
-    setSelectType(e.target.value);
+    setCostType(e.target.value);
   };
 
   return (
@@ -28,7 +29,7 @@ const SelectTypeField: FC = () => {
         id={id}
         label="種別"
         name="type"
-        value={selectType}
+        value={costType}
         onChange={handleChangeType}
         sx={{ width: "8vw" }}
       >

@@ -5,6 +5,11 @@ const costState = atom<string>({
   default: "",
 });
 
+const costTypeState = atom<string>({
+  key: "costType",
+  default: "",
+});
+
 const costNameState = atom<string>({
   key: "costName",
   default: "",
@@ -20,4 +25,10 @@ const costIsHalfState = atom<boolean>({
   default: false,
 });
 
-export { costState, costNameState, costIsFullState, costIsHalfState };
+export {
+  costState,
+  costTypeState,
+  costNameState,
+  costIsFullState,
+  costIsHalfState,
+};

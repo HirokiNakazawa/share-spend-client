@@ -5,6 +5,9 @@ import {
   GetTypeResponse,
   PostAuthResponse,
   CreateTypeFormData,
+  CreateCostFormData,
+  PostCostResponse,
+  PostTypeResponse,
 } from "@/types";
 
 const useApi = () => {
@@ -42,7 +45,7 @@ const useApi = () => {
 
   const postCreateType = async (
     data: CreateTypeFormData
-  ): Promise<PostAuthResponse> => {
+  ): Promise<PostTypeResponse> => {
     try {
       const url = `${API_BASE_URL}/types/create`;
       const response = await axios.post(url, data);
@@ -52,7 +55,19 @@ const useApi = () => {
     }
   };
 
-  return { postRegister, postLogin, getTypes, postCreateType };
+  const postCreateCost = async (
+    data: CreateCostFormData
+  ): Promise<PostCostResponse> => {
+    try {
+      const url = `${API_BASE_URL}/costs/create`;
+      const response = await axios.post(url, data);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  return { postRegister, postLogin, getTypes, postCreateType, postCreateCost };
 };
 
 export { useApi };

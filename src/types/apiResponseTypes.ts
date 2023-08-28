@@ -12,3 +12,8 @@ export type PostTypeResponse = {
   id: number;
   type: string;
 };
+
+export type PostCostResponse = {
+  name: string;
+  cost: number;
+};
