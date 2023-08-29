@@ -1,7 +1,8 @@
-import { List, ListItem, ListItemText, Paper, Typography } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import { FC } from "react";
 import { ariaNameStyles } from "./styles";
 import { COST_MONTHLY_LIST_ARIA } from "@/config/config";
+import CostMonthlyList from "./CostMonthlyList";
 
 const CostMonthlyListAria: FC = () => {
   return (
@@ -15,14 +16,7 @@ const CostMonthlyListAria: FC = () => {
       }}
     >
       <Typography sx={ariaNameStyles}>{COST_MONTHLY_LIST_ARIA}</Typography>
-      <List sx={{ position: "relative", top: 48, left: 16 }}>
-        <ListItem>
-          <ListItemText>家賃</ListItemText>
-        </ListItem>
-        <ListItem>
-          <ListItemText>食費</ListItemText>
-        </ListItem>
-      </List>
+      <CostMonthlyList />
     </Paper>
   );
 };

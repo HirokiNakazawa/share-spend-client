@@ -50,15 +50,31 @@ const useAuthentication = () => {
   };
 
   const handleAuthentication = async (response: PostAuthResponse) => {
+    setUserInfomation(response);
+    closeAndResetModal();
+    resetFlag();
+
+    await fetchData();
+  };
+
+  const setUserInfomation = (response: PostAuthResponse) => {
     setUser({
       id: response.id,
       name: response.name,
       isLoggedIn: true,
     });
+  };
+
+  const closeAndResetModal = () => {
     setModal({ isOpen: false, title: "", buttonText: "" });
+  };
+
+  const resetFlag = () => {
     setIsRegister(false);
     setIsLogin(false);
+  };
 
+  const fetchData = async () => {
     const typeList = await api.getTypes();
     console.log(typeList);
     setTypeList(typeList);

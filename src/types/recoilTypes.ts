@@ -10,6 +10,7 @@ export type Type = {
 };
 
 export type monthlyCostByType = {
-  id: number | null;
-  totalCost: number | null;
+  type_id: number | null;
+  type_name: string;
+  total_cost: number | null;
 };
