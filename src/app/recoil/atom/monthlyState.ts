@@ -1,7 +1,7 @@
-import { monthlyCostByType } from "@/types";
+import { MonthlyCostByTypeState } from "@/types";
 import { atom } from "recoil";
 
-const monthlyCostByTypeState = atom<monthlyCostByType[]>({
+const monthlyCostByTypeState = atom<MonthlyCostByTypeState[]>({
   key: "monthlyCostByType",
   default: [],
 });

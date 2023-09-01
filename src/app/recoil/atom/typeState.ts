@@ -1,7 +1,7 @@
 import { atom } from "recoil";
-import { Type } from "@/types";
+import { TypeState } from "@/types";
 
-const typeListState = atom<Type[]>({
+const typeListState = atom<TypeState[]>({
   key: "typeList",
   default: [],
 });

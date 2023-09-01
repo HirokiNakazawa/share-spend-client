@@ -7,10 +7,11 @@ import {
   modalState,
 } from "../recoil/atom/modalState";
 import { userState } from "../recoil/atom/userState";
-import { useApi } from "./useApi";
 import { PostAuthResponse } from "@/types";
 import { typeListState } from "../recoil/atom/typeState";
 import { monthlyCostByTypeState } from "../recoil/atom/monthlyState";
+import { useApi } from "./useApi";
+import { useUpdate } from "./useUpdate";
 
 const useAuthentication = () => {
   const authName = useRecoilValue(authNameState);
@@ -20,10 +21,9 @@ const useAuthentication = () => {
   const setIsRegister = useSetRecoilState(isRegisterState);
   const setIsLogin = useSetRecoilState(isLoginState);
   const setUser = useSetRecoilState(userState);
-  const setTypeList = useSetRecoilState(typeListState);
-  const setMonthlyCostByType = useSetRecoilState(monthlyCostByTypeState);
 
   const api = useApi();
+  const update = useUpdate();
 
   const register = async () => {
     const data = { name: authName, password: authPassword };
@@ -75,13 +75,8 @@ const useAuthentication = () => {
   };
 
   const fetchData = async () => {
-    const typeList = await api.getTypes();
-    console.log(typeList);
-    setTypeList(typeList);
-
-    const monthlyCostByType = await api.getMonthlyCostByType();
-    console.log(monthlyCostByType);
-    setMonthlyCostByType(monthlyCostByType);
+    await update.updateTypes();
+    await update.updateMonthlyCostByType();
   };
 
   return { register, login };

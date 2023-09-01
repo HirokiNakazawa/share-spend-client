@@ -4,13 +4,16 @@ import { ADD_BUTTON } from "@/config/config";
 import { Button } from "@mui/material";
 import { FC } from "react";
 import { useCostManagement } from "../hooks/useCostManagement";
+import { useUpdate } from "../hooks/useUpdate";
 
 const CreateCostButton: FC = () => {
   const costManegement = useCostManagement();
+  const update = useUpdate();
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     console.log("支出追加ボタンがクリックされました");
-    costManegement.createCost();
+    await costManegement.createCost();
+    await update.updateMonthlyCostByType();
   };
 
   return (

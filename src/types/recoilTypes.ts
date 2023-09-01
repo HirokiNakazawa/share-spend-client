@@ -4,12 +4,12 @@ export type ModalState = {
   buttonText: string;
 };
 
-export type Type = {
+export type TypeState = {
   id: number | null;
   type: string;
 };
 
-export type monthlyCostByType = {
+export type MonthlyCostByTypeState = {
   type_id: number;
   type_name: string;
   total_cost: number;
