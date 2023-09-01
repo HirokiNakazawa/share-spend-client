@@ -7,13 +7,13 @@ import AuthenticationButton from "../components/AuthenticationButton";
 const LogoutContainer: FC = () => {
   const setUser = useSetRecoilState(userState);
 
-  const handleClick = () => {
+  const handleSetState = () => {
     console.log("ログアウトがクリックされました");
     setUser({ id: null, name: "", isLoggedIn: false });
   };
 
   return (
-    <AuthenticationButton text={LOGOUT_BUTTON} handleClick={handleClick} />
+    <AuthenticationButton text={LOGOUT_BUTTON} handleClick={handleSetState} />
   );
 };
 

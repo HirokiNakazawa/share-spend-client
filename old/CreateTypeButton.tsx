@@ -2,9 +2,9 @@
 
 import { Button } from "@mui/material";
 import { FC } from "react";
-import { CREATE_BUTTON } from "../config/config";
-import { useTypeManagement } from "../hooks/useTypeManagement";
-import { useUpdate } from "../hooks/useUpdate";
+import { CREATE_BUTTON } from "../src/config/config";
+import { useTypeManagement } from "../src/hooks/useTypeManagement";
+import { useUpdate } from "../src/hooks/useUpdate";
 
 const CreateTypeButton: FC = () => {
   const typeManagement = useTypeManagement();

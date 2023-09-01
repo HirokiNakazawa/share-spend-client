@@ -8,7 +8,7 @@ const LoginContainer: FC = () => {
   const setModal = useSetRecoilState(modalState);
   const setIsLogin = useSetRecoilState(isLoginState);
 
-  const handleClick = () => {
+  const handleSetState = () => {
     console.log("ログインがクリックされました");
     setModal({
       isOpen: true,
@@ -18,7 +18,9 @@ const LoginContainer: FC = () => {
     setIsLogin(true);
   };
 
-  return <AuthenticationButton text={LOGIN_BUTTON} handleClick={handleClick} />;
+  return (
+    <AuthenticationButton text={LOGIN_BUTTON} handleClick={handleSetState} />
+  );
 };
 
 export default LoginContainer;

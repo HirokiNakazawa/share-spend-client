@@ -8,7 +8,7 @@ const RegistrationContainer: FC = () => {
   const setModal = useSetRecoilState(modalState);
   const setIsRegister = useSetRecoilState(isRegisterState);
 
-  const handleClick = () => {
+  const handleSetState = () => {
     setModal({
       isOpen: true,
       title: REGISTER_BUTTON,
@@ -18,7 +18,7 @@ const RegistrationContainer: FC = () => {
   };
 
   return (
-    <AuthenticationButton text={REGISTER_BUTTON} handleClick={handleClick} />
+    <AuthenticationButton text={REGISTER_BUTTON} handleClick={handleSetState} />
   );
 };
 

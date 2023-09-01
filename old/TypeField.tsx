@@ -3,7 +3,7 @@
 import { TextField } from "@mui/material";
 import { FC, ChangeEvent } from "react";
 import { useRecoilState } from "recoil";
-import { registerTypeState } from "../recoil/typeState";
+import { registerTypeState } from "../src/recoil/typeState";
 
 type TypeFieldProps = {
   id: string;
