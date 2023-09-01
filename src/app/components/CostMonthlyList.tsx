@@ -1,6 +1,6 @@
 "use client";
 
-import { List, ListItem, ListItemText, Typography } from "@mui/material";
+import { List, ListItem } from "@mui/material";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
 import { monthlyCostByTypeState } from "../recoil/atom/monthlyState";
