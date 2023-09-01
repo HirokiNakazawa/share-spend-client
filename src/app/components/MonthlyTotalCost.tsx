@@ -4,11 +4,10 @@ import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 import { MONTHLY_TOTAL_COST } from "@/config/config";
 import { mainRightAriaStyles } from "./styles";
-import { useRecoilValue } from "recoil";
-import { monthlyCostByTypeState } from "../recoil/atom/monthlyState";
+import { useSummary } from "../hooks/useSummary";
 
 const MonthlyTotalCost: FC = () => {
-  const monthlyCostByType = useRecoilValue(monthlyCostByTypeState);
+  const summary = useSummary();
 
   return (
     <Box sx={mainRightAriaStyles.box}>
@@ -16,11 +15,7 @@ const MonthlyTotalCost: FC = () => {
         {MONTHLY_TOTAL_COST}
       </Typography>
       <Typography sx={mainRightAriaStyles.body}>
-        {`${monthlyCostByType
-          .reduce((total, item) => {
-            return total + item.total_cost;
-          }, 0)
-          .toLocaleString()} 円`}
+        {`${summary.getMonthlyTotalCost().toLocaleString()} 円`}
       </Typography>
     </Box>
   );
