@@ -2,10 +2,9 @@ import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { FC } from "react";
 import { APP_NAME } from "../config/config";
-import RegisterButton from "./RegisterButton";
-import LoginButton from "./LoginButton";
 import { UserState } from "@/types";
 import LoggedInUser from "../features/Authentication/components/LoggedInUser";
+import Guest from "@/features/Authentication/components/Guest";
 
 const Header: FC<{ user: UserState }> = ({ user }) => {
   return (
@@ -17,14 +16,7 @@ const Header: FC<{ user: UserState }> = ({ user }) => {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           {APP_NAME}
         </Typography>
-        {user.isLoggedIn ? (
-          <LoggedInUser name={user.name} />
-        ) : (
-          <>
-            <RegisterButton />
-            <LoginButton />
-          </>
-        )}
+        {user.isLoggedIn ? <LoggedInUser name={user.name} /> : <Guest />}
       </Toolbar>
     </AppBar>
   );

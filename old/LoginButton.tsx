@@ -3,8 +3,8 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
 import { useSetRecoilState } from "recoil";
-import { LOGIN_BUTTON } from "../config/config";
-import { isLoginState, modalState } from "../recoil/modalState";
+import { LOGIN_BUTTON } from "../src/config/config";
+import { isLoginState, modalState } from "../src/recoil/modalState";
 
 const LoginButton: FC = () => {
   const setModal = useSetRecoilState(modalState);
