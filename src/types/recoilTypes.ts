@@ -1,3 +1,9 @@
+export type UserState = {
+  id: number | null;
+  name: string;
+  isLoggedIn: boolean;
+};
+
 export type ModalState = {
   isOpen: boolean;
   title: string;
