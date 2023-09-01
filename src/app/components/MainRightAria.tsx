@@ -1,5 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { FC } from "react";
+import MonthlyTotalCost from "./MonthlyTotalCost";
+import MonthlyPredictCost from "./MonthlyPredictCost";
 
 const MainRightAria: FC = () => {
   return (
@@ -11,13 +13,9 @@ const MainRightAria: FC = () => {
         width: "30%",
       }}
     >
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 10 }}>
-        <Box>
-          <Typography sx={{ fontSize: "24px" }}>今月の支出</Typography>
-        </Box>
-        <Box>
-          <Typography sx={{ fontSize: "24px" }}>今月の予想</Typography>
-        </Box>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
+        <MonthlyTotalCost />
+        <MonthlyPredictCost />
       </Box>
     </Box>
   );

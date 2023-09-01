@@ -2,7 +2,7 @@ import { ListItemText, Typography } from "@mui/material";
 import { FC } from "react";
 
 type ListItemTotalCostProps = {
-  totalCost: number | null;
+  totalCost: number;
 };
 
 const ListItemTotalCost: FC<ListItemTotalCostProps> = (props) => {
@@ -10,7 +10,7 @@ const ListItemTotalCost: FC<ListItemTotalCostProps> = (props) => {
     <ListItemText
       primary={
         <Typography sx={{ fontSize: "20px" }}>
-          {`${Number(props.totalCost)?.toLocaleString()} 円`}
+          {`${props.totalCost.toLocaleString()} 円`}
         </Typography>
       }
       sx={{ width: "5vw", textAlign: "right", marginRight: 10 }}

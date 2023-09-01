@@ -1,4 +1,4 @@
-import { Paper, Box, Typography } from "@mui/material";
+import { Paper, Box } from "@mui/material";
 import { FC } from "react";
 import MainLeftAria from "./MainLeftAria";
 import MainRightAria from "./MainRightAria";
