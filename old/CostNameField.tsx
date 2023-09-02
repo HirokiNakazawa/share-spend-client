@@ -3,7 +3,7 @@
 import { TextField } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
-import { costNameState } from "../recoil/costState";
+import { costNameState } from "../src/recoil/costState";
 
 type CostNameFieldProps = {
   id: string;

@@ -11,4 +11,9 @@ const registerTypeState = atom<string>({
   default: "",
 });
 
-export { typeListState, registerTypeState };
+const selectTypeState = atom<string>({
+  key: "selectType",
+  default: "",
+});
+
+export { typeListState, registerTypeState, selectTypeState };

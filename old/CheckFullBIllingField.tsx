@@ -3,7 +3,7 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
-import { costIsFullState } from "../recoil/costState";
+import { costIsFullState } from "../src/recoil/costState";
 
 const CheckFullBillingField: FC = () => {
   const [costIsFull, setCostIsFull] = useRecoilState(costIsFullState);

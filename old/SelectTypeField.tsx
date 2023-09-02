@@ -9,8 +9,8 @@ import {
 } from "@mui/material";
 import { FC } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { typeListState } from "../recoil/typeState";
-import { costTypeState } from "../recoil/costState";
+import { typeListState } from "../src/recoil/typeState";
+import { costTypeState } from "../src/recoil/costState";
 
 const SelectTypeField: FC = () => {
   const id = "select-type-field";

@@ -1,17 +1,20 @@
 import { Box, FormControl, Paper, Typography } from "@mui/material";
 import { FC } from "react";
-import { COST_REGISTRATION_ARIA } from "../config/config";
-import { ariaNameStyles, paperStyles } from "./styles";
+import { COST_REGISTRATION } from "../src/config/config";
+import {
+  paperStyles,
+  ariaNameStyles,
+} from "@/features/Dashboard/styles/dashboardStyles";
 import CostField from "./CostField";
 import SelectTypeField from "./SelectTypeField";
 import CreateCostButton from "./CreateCostButton";
 import CostNameField from "./CostNameField";
-import CheckBillingTypeField from "./CostCheckField";
+import CheckBillingTypeField from "../src/components/CostCheckField";
 
 const CostRegistrationAria: FC = () => {
   return (
     <Paper elevation={3} sx={paperStyles}>
-      <Typography sx={ariaNameStyles}>{COST_REGISTRATION_ARIA}</Typography>
+      <Typography sx={ariaNameStyles}>{COST_REGISTRATION}</Typography>
       <FormControl>
         <Box sx={{ display: "flex", flexDirectrion: "row" }}>
           <SelectTypeField />

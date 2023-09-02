@@ -13,6 +13,7 @@ const FormButton: FC<FormButtonProps> = (props) => {
       variant="contained"
       color="primary"
       onClick={props.handleClick}
+      sx={{ marginLeft: 2 }}
     >
       {props.text}
     </Button>

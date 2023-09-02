@@ -1,7 +1,7 @@
 import { Paper, Typography, FormControl, Box } from "@mui/material";
 import { FC } from "react";
 import { TYPE_REGISTRATION } from "@/config/config";
-import { paperStyles, ariaNameStyles } from "@/components/styles";
+import { paperStyles, ariaNameStyles } from "../../styles/dashboardStyles";
 import CreateTypeContainer from "../containers/CreateTypeContainer";
 import InputTypeContainer from "../containers/InputTypeContainer";
 

@@ -3,8 +3,8 @@
 import { ADD_BUTTON } from "@/config/config";
 import { Button } from "@mui/material";
 import { FC } from "react";
-import { useCostManagement } from "../hooks/useCostManagement";
-import { useUpdate } from "../hooks/useUpdate";
+import { useCostManagement } from "../src/hooks/useCostManagement";
+import { useUpdate } from "../src/hooks/useUpdate";
 
 const CreateCostButton: FC = () => {
   const costManegement = useCostManagement();
