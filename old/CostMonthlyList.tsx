@@ -3,9 +3,9 @@
 import { List, ListItem } from "@mui/material";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
-import { monthlyCostByTypeState } from "../recoil/monthlyState";
-import ListItemType from "./ListItemType";
-import ListItemTotalCost from "./ListItemTotalCost";
+import { monthlyCostByTypeState } from "../src/recoil/monthlyState";
+import ListItemType from "../src/features/Dashboard/RightTopAria/components/ListItemType";
+import ListItemTotalCost from "../src/features/Dashboard/RightTopAria/components/ListItemTotalCost";
 
 const CostMonthlyList: FC = () => {
   const monthlyCostByType = useRecoilValue(monthlyCostByTypeState);

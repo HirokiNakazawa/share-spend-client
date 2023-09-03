@@ -6,6 +6,7 @@ import { FC } from "react";
 // import CostRegistrationAria from "../../../components/CostRegistrationAria";
 import TypeRegistration from "../LeftBottomAria/components/TypeRegistration";
 import CostRegistration from "../RightBottomAria/components/CostRegistration";
+import MonthlyList from "../RightTopAria/components/MonthlyList";
 
 const Dashboard: FC = () => {
   return (
@@ -15,7 +16,7 @@ const Dashboard: FC = () => {
           {/* <MainAria /> */}
         </Grid>
         <Grid item xs={4} height="60vh">
-          {/* <CostMonthlyListAria /> */}
+          <MonthlyList />
         </Grid>
         <Grid item xs={4} height="30vh">
           <TypeRegistration />

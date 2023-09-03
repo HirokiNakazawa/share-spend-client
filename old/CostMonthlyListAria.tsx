@@ -1,7 +1,7 @@
 import { Paper, Typography } from "@mui/material";
 import { FC } from "react";
-import { ariaNameStyles } from "./styles";
-import { COST_MONTHLY_LIST_ARIA } from "@/config/config";
+import { ariaNameStyles } from "@/features/Dashboard/styles/dashboardStyles";
+import { COST_MONTHLY_LIST } from "@/config/config";
 import CostMonthlyList from "./CostMonthlyList";
 
 const CostMonthlyListAria: FC = () => {
@@ -15,7 +15,7 @@ const CostMonthlyListAria: FC = () => {
         overflowY: "auto",
       }}
     >
-      <Typography sx={ariaNameStyles}>{COST_MONTHLY_LIST_ARIA}</Typography>
+      <Typography sx={ariaNameStyles}>{COST_MONTHLY_LIST}</Typography>
       <CostMonthlyList />
     </Paper>
   );
