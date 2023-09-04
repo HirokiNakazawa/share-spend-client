@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { FC } from "react";
-import AriaName from "./AriaName";
-import AriaClaim from "./AriaClaim";
-import PieChartContainer from "../containers/PieChartContainer";
+import AriaName from "@/features/Dashboard/LeftTopAria/components/AriaName";
+import PieChartContainer from "@/features/Dashboard/LeftTopAria/containers/PieChartContainer";
+import AriaClaim from "@/features/Dashboard/LeftTopAria/components/AriaClaim";
 
 const MainLeftAria: FC = () => {
   return (

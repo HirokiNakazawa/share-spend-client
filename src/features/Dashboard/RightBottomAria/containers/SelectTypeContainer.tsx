@@ -1,10 +1,10 @@
 "use client";
 
-import { selectTypeState, typeListState } from "@/recoil/typeState";
 import { SelectChangeEvent } from "@mui/material";
 import { FC } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import SelectType from "../components/SelectType";
+import { selectTypeState, typeListState } from "@/recoil/typeState";
+import SelectType from "@/features/Dashboard/RightBottomAria/components/SelectType";
 
 const SelectTypeContainer: FC = () => {
   const labelId = "select-type-label";
@@ -22,7 +22,7 @@ const SelectTypeContainer: FC = () => {
       labelName="種別"
       selectType={selectType}
       typeList={typeList}
-      handleChange={() => handleChangeType}
+      handleChange={handleChangeType}
     />
   );
 };

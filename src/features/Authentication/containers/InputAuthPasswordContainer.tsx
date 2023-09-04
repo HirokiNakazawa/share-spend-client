@@ -3,9 +3,9 @@
 import { authPasswordState } from "@/recoil/authState";
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
-import AuthPassword from "../components/AuthPassword";
+import InputAuthPassword from "@/features/Authentication/components/InputAuthPassword";
 
-const AuthPasswordContainer: FC = () => {
+const InputAuthPasswordContainer: FC = () => {
   const [authPassword, setAuthPassword] = useRecoilState(authPasswordState);
 
   const handleChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
@@ -13,12 +13,12 @@ const AuthPasswordContainer: FC = () => {
   };
 
   return (
-    <AuthPassword
+    <InputAuthPassword
       id="auth-password"
       password={authPassword}
-      handleChange={() => handleChangePassword}
+      handleChange={handleChangePassword}
     />
   );
 };
 
-export default AuthPasswordContainer;
+export default InputAuthPasswordContainer;

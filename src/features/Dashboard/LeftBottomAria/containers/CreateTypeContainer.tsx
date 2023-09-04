@@ -2,9 +2,9 @@
 
 import { FC } from "react";
 import { CREATE_BUTTON } from "@/config/config";
-import { useCreateType } from "../hooks/useCreateType";
+import { useCreateType } from "@/features/Dashboard/LeftBottomAria/hooks/useCreateType";
 import { useUpdate } from "@/hooks/useUpdate";
-import FormButton from "../../components/FormButton";
+import FormButton from "@/features/Dashboard/components/FormButton";
 
 const CreateTypeContainer: FC = () => {
   const createTypeService = useCreateType();

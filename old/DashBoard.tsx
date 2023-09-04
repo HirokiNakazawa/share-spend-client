@@ -3,7 +3,7 @@ import { FC } from "react";
 import TypeRegistrationAria from "./TypeRegistrationAria";
 import CostRegistrationAria from "./CostRegistrationAria";
 import CostMonthlyListAria from "./CostMonthlyListAria";
-import MainAria from "../src/features/Dashboard/LeftTopAria/components/MainAria";
+import MainAria from "../src/app/features/Dashboard/LeftTopAria/components/MainAria";
 
 const DashBoard: FC = () => {
   return (

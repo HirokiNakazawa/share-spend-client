@@ -1,9 +1,9 @@
 import { Container, Grid } from "@mui/material";
 import { FC } from "react";
-import TypeRegistration from "../LeftBottomAria/components/TypeRegistration";
-import CostRegistration from "../RightBottomAria/components/CostRegistration";
-import MonthlyList from "../RightTopAria/components/MonthlyList";
-import MainAria from "../LeftTopAria/components/MainAria";
+import MainAria from "@/features/Dashboard/LeftTopAria/components/MainAria";
+import MonthlyList from "@/features/Dashboard/RightTopAria/components/MonthlyList";
+import TypeRegistration from "@/features/Dashboard/LeftBottomAria/components/TypeRegistration";
+import CostRegistration from "@/features/Dashboard/RightBottomAria/components/CostRegistration";
 
 const Dashboard: FC = () => {
   return (

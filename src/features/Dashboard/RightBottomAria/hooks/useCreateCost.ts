@@ -4,10 +4,10 @@ import {
   costNameState,
   costState,
 } from "@/recoil/costState";
-import { selectTypeState, typeListState } from "@/recoil/typeState";
-import { userState } from "@/recoil/userState";
 import { useRecoilValue } from "recoil";
-import { createCostApi } from "../api/createCostApi";
+import { userState } from "@/recoil/userState";
+import { selectTypeState, typeListState } from "@/recoil/typeState";
+import { createCostApi } from "@/features/Dashboard/RightBottomAria/api/createCostApi";
 
 const useCreateCost = () => {
   const typeList = useRecoilValue(typeListState);

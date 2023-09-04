@@ -1,8 +1,8 @@
 "use client";
 
-import { userState } from "@/recoil/userState";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
+import { userState } from "@/recoil/userState";
 import Header from "@/components/Header";
 
 const HeaderContainer: FC = () => {

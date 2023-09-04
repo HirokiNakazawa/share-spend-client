@@ -1,13 +1,16 @@
 import { Paper, Typography, FormControl, Box } from "@mui/material";
 import { FC } from "react";
 import { COST_REGISTRATION } from "@/config/config";
-import { paperStyles, ariaNameStyles } from "../../styles/dashboardStyles";
-import InputCostContainer from "../containers/InputCostContainer";
-import InputCostNameContainer from "../containers/InputCostNameContainer";
-import SelectTypeContainer from "../containers/SelectTypeContainer";
-import CheckHalfBillingContainer from "../containers/CheckHalfBillingContainer";
-import CheckFullBillingContainer from "../containers/CheckFullBillingContainer";
-import CreateCostContainer from "../containers/CreateCostContainer";
+import {
+  paperStyles,
+  ariaNameStyles,
+} from "@/features/Dashboard/styles/dashboardStyles";
+import SelectTypeContainer from "@/features/Dashboard/RightBottomAria/containers/SelectTypeContainer";
+import InputCostNameContainer from "@/features/Dashboard/RightBottomAria/containers/InputCostNameContainer";
+import InputCostContainer from "@/features/Dashboard/RightBottomAria/containers/InputCostContainer";
+import CheckHalfBillingContainer from "@/features/Dashboard/RightBottomAria/containers/CheckHalfBillingContainer";
+import CheckFullBillingContainer from "@/features/Dashboard/RightBottomAria/containers/CheckFullBillingContainer";
+import CreateCostContainer from "@/features/Dashboard/RightBottomAria/containers/CreateCostContainer";
 
 const CostRegistration: FC = () => {
   return (

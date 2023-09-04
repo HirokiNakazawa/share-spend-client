@@ -4,7 +4,7 @@ import { FC } from "react";
 import { APP_NAME } from "../config/config";
 import { UserState } from "@/types";
 import LoggedInUser from "../features/Authentication/components/LoggedInUser";
-import Guest from "@/features/Authentication/components/Guest";
+import Guest from "../features/Authentication/components/Guest";
 
 const Header: FC<{ user: UserState }> = ({ user }) => {
   return (

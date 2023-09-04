@@ -1,4 +1,10 @@
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from "@mui/material";
 import { FC } from "react";
 import { TypeState } from "@/types";
 
@@ -8,7 +14,7 @@ type SelectTypeProps = {
   labelName: string;
   selectType: string;
   typeList: TypeState[];
-  handleChange: () => void;
+  handleChange: (e: SelectChangeEvent<string>) => void;
 };
 
 const SelectType: FC<SelectTypeProps> = (props) => {

@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { MONTHLY_PREDICT_COST } from "@/config/config";
 import { useSummary } from "@/hooks/useSummary";
-import MonthlyCost from "../components/MonthlyCost";
+import MonthlyCost from "@/features/Dashboard/LeftTopAria/components/MonthlyCost";
 
 const MonthlyPredictCostContainer: FC = () => {
   const summary = useSummary();

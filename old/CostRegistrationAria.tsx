@@ -4,7 +4,7 @@ import { COST_REGISTRATION } from "../src/config/config";
 import {
   paperStyles,
   ariaNameStyles,
-} from "@/features/Dashboard/styles/dashboardStyles";
+} from "@/app/features/Dashboard/styles/dashboardStyles";
 import CostField from "./CostField";
 import SelectTypeField from "./SelectTypeField";
 import CreateCostButton from "./CreateCostButton";

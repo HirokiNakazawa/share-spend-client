@@ -1,9 +1,9 @@
 "use client";
 
-import ModalButton from "@/features/Modal/components/ModalButton";
-import { isLoginState, isRegisterState, modalState } from "@/recoil/modalState";
 import { FC } from "react";
 import { useSetRecoilState } from "recoil";
+import { isLoginState, isRegisterState, modalState } from "@/recoil/modalState";
+import ModalButton from "@/features/Modal/components/ModalButton";
 
 const ModalCloseContainer: FC = () => {
   const setModal = useSetRecoilState(modalState);

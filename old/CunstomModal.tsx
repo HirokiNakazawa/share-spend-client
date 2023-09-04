@@ -8,7 +8,7 @@ import {
   isRegisterState,
   modalState,
 } from "../src/recoil/modalState";
-import ModalAuthContent from "@/features/Authentication/components/ModalAuthContent";
+import ModalAuthContent from "@/app/features/Authentication/components/ModalAuthContent";
 import ModalFooter from "../src/components/ModalFooter";
 import ModalHeader from "../src/components/ModalHeader";
 

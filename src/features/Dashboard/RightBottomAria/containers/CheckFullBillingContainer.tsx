@@ -1,9 +1,9 @@
 "use client";
 
-import { costIsFullState } from "@/recoil/costState";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 import { useSetRecoilState } from "recoil";
+import { costIsFullState } from "@/recoil/costState";
 
 const CheckFullBillingContainer: FC = () => {
   const setCostIsFull = useSetRecoilState(costIsFullState);

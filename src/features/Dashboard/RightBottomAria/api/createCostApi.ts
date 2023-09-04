@@ -7,7 +7,7 @@ const createCostApi = () => {
     data: CreateCostFormData
   ): Promise<PostCostResponse> => {
     try {
-      const url = `${API_BASE_URL}/types/create`;
+      const url = `${API_BASE_URL}/costs/create`;
       const response = await axios.post(url, data);
       return response.data;
     } catch (error) {

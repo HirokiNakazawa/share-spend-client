@@ -1,8 +1,8 @@
 import { Paper, Typography } from "@mui/material";
 import { FC } from "react";
-import { ariaNameStyles } from "../../styles/dashboardStyles";
 import { COST_MONTHLY_LIST } from "@/config/config";
-import MonthlyListContainer from "../containers/MonthlyListContainer";
+import { ariaNameStyles } from "@/features/Dashboard/styles/dashboardStyles";
+import MonthlyListContainer from "@/features/Dashboard/RightTopAria/containers/MonthlyListContainer";
 
 const MonthlyList: FC = () => {
   return (

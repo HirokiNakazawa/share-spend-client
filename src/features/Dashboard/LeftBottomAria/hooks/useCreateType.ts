@@ -1,6 +1,6 @@
 import { registerTypeState } from "@/recoil/typeState";
 import { useRecoilValue } from "recoil";
-import { createTypeApi } from "../api/createTypeApi";
+import { createTypeApi } from "@/features/Dashboard/LeftBottomAria/api/createTypeApi";
 
 const useCreateType = () => {
   const type = useRecoilValue(registerTypeState);

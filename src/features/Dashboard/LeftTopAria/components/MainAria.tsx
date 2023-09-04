@@ -1,7 +1,7 @@
 import { Paper, Box } from "@mui/material";
 import { FC } from "react";
-import MainLeftAria from "./MainLeftAria";
-import MainRightAria from "./MainRightAria";
+import MainLeftAria from "@/features/Dashboard/LeftTopAria/components/MainLeftAria";
+import MainRightAria from "@/features/Dashboard/LeftTopAria/components/MainRightAria";
 
 const MainAria: FC = () => {
   return (

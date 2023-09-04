@@ -3,23 +3,22 @@
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
 import { authNameState } from "@/recoil/authState";
-import AuthName from "../components/AuthName";
+import InputAuthName from "@/features/Authentication/components/InputAuthName";
 
-const AuthNameContainer: FC = () => {
+const InputAuthNameContainer: FC = () => {
   const [authName, setAuthName] = useRecoilState(authNameState);
 
   const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     setAuthName(e.target.value);
   };
 
   return (
-    <AuthName
+    <InputAuthName
       id="auth-name"
       name={authName}
-      handleChange={() => handleChangeName}
+      handleChange={handleChangeName}
     />
   );
 };
 
-export default AuthNameContainer;
+export default InputAuthNameContainer;

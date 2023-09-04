@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { FC } from "react";
-import MonthlyPredictCost from "../../../../../old/MonthlyPredictCost";
-import MonthlyTotalCostContainer from "../containers/MonthlyTotalCostContainer";
+import MonthlyTotalCostContainer from "@/features/Dashboard/LeftTopAria/containers/MonthlyTotalCostContainer";
+import MonthlyPredictCostContainer from "@/features/Dashboard/LeftTopAria/containers/MonthlyPredictCostContainer";
 
 const MainRightAria: FC = () => {
   return (
@@ -15,7 +15,7 @@ const MainRightAria: FC = () => {
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
         <MonthlyTotalCostContainer />
-        <MonthlyPredictCost />
+        <MonthlyPredictCostContainer />
       </Box>
     </Box>
   );

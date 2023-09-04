@@ -3,7 +3,7 @@
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
 import { registerTypeState } from "@/recoil/typeState";
-import InputType from "../components/InputType";
+import InputType from "@/features/Dashboard/LeftBottomAria/components/InputType";
 
 const InputTypeContainer: FC = () => {
   const [type, setType] = useRecoilState(registerTypeState);
@@ -13,11 +13,7 @@ const InputTypeContainer: FC = () => {
   };
 
   return (
-    <InputType
-      id="input-type"
-      type={type}
-      handleChange={() => handleChangeType}
-    />
+    <InputType id="input-type" type={type} handleChange={handleChangeType} />
   );
 };
 

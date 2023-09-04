@@ -1,13 +1,13 @@
 import { TextField } from "@mui/material";
-import { FC } from "react";
+import { ChangeEvent, FC } from "react";
 
 type AuthNameProps = {
   id: string;
   name: string;
-  handleChange: () => void;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const AuthName: FC<AuthNameProps> = (props) => {
+const InputAuthName: FC<AuthNameProps> = (props) => {
   return (
     <TextField
       id={props.id}
@@ -21,4 +21,4 @@ const AuthName: FC<AuthNameProps> = (props) => {
   );
 };
 
-export default AuthName;
+export default InputAuthName;

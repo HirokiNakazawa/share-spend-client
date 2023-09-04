@@ -1,13 +1,13 @@
 import { TextField } from "@mui/material";
-import { FC } from "react";
+import { ChangeEvent, FC } from "react";
 
 type authPasswordProps = {
   id: string;
   password: string;
-  handleChange: () => void;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const AuthPassword: FC<authPasswordProps> = (props) => {
+const InputAuthPassword: FC<authPasswordProps> = (props) => {
   return (
     <TextField
       id={props.id}
@@ -21,4 +21,4 @@ const AuthPassword: FC<authPasswordProps> = (props) => {
   );
 };
 
-export default AuthPassword;
+export default InputAuthPassword;

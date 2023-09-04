@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
 import { isLoginState, isRegisterState } from "@/recoil/modalState";
-import ModalFooter from "../components/ModalFooter";
+import ModalFooter from "@/features/Modal/components/ModalFooter";
 
 const ModalFooterContainer: FC = () => {
   const isRegister = useRecoilValue(isRegisterState);

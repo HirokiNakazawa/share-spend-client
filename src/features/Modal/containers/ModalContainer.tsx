@@ -1,9 +1,9 @@
 "use client";
 
-import { isLoginState, isRegisterState, modalState } from "@/recoil/modalState";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
-import CustomModal from "@/components/CustomModal";
+import { isLoginState, isRegisterState, modalState } from "@/recoil/modalState";
+import CustomModal from "@/features/Modal/components/CustomModal";
 
 const ModalContainer: FC = () => {
   const modal = useRecoilValue(modalState);

@@ -1,13 +1,13 @@
 import { FormControl, Box } from "@mui/material";
 import { FC } from "react";
-import AuthNameContainer from "../containers/AuthNameContainer";
-import AuthPasswordContainer from "../containers/AuthPasswordContainer";
+import InputAuthNameContainer from "../containers/InputAuthNameContainer";
+import AuthPasswordContainer from "../containers/InputAuthPasswordContainer";
 
 const ModalAuthContent: FC = () => {
   return (
     <FormControl>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-        <AuthNameContainer />
+        <InputAuthNameContainer />
         <AuthPasswordContainer />
       </Box>
     </FormControl>

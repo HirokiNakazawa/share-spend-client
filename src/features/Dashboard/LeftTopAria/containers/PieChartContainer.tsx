@@ -1,8 +1,8 @@
 "use client";
 
-import { monthlyCostByTypeState } from "@/recoil/monthlyState";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
+import { monthlyCostByTypeState } from "@/recoil/monthlyState";
 import dynamic from "next/dynamic";
 
 const PieChartContainer: FC = () => {

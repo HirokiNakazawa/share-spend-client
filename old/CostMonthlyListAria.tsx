@@ -1,6 +1,6 @@
 import { Paper, Typography } from "@mui/material";
 import { FC } from "react";
-import { ariaNameStyles } from "@/features/Dashboard/styles/dashboardStyles";
+import { ariaNameStyles } from "@/app/features/Dashboard/styles/dashboardStyles";
 import { COST_MONTHLY_LIST } from "@/config/config";
 import CostMonthlyList from "./CostMonthlyList";
 

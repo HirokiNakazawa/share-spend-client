@@ -3,7 +3,7 @@
 import { costState } from "@/recoil/costState";
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
-import InputCost from "../components/InputCost";
+import InputCost from "@/features/Dashboard/RightBottomAria/components/InputCost";
 
 const InputCostContainer: FC = () => {
   const [cost, setCost] = useRecoilState(costState);
@@ -13,11 +13,7 @@ const InputCostContainer: FC = () => {
   };
 
   return (
-    <InputCost
-      id="input-cost"
-      cost={cost}
-      handleChange={() => handleChangeCost}
-    />
+    <InputCost id="input-cost" cost={cost} handleChange={handleChangeCost} />
   );
 };
 

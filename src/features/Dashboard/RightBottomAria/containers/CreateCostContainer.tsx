@@ -2,9 +2,9 @@
 
 import { FC } from "react";
 import { ADD_BUTTON } from "@/config/config";
-import { useCreateCost } from "../hooks/useCreateCost";
+import { useCreateCost } from "@/features/Dashboard/RightBottomAria/hooks/useCreateCost";
 import { useUpdate } from "@/hooks/useUpdate";
-import FormButton from "../../components/FormButton";
+import FormButton from "@/features/Dashboard/components/FormButton";
 
 const CreateCostContainer: FC = () => {
   const createCostService = useCreateCost();

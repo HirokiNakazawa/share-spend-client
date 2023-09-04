@@ -3,7 +3,7 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
-import { useAuthentication } from "../src/features/Authentication/hooks/useAuthentication";
+import { useAuthentication } from "../src/app/features/Authentication/hooks/useAuthentication";
 import { modalState } from "@/recoil/modalState";
 
 const ModalLoginButton: FC = () => {

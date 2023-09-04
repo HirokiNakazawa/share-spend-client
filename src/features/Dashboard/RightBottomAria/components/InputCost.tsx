@@ -1,10 +1,10 @@
 import { TextField } from "@mui/material";
-import { FC } from "react";
+import { ChangeEvent, FC } from "react";
 
 type InputCostProps = {
   id: string;
   cost: string;
-  handleChange: () => void;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const InputCost: FC<InputCostProps> = (props) => {

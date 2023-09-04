@@ -3,7 +3,7 @@
 import { modalState } from "@/recoil/modalState";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
-import { useAuthentication } from "../hooks/useAuthentication";
+import { useAuthentication } from "@/features/Authentication/hooks/useAuthentication";
 import ModalButton from "@/features/Modal/components/ModalButton";
 
 const ModalLoginContainer: FC = () => {

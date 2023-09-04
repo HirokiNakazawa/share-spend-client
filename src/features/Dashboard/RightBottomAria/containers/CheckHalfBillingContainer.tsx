@@ -1,9 +1,9 @@
 "use client";
 
-import { costIsHalfState } from "@/recoil/costState";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 import { useSetRecoilState } from "recoil";
+import { costIsHalfState } from "@/recoil/costState";
 
 const CheckHalfBillingContainer: FC = () => {
   const setCostIsHalf = useSetRecoilState(costIsHalfState);

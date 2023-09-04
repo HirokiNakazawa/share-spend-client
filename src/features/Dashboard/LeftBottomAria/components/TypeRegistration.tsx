@@ -1,9 +1,12 @@
 import { Paper, Typography, FormControl, Box } from "@mui/material";
 import { FC } from "react";
 import { TYPE_REGISTRATION } from "@/config/config";
-import { paperStyles, ariaNameStyles } from "../../styles/dashboardStyles";
-import CreateTypeContainer from "../containers/CreateTypeContainer";
-import InputTypeContainer from "../containers/InputTypeContainer";
+import {
+  paperStyles,
+  ariaNameStyles,
+} from "@/features/Dashboard/styles/dashboardStyles";
+import InputTypeContainer from "@/features/Dashboard/LeftBottomAria/containers/InputTypeContainer";
+import CreateTypeContainer from "@/features/Dashboard/LeftBottomAria/containers/CreateTypeContainer";
 
 const TypeRegistration: FC = () => {
   return (

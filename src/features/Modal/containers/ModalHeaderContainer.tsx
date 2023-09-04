@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
 import { modalErrorMsgState, modalState } from "@/recoil/modalState";
-import ModalHeader from "../components/ModalHeader";
+import ModalHeader from "@/features/Modal/components/ModalHeader";
 
 const ModalHeaderContainer: FC = () => {
   const modal = useRecoilValue(modalState);
