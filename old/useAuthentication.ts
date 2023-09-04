@@ -1,17 +1,17 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { authNameState, authPasswordState } from "../recoil/authState";
+import { authNameState, authPasswordState } from "../src/recoil/authState";
 import {
   isLoginState,
   isRegisterState,
   modalErrorMsgState,
   modalState,
-} from "../recoil/modalState";
-import { userState } from "../recoil/userState";
+} from "../src/recoil/modalState";
+import { userState } from "../src/recoil/userState";
 import { PostAuthResponse } from "@/types";
-import { typeListState } from "../recoil/typeState";
-import { monthlyCostByTypeState } from "../recoil/monthlyState";
-import { useApi } from "./useApi";
-import { useUpdate } from "./useUpdate";
+import { typeListState } from "../src/recoil/typeState";
+import { monthlyCostByTypeState } from "../src/recoil/monthlyState";
+import { useApi } from "../src/hooks/useApi";
+import { useUpdate } from "../src/hooks/useUpdate";
 
 const useAuthentication = () => {
   const authName = useRecoilValue(authNameState);

@@ -7,10 +7,10 @@ import {
   isLoginState,
   isRegisterState,
   modalState,
-} from "../recoil/modalState";
-import ModalAuthContent from "./ModalAuthContent";
-import ModalFooter from "./ModalFooter";
-import ModalHeader from "./ModalHeader";
+} from "../src/recoil/modalState";
+import ModalAuthContent from "@/features/Authentication/components/ModalAuthContent";
+import ModalFooter from "../src/components/ModalFooter";
+import ModalHeader from "../src/components/ModalHeader";
 
 const CustomModal: FC = () => {
   const [modal, setModal] = useRecoilState(modalState);

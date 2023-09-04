@@ -1,12 +1,12 @@
 import { FC } from "react";
-import CustomModal from "../components/CunstomModal";
-import HeaderContainer from "@/container/HeaderContainer";
+import ModalContainer from "@/features/Modal/containers/ModalContainer";
+import HeaderContainer from "@/containers/HeaderContainer";
 import Dashboard from "@/features/Dashboard/components/Dashboard";
 
 const Home: FC = () => {
   return (
     <>
-      <CustomModal />
+      <ModalContainer />
       <HeaderContainer />
       <Dashboard />
     </>

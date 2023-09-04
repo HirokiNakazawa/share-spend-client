@@ -2,7 +2,7 @@ import { MonthlyCostByTypeState } from "@/types";
 import { Box } from "@mui/material";
 import { FC } from "react";
 import { Cell, Pie, PieChart } from "recharts";
-import { colors } from "@/components/colors";
+import { colors } from "../colors";
 
 type MainPieChartProps = {
   data: MonthlyCostByTypeState[];

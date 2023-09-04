@@ -1,15 +1,11 @@
 "use client";
 
-import { Button } from "@mui/material";
+import ModalButton from "@/features/Modal/components/ModalButton";
+import { isLoginState, isRegisterState, modalState } from "@/recoil/modalState";
 import { FC } from "react";
 import { useSetRecoilState } from "recoil";
-import {
-  isLoginState,
-  isRegisterState,
-  modalState,
-} from "../recoil/modalState";
 
-const ModalCloseButton: FC = () => {
+const ModalCloseContainer: FC = () => {
   const setModal = useSetRecoilState(modalState);
   const setIsRegister = useSetRecoilState(isRegisterState);
   const setIsLogin = useSetRecoilState(isLoginState);
@@ -20,11 +16,7 @@ const ModalCloseButton: FC = () => {
     setIsLogin(false);
   };
 
-  return (
-    <Button onClick={handleClose} variant="contained">
-      閉じる
-    </Button>
-  );
+  return <ModalButton text="閉じる" handleClick={handleClose} />;
 };
 
-export default ModalCloseButton;
+export default ModalCloseContainer;

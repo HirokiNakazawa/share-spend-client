@@ -5,7 +5,7 @@ import { FC } from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import { useRecoilValue } from "recoil";
 import { monthlyCostByTypeState } from "@/recoil/monthlyState";
-import { colors } from "@/components/colors";
+import { colors } from "@/features/Dashboard/LeftTopAria/colors";
 
 const MainPieChart: FC = () => {
   const monthlyCostByType = useRecoilValue(monthlyCostByTypeState);

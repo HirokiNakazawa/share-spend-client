@@ -3,7 +3,7 @@
 import { TextField } from "@mui/material";
 import { FC, ChangeEvent } from "react";
 import { useRecoilState } from "recoil";
-import { authPasswordState } from "../recoil/authState";
+import { authPasswordState } from "@/recoil/authState";
 
 type AuthPasswordFieldProps = {
   id: string;

@@ -3,8 +3,8 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
-import { useAuthentication } from "../hooks/useAuthentication";
-import { modalState } from "../recoil/modalState";
+import { useAuthentication } from "./useAuthentication";
+import { modalState } from "@/recoil/modalState";
 
 const ModalRegisterButton: FC = () => {
   const modal = useRecoilValue(modalState);
