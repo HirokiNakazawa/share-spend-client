@@ -1,20 +1,19 @@
-"use client";
-
+import { MonthlyCostByTypeState } from "@/types";
 import { Box } from "@mui/material";
 import { FC } from "react";
-import { PieChart, Pie, Cell } from "recharts";
-import { useRecoilValue } from "recoil";
-import { monthlyCostByTypeState } from "../recoil/monthlyState";
-import { colors } from "./colors";
+import { Cell, Pie, PieChart } from "recharts";
+import { colors } from "@/components/colors";
 
-const MainPieChart: FC = () => {
-  const monthlyCostByType = useRecoilValue(monthlyCostByTypeState);
+type MainPieChartProps = {
+  data: MonthlyCostByTypeState[];
+};
 
+const MainPieChart: FC<MainPieChartProps> = (props) => {
   return (
     <Box sx={{ marginLeft: "25%" }}>
       <PieChart width={500} height={500}>
         <Pie
-          data={monthlyCostByType}
+          data={props.data}
           dataKey="total_cost"
           nameKey="type_name"
           cx="50%"
@@ -24,7 +23,7 @@ const MainPieChart: FC = () => {
           endAngle={-270}
           labelLine={false}
         >
-          {monthlyCostByType.map((entry, index) => (
+          {props.data.map((entry, index) => (
             <Cell
               key={`cell-${entry.type_name}`}
               fill={colors[index % colors.length]}

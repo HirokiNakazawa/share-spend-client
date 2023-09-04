@@ -1,7 +1,7 @@
 import { Paper, FormControl, Box, Typography } from "@mui/material";
 import { FC } from "react";
 import { TYPE_REGISTRATION } from "../src/config/config";
-import { paperStyles, ariaNameStyles } from "../src/components/styles";
+import { paperStyles, ariaNameStyles } from "./styles";
 import TypeField from "./TypeField";
 import CreateTypeButton from "./CreateTypeButton";
 

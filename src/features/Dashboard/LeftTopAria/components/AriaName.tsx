@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
-import { ariaNameStyles } from "./styles";
+import { ariaNameStyles } from "../../styles/dashboardStyles";
 
-const MainAriaName = () => {
+const AriaName = () => {
   const today = new Date();
   const year = today.getFullYear();
   const month = today.getMonth() + 1;
@@ -13,4 +13,4 @@ const MainAriaName = () => {
   );
 };
 
-export default MainAriaName;
+export default AriaName;

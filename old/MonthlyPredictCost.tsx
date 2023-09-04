@@ -2,23 +2,23 @@
 
 import { Box, Typography } from "@mui/material";
 import { FC } from "react";
-import { MONTHLY_TOTAL_COST } from "@/config/config";
+import { MONTHLY_PREDICT_COST } from "@/config/config";
 import { mainRightAriaStyles } from "./styles";
-import { useSummary } from "../hooks/useSummary";
+import { useSummary } from "../src/hooks/useSummary";
 
-const MonthlyTotalCost: FC = () => {
+const MonthlyPredictCost: FC = () => {
   const summary = useSummary();
 
   return (
     <Box sx={mainRightAriaStyles.box}>
       <Typography sx={mainRightAriaStyles.head}>
-        {MONTHLY_TOTAL_COST}
+        {MONTHLY_PREDICT_COST}
       </Typography>
       <Typography sx={mainRightAriaStyles.body}>
-        {`${summary.getMonthlyTotalCost().toLocaleString()} 円`}
+        {`${summary.getMonthlyPredictCost().toLocaleString()} 円`}
       </Typography>
     </Box>
   );
 };
 
-export default MonthlyTotalCost;
+export default MonthlyPredictCost;

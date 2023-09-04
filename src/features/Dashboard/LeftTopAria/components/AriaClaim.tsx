@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 
-const MainAriaClaim: FC = () => {
+const AriaClaim: FC = () => {
   return (
     <Box
       sx={{
@@ -21,4 +21,4 @@ const MainAriaClaim: FC = () => {
   );
 };
 
-export default MainAriaClaim;
+export default AriaClaim;

@@ -1,7 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { FC } from "react";
-import MonthlyTotalCost from "./MonthlyTotalCost";
-import MonthlyPredictCost from "./MonthlyPredictCost";
+import MonthlyPredictCost from "../../../../../old/MonthlyPredictCost";
+import MonthlyTotalCostContainer from "../containers/MonthlyTotalCostContainer";
 
 const MainRightAria: FC = () => {
   return (
@@ -14,7 +14,7 @@ const MainRightAria: FC = () => {
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
-        <MonthlyTotalCost />
+        <MonthlyTotalCostContainer />
         <MonthlyPredictCost />
       </Box>
     </Box>
