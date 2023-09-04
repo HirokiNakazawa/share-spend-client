@@ -1,19 +1,15 @@
 "use client";
 
 import { FC } from "react";
-import { useSetRecoilState } from "recoil";
-import { isLoginState, isRegisterState, modalState } from "@/recoil/modalState";
 import ModalButton from "@/features/Modal/components/ModalButton";
+import { useReset } from "@/hooks/useReset";
 
 const ModalCloseContainer: FC = () => {
-  const setModal = useSetRecoilState(modalState);
-  const setIsRegister = useSetRecoilState(isRegisterState);
-  const setIsLogin = useSetRecoilState(isLoginState);
+  const reset = useReset();
 
   const handleClose = () => {
-    setModal({ isOpen: false, title: "", buttonText: "" });
-    setIsRegister(false);
-    setIsLogin(false);
+    reset.resetModalParams();
+    reset.resetAuthenticationParams();
   };
 
   return <ModalButton text="閉じる" handleClick={handleClose} />;

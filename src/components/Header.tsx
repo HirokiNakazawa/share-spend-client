@@ -1,10 +1,10 @@
 import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { FC } from "react";
-import { APP_NAME } from "../config/config";
+import { APP_NAME } from "@/config/config";
 import { UserState } from "@/types";
-import LoggedInUser from "../features/Authentication/components/LoggedInUser";
-import Guest from "../features/Authentication/components/Guest";
+import LoggedInUser from "@/features/Authentication/components/LoggedInUser";
+import Guest from "@/features/Authentication/components/Guest";
 
 const Header: FC<{ user: UserState }> = ({ user }) => {
   return (

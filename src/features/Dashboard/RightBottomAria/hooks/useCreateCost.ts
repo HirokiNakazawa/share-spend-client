@@ -8,6 +8,7 @@ import { useRecoilValue } from "recoil";
 import { userState } from "@/recoil/userState";
 import { selectTypeState, typeListState } from "@/recoil/typeState";
 import { createCostApi } from "@/features/Dashboard/RightBottomAria/api/createCostApi";
+import { useReset } from "@/hooks/useReset";
 
 const useCreateCost = () => {
   const typeList = useRecoilValue(typeListState);
@@ -20,6 +21,7 @@ const useCreateCost = () => {
   const costIsFull = useRecoilValue(costIsFullState);
 
   const api = createCostApi();
+  const reset = useReset();
 
   const createCost = async () => {
     const targetType = typeList.find((item) => item.type === selectType);
@@ -34,6 +36,7 @@ const useCreateCost = () => {
     try {
       const response = await api.postCreateCost(data);
       console.log(response);
+      reset.resetCostRegistrationParams();
     } catch (error) {
       console.log(error);
     }

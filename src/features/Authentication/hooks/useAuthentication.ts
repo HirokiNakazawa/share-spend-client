@@ -1,27 +1,22 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { authNameState, authPasswordState } from "@/recoil/authState";
-import {
-  isLoginState,
-  isRegisterState,
-  modalErrorMsgState,
-  modalState,
-} from "@/recoil/modalState";
+import { modalErrorMsgState, modalState } from "@/recoil/modalState";
 import { userState } from "@/recoil/userState";
 import { PostAuthResponse } from "@/types";
 import { useApi } from "@/hooks/useApi";
 import { useUpdate } from "@/hooks/useUpdate";
+import { useReset } from "@/hooks/useReset";
 
 const useAuthentication = () => {
   const authName = useRecoilValue(authNameState);
   const authPassword = useRecoilValue(authPasswordState);
   const setModal = useSetRecoilState(modalState);
   const setModalErrorMsg = useSetRecoilState(modalErrorMsgState);
-  const setIsRegister = useSetRecoilState(isRegisterState);
-  const setIsLogin = useSetRecoilState(isLoginState);
   const setUser = useSetRecoilState(userState);
 
   const api = useApi();
   const update = useUpdate();
+  const reset = useReset();
 
   const register = async () => {
     const data = { name: authName, password: authPassword };
@@ -50,7 +45,9 @@ const useAuthentication = () => {
   const handleAuthentication = async (response: PostAuthResponse) => {
     setUserInfomation(response);
     closeAndResetModal();
-    resetFlag();
+
+    reset.resetModalParams();
+    reset.resetAuthenticationParams();
 
     await fetchData();
   };
@@ -65,11 +62,6 @@ const useAuthentication = () => {
 
   const closeAndResetModal = () => {
     setModal({ isOpen: false, title: "", buttonText: "" });
-  };
-
-  const resetFlag = () => {
-    setIsRegister(false);
-    setIsLogin(false);
   };
 
   const fetchData = async () => {
