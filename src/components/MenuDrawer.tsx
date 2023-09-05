@@ -2,6 +2,7 @@ import { IconButton, Drawer, List, ListItem } from "@mui/material";
 import { FC } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
+import { pages } from "@/config/pages";
 
 type MenuDrawerProps = {
   isOpen: boolean;
@@ -16,21 +17,13 @@ const MenuDrawer: FC<MenuDrawerProps> = (props) => {
       </IconButton>
       <Drawer anchor="left" open={props.isOpen} onClose={props.handleToggle}>
         <List>
-          <ListItem>
-            <Link href="/">Home</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="/costs/bulk-add">支出一括登録</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="/costs/edit">支出編集</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="/fixed-cost">固定費関連</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="/past">過去データ</Link>
-          </ListItem>
+          {pages.map((item, index) => (
+            <ListItem key={index}>
+              <Link href={item.url} onClick={props.handleToggle}>
+                {item.name}
+              </Link>
+            </ListItem>
+          ))}
         </List>
       </Drawer>
     </>

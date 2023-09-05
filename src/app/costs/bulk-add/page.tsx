@@ -1,7 +1,13 @@
+import ModalContainer from "@/features/Modal/containers/ModalContainer";
 import HeaderContainer from "@/containers/HeaderContainer";
 
 const Home = () => {
-  return <HeaderContainer />;
+  return (
+    <>
+      <ModalContainer />
+      <HeaderContainer />
+    </>
+  );
 };
 
 export default Home;
