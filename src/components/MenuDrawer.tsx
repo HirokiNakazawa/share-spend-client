@@ -1,4 +1,4 @@
-import { IconButton, Drawer, List, ListItem } from "@mui/material";
+import { IconButton, Drawer, Toolbar, List, ListItem } from "@mui/material";
 import { FC } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
@@ -16,6 +16,7 @@ const MenuDrawer: FC<MenuDrawerProps> = (props) => {
         <MenuIcon />
       </IconButton>
       <Drawer anchor="left" open={props.isOpen} onClose={props.handleToggle}>
+        <Toolbar />
         <List>
           {pages.map((item, index) => (
             <ListItem key={index}>

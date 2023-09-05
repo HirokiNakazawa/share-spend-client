@@ -8,7 +8,10 @@ import MenuDrawerContainer from "@/containers/MenuDrawerContainer";
 
 const Header: FC<{ user: UserState }> = ({ user }) => {
   return (
-    <AppBar position="static">
+    <AppBar
+      position="fixed"
+      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    >
       <Toolbar>
         <MenuDrawerContainer />
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
