@@ -2,7 +2,7 @@ import { atom } from "recoil";
 import { ModalState } from "@/types";
 
 const modalState = atom<ModalState>({
-  key: "modalState",
+  key: "modal",
   default: { isOpen: false, title: "", buttonText: "" },
 });
 
@@ -17,7 +17,7 @@ const isLoginState = atom<boolean>({
 });
 
 const modalErrorMsgState = atom<string>({
-  key: "modalErrorMsgState",
+  key: "modalErrorMsg",
   default: "",
 });
 

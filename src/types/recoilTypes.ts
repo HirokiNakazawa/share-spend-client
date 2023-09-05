@@ -20,3 +20,8 @@ export type MonthlyCostByTypeState = {
   type_name: string;
   total_cost: number;
 };
+
+export type SelectDateState = {
+  year: number;
+  month: number;
+};

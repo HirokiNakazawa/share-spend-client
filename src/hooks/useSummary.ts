@@ -1,24 +1,24 @@
 import { useRecoilValue } from "recoil";
 import { monthlyCostByTypeState } from "../recoil/monthlyState";
+import { useUtils } from "./useUtils";
 
 const useSummary = () => {
   const monthlyCostByType = useRecoilValue(monthlyCostByTypeState);
 
-  const getMonthlyTotalCost = () => {
+  const utils = useUtils();
+
+  const getMonthlyTotalCost = (): number => {
     const totalCost = monthlyCostByType.reduce((total, item) => {
       return total + item.total_cost;
     }, 0);
     return totalCost;
   };
 
-  const getMonthlyPredictCost = () => {
+  const getMonthlyPredictCost = (): number => {
     const totalCost = getMonthlyTotalCost();
 
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const days = new Date(year, month, 0).getDate();
-    const day = today.getDate();
+    const days = new Date(utils.getFullYear(), utils.getMonth(), 0).getDate();
+    const day = utils.getDate();
     const daysLeft = days - day;
 
     const dailyCost = totalCost / day;

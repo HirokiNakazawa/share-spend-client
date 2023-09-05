@@ -1,8 +1,8 @@
 import { IconButton, Drawer, Toolbar, List, ListItem } from "@mui/material";
-import { FC } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import Link from "next/link";
+import { FC } from "react";
 import { pages } from "@/config/pages";
+import Link from "next/link";
 
 type MenuDrawerProps = {
   isOpen: boolean;
