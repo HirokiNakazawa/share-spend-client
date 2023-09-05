@@ -3,7 +3,7 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 import { useSetRecoilState } from "recoil";
-import { costIsHalfState } from "@/recoil/costState";
+import { costIsHalfState } from "@/recoil";
 
 type CheckHalfBillingContainerProps = {
   label: string;

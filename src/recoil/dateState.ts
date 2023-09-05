@@ -4,9 +4,7 @@ import { atom } from "recoil";
 
 const utils = useUtils();
 
-const selectDateState = atom<SelectDateState>({
+export const selectDateState = atom<SelectDateState>({
   key: "selectDate",
   default: { year: utils.getFullYear(), month: utils.getMonth() },
 });
-
-export { selectDateState };

@@ -1,9 +1,9 @@
 "use client";
 
-import { monthlyCostByTypeState } from "@/recoil/monthlyState";
 import { List, ListItem } from "@mui/material";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
+import { monthlyCostByTypeState } from "@/recoil";
 import ListItemType from "@/features/Dashboard/RightTopAria/components/ListItemType";
 import ListItemTotalCost from "@/features/Dashboard/RightTopAria/components/ListItemTotalCost";
 

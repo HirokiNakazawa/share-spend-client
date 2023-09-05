@@ -3,7 +3,7 @@
 import { SelectChangeEvent } from "@mui/material";
 import { FC } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { selectTypeState, typeListState } from "@/recoil/typeState";
+import { selectTypeState, typeListState } from "@/recoil";
 import SelectType from "@/features/Dashboard/RightBottomAria/components/SelectType";
 
 type SelectTypeContainerProps = {

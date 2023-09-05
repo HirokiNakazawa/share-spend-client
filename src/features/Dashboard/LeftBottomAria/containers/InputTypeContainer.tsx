@@ -2,7 +2,7 @@
 
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
-import { registerTypeState } from "@/recoil/typeState";
+import { registerTypeState } from "@/recoil";
 import InputType from "@/features/Dashboard/LeftBottomAria/components/InputType";
 
 const InputTypeContainer: FC = () => {

@@ -1,13 +1,11 @@
 import { atom } from "recoil";
 
-const authNameState = atom<string>({
+export const authNameState = atom<string>({
   key: "authName",
   default: "",
 });
 
-const authPasswordState = atom<string>({
+export const authPasswordState = atom<string>({
   key: "authPassword",
   default: "",
 });
-
-export { authNameState, authPasswordState };

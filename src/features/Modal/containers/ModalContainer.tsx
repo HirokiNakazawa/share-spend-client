@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
-import { isLoginState, isRegisterState, modalState } from "@/recoil/modalState";
+import { isLoginState, isRegisterState, modalState } from "@/recoil";
 import CustomModal from "@/features/Modal/components/CustomModal";
 
 const ModalContainer: FC = () => {

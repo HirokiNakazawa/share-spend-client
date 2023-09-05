@@ -1,8 +1,8 @@
 "use client";
 
-import { costNameState } from "@/recoil/costState";
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
+import { costNameState } from "@/recoil";
 import InputCostName from "@/features/Dashboard/RightBottomAria/components/InputCostName";
 
 type InputCostNameContainerProps = {

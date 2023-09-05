@@ -1,6 +1,6 @@
-import { useRecoilValue } from "recoil";
-import { monthlyCostByTypeState } from "../recoil/monthlyState";
 import { useUtils } from "./useUtils";
+import { useRecoilValue } from "recoil";
+import { monthlyCostByTypeState } from "../recoil";
 
 const useSummary = () => {
   const monthlyCostByType = useRecoilValue(monthlyCostByTypeState);

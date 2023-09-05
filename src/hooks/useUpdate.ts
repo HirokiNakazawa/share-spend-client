@@ -1,7 +1,6 @@
-import { useSetRecoilState } from "recoil";
-import { typeListState } from "@/recoil/typeState";
-import { monthlyCostByTypeState } from "@/recoil/monthlyState";
 import { useApi } from "@/hooks/useApi";
+import { useSetRecoilState } from "recoil";
+import { typeListState, monthlyCostByTypeState } from "@/recoil";
 
 const useUpdate = () => {
   const setTypeList = useSetRecoilState(typeListState);

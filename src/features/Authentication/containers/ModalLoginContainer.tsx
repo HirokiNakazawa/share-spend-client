@@ -1,9 +1,9 @@
 "use client";
 
-import { modalState } from "@/recoil/modalState";
 import { FC } from "react";
-import { useRecoilValue } from "recoil";
 import { useAuthentication } from "@/features/Authentication/hooks/useAuthentication";
+import { useRecoilValue } from "recoil";
+import { modalState } from "@/recoil";
 import ModalButton from "@/features/Modal/components/ModalButton";
 
 const ModalLoginContainer: FC = () => {

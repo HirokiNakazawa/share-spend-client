@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { REGISTER_BUTTON } from "@/config/config";
 import { useSetRecoilState } from "recoil";
-import { isRegisterState, modalState } from "@/recoil/modalState";
+import { isRegisterState, modalState } from "@/recoil";
 import AuthenticationButton from "../components/AuthenticationButton";
 
 const RegistrationContainer: FC = () => {

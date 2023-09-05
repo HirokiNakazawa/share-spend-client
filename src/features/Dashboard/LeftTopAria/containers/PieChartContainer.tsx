@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
-import { monthlyCostByTypeState } from "@/recoil/monthlyState";
+import { monthlyCostByTypeState } from "@/recoil";
 import MainPieChart from "@/features/Dashboard/LeftTopAria/components/MainPieChart";
 
 const PieChartContainer: FC = () => {

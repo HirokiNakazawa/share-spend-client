@@ -4,15 +4,15 @@ import {
   isRegisterState,
   modalErrorMsgState,
   modalState,
-} from "@/recoil/modalState";
-import { authNameState, authPasswordState } from "@/recoil/authState";
-import { registerTypeState, selectTypeState } from "@/recoil/typeState";
-import {
+  authNameState,
+  authPasswordState,
+  registerTypeState,
+  selectTypeState,
   costIsFullState,
   costIsHalfState,
   costNameState,
   costState,
-} from "@/recoil/costState";
+} from "@/recoil";
 
 const useReset = () => {
   const setModal = useSetRecoilState(modalState);

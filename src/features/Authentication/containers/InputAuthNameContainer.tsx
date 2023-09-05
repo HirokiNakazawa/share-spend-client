@@ -2,7 +2,7 @@
 
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
-import { authNameState } from "@/recoil/authState";
+import { authNameState } from "@/recoil";
 import InputAuthName from "@/features/Authentication/components/InputAuthName";
 
 const InputAuthNameContainer: FC = () => {
