@@ -4,7 +4,7 @@ import { APP_NAME } from "@/config/config";
 import { UserState } from "@/types";
 import LoggedInUser from "@/features/Authentication/components/LoggedInUser";
 import Guest from "@/features/Authentication/components/Guest";
-import MenuDrawerContainer from "@/containers/MenuDrawerContainer";
+import MenuDrawerContainer from "@/features/Drawer/containers/MenuDrawerContainer";
 
 const Header: FC<{ user: UserState }> = ({ user }) => {
   return (

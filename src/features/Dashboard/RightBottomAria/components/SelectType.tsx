@@ -13,6 +13,7 @@ type SelectTypeProps = {
   labelId: string;
   labelName: string;
   selectType: string;
+  width: string;
   typeList: TypeState[];
   handleChange: (e: SelectChangeEvent<string>) => void;
 };
@@ -28,7 +29,7 @@ const SelectType: FC<SelectTypeProps> = (props) => {
         name="type"
         value={props.selectType}
         onChange={props.handleChange}
-        sx={{ width: "8vw" }}
+        sx={{ width: props.width }}
       >
         {props.typeList.map((item) => (
           <MenuItem key={item.id} value={item.type}>

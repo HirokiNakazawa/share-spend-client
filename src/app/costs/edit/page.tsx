@@ -1,4 +1,4 @@
-import HeaderContainer from "@/containers/HeaderContainer";
+import HeaderContainer from "@/features/Header/containers/HeaderContainer";
 
 const Home = () => {
   return <HeaderContainer />;

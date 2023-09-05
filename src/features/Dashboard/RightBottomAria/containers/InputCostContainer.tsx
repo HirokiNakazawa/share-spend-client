@@ -5,7 +5,11 @@ import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
 import InputCost from "@/features/Dashboard/RightBottomAria/components/InputCost";
 
-const InputCostContainer: FC = () => {
+type InputCostContainerProps = {
+  width: string;
+};
+
+const InputCostContainer: FC<InputCostContainerProps> = (props) => {
   const [cost, setCost] = useRecoilState(costState);
 
   const handleChangeCost = (e: ChangeEvent<HTMLInputElement>) => {
@@ -13,7 +17,12 @@ const InputCostContainer: FC = () => {
   };
 
   return (
-    <InputCost id="input-cost" cost={cost} handleChange={handleChangeCost} />
+    <InputCost
+      id="input-cost"
+      cost={cost}
+      width={props.width}
+      handleChange={handleChangeCost}
+    />
   );
 };
 

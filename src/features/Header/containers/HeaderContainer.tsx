@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
 import { userState } from "@/recoil/userState";
-import Header from "@/components/Header";
+import Header from "@/features/Header/components/Header";
 
 const HeaderContainer: FC = () => {
   const user = useRecoilValue(userState);

@@ -18,11 +18,11 @@ const CostRegistration: FC = () => {
       <Typography sx={ariaNameStyles}>{COST_REGISTRATION}</Typography>
       <FormControl>
         <Box sx={{ display: "flex", flexDirectrion: "row" }}>
-          <SelectTypeContainer />
-          <InputCostNameContainer />
-          <InputCostContainer />
-          <CheckHalfBillingContainer />
-          <CheckFullBillingContainer />
+          <SelectTypeContainer width="8vw" />
+          <InputCostNameContainer width="10vw" />
+          <InputCostContainer width="8vw" />
+          <CheckHalfBillingContainer label="半額請求" />
+          <CheckFullBillingContainer label="全額請求" />
           <CreateCostContainer />
         </Box>
       </FormControl>

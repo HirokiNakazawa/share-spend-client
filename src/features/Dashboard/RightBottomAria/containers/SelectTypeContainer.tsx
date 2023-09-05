@@ -6,7 +6,11 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { selectTypeState, typeListState } from "@/recoil/typeState";
 import SelectType from "@/features/Dashboard/RightBottomAria/components/SelectType";
 
-const SelectTypeContainer: FC = () => {
+type SelectTypeContainerProps = {
+  width: string;
+};
+
+const SelectTypeContainer: FC<SelectTypeContainerProps> = (props) => {
   const labelId = "select-type-label";
   const typeList = useRecoilValue(typeListState);
   const [selectType, setSelectType] = useRecoilState(selectTypeState);
@@ -21,6 +25,7 @@ const SelectTypeContainer: FC = () => {
       labelId={labelId}
       labelName="種別"
       selectType={selectType}
+      width={props.width}
       typeList={typeList}
       handleChange={handleChangeType}
     />

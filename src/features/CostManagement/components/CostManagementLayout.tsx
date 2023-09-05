@@ -1,5 +1,6 @@
 import { Box, Divider, List, ListItem, Typography } from "@mui/material";
 import { FC } from "react";
+import CostBulkAdd from "../BulkAdd/components/CostBulkAdd";
 
 type CostManagementLayoutProps = {
   year: number;
@@ -47,6 +48,7 @@ const CostManagementLayout: FC<CostManagementLayoutProps> = (props) => {
           {`${props.year}年${props.month}月`}
         </Typography>
         {/* 一括登録のテーブルコンテナ */}
+        <CostBulkAdd />
         {/* 登録ボタン */}
       </Box>
     </Box>

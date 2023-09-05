@@ -5,7 +5,13 @@ import { ChangeEvent, FC } from "react";
 import { useSetRecoilState } from "recoil";
 import { costIsFullState } from "@/recoil/costState";
 
-const CheckFullBillingContainer: FC = () => {
+type CheckFullBillingContainerProps = {
+  label: string;
+};
+
+const CheckFullBillingContainer: FC<CheckFullBillingContainerProps> = (
+  props
+) => {
   const setCostIsFull = useSetRecoilState(costIsFullState);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -15,7 +21,7 @@ const CheckFullBillingContainer: FC = () => {
   return (
     <FormControlLabel
       control={<Checkbox onChange={handleChange} />}
-      label="全額請求"
+      label={props.label}
       labelPlacement="start"
     />
   );

@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
 import { selectDateState } from "@/recoil/dateState";
-import CostManagementLayout from "@/components/CostManagementLayout";
+import CostManagementLayout from "@/features/CostManagement/components/CostManagementLayout";
 
 const CostManagementLayoutContainer: FC = () => {
   const selectDate = useRecoilValue(selectDateState);

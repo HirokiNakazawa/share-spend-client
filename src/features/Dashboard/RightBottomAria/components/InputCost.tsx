@@ -4,6 +4,7 @@ import { ChangeEvent, FC } from "react";
 type InputCostProps = {
   id: string;
   cost: string;
+  width: string;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -16,7 +17,7 @@ const InputCost: FC<InputCostProps> = (props) => {
       name="cost"
       value={props.cost}
       onChange={props.handleChange}
-      sx={{ width: "8vw" }}
+      sx={{ width: props.width }}
       required
     />
   );

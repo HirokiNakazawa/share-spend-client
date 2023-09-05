@@ -5,7 +5,11 @@ import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
 import InputCostName from "@/features/Dashboard/RightBottomAria/components/InputCostName";
 
-const InputCostNameContainer: FC = () => {
+type InputCostNameContainerProps = {
+  width: string;
+};
+
+const InputCostNameContainer: FC<InputCostNameContainerProps> = (props) => {
   const [costName, setCostName] = useRecoilState(costNameState);
 
   const handleChangeCostName = (e: ChangeEvent<HTMLInputElement>) => {
@@ -16,6 +20,7 @@ const InputCostNameContainer: FC = () => {
     <InputCostName
       id="input-cost-name"
       name={costName}
+      width={props.width}
       handleChange={handleChangeCostName}
     />
   );
