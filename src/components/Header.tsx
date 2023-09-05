@@ -1,18 +1,16 @@
-import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 import { FC } from "react";
 import { APP_NAME } from "@/config/config";
 import { UserState } from "@/types";
 import LoggedInUser from "@/features/Authentication/components/LoggedInUser";
 import Guest from "@/features/Authentication/components/Guest";
+import MenuDrawerContainer from "@/containers/MenuDrawerContainer";
 
 const Header: FC<{ user: UserState }> = ({ user }) => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton color="inherit">
-          <MenuIcon />
-        </IconButton>
+        <MenuDrawerContainer />
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           {APP_NAME}
         </Typography>
