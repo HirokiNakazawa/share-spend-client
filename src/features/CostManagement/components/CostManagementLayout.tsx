@@ -3,6 +3,7 @@ import { FC } from "react";
 import CostBulkAdd from "../BulkAdd/components/CostBulkAdd";
 
 type CostManagementLayoutProps = {
+  page: string;
   year: number;
   month: number;
 };
@@ -47,8 +48,8 @@ const CostManagementLayout: FC<CostManagementLayoutProps> = (props) => {
         <Typography sx={{ fontSize: "24px" }}>
           {`${props.year}年${props.month}月`}
         </Typography>
-        {/* 一括登録のテーブルコンテナ */}
-        <CostBulkAdd />
+        {props.page === "bulkAdd" ? <CostBulkAdd /> : null}
+        {props.page === "edit" ? <Typography>edit</Typography> : null}
         {/* 登録ボタン */}
       </Box>
     </Box>

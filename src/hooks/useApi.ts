@@ -1,40 +1,14 @@
 import axios from "axios";
 import { API_BASE_URL } from "@/config/config";
 import {
-  AuthFormData,
-  GetTypeResponse,
-  PostAuthResponse,
-  CreateTypeFormData,
-  CreateCostFormData,
-  PostCostResponse,
-  PostTypeResponse,
+  GetTypeListResponse,
   GetMonthlyCostByTypeResponse,
+  GetUserCostListResponse,
+  SelectDateState,
 } from "@/types";
 
 const useApi = () => {
-  const postRegister = async (
-    data: AuthFormData
-  ): Promise<PostAuthResponse> => {
-    try {
-      const url = `${API_BASE_URL}/register`;
-      const response = await axios.post(url, data);
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  };
-
-  const postLogin = async (data: AuthFormData): Promise<PostAuthResponse> => {
-    try {
-      const url = `${API_BASE_URL}/login`;
-      const response = await axios.post(url, data);
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  };
-
-  const getTypes = async (): Promise<GetTypeResponse[]> => {
+  const getTypeList = async (): Promise<GetTypeListResponse[]> => {
     try {
       const url = `${API_BASE_URL}/types`;
       const response = await axios.get(url);
@@ -44,15 +18,12 @@ const useApi = () => {
     }
   };
 
-  const getMonthlyCostByType = async (): Promise<
-    GetMonthlyCostByTypeResponse[]
-  > => {
+  const getUserCostList = async (
+    id: number,
+    selectDate: SelectDateState
+  ): Promise<GetUserCostListResponse[]> => {
     try {
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = today.getMonth() + 1;
-
-      const url = `${API_BASE_URL}/costs/type?year=${year}&month=${month}`;
+      const url = `${API_BASE_URL}/costs/${id}?year=${selectDate.year}&month=${selectDate.month}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
@@ -60,24 +31,12 @@ const useApi = () => {
     }
   };
 
-  const postCreateType = async (
-    data: CreateTypeFormData
-  ): Promise<PostTypeResponse> => {
+  const getMonthlyCostByType = async (
+    selectDate: SelectDateState
+  ): Promise<GetMonthlyCostByTypeResponse[]> => {
     try {
-      const url = `${API_BASE_URL}/types/create`;
-      const response = await axios.post(url, data);
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  };
-
-  const postCreateCost = async (
-    data: CreateCostFormData
-  ): Promise<PostCostResponse> => {
-    try {
-      const url = `${API_BASE_URL}/costs/create`;
-      const response = await axios.post(url, data);
+      const url = `${API_BASE_URL}/costs/type?year=${selectDate.year}&month=${selectDate.month}`;
+      const response = await axios.get(url);
       return response.data;
     } catch (error) {
       throw error;
@@ -85,12 +44,9 @@ const useApi = () => {
   };
 
   return {
-    postRegister,
-    postLogin,
-    getTypes,
+    getTypeList,
+    getUserCostList,
     getMonthlyCostByType,
-    postCreateType,
-    postCreateCost,
   };
 };
 

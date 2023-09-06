@@ -1,24 +1,26 @@
 import { PostAuthResponse } from "@/types";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import {
   authNameState,
   authPasswordState,
   modalErrorMsgState,
   modalState,
+  selectDateState,
   userState,
 } from "@/recoil";
-import { useApi } from "@/hooks/useApi";
+import { authApi } from "../api/authApi";
 import { useUpdate } from "@/hooks/useUpdate";
 import { useReset } from "@/hooks/useReset";
 
 const useAuthentication = () => {
   const authName = useRecoilValue(authNameState);
   const authPassword = useRecoilValue(authPasswordState);
+  const selectDate = useRecoilValue(selectDateState);
   const setModal = useSetRecoilState(modalState);
   const setModalErrorMsg = useSetRecoilState(modalErrorMsgState);
-  const setUser = useSetRecoilState(userState);
+  const [user, setUser] = useRecoilState(userState);
 
-  const api = useApi();
+  const api = authApi();
   const update = useUpdate();
   const reset = useReset();
 
@@ -47,16 +49,16 @@ const useAuthentication = () => {
   };
 
   const handleAuthentication = async (response: PostAuthResponse) => {
-    setUserInfomation(response);
+    await setUserInfomation(response);
     closeAndResetModal();
 
     reset.resetModalParams();
     reset.resetAuthenticationParams();
 
-    await fetchData();
+    await fetchData(response.id);
   };
 
-  const setUserInfomation = (response: PostAuthResponse) => {
+  const setUserInfomation = async (response: PostAuthResponse) => {
     setUser({
       id: response.id,
       name: response.name,
@@ -68,9 +70,10 @@ const useAuthentication = () => {
     setModal({ isOpen: false, title: "", buttonText: "" });
   };
 
-  const fetchData = async () => {
-    await update.updateTypes();
-    await update.updateMonthlyCostByType();
+  const fetchData = async (id: number) => {
+    await update.updateTypeList();
+    await update.updateUserCostList(id, selectDate);
+    await update.updateMonthlyCostByType(selectDate);
   };
 
   return { register, login };

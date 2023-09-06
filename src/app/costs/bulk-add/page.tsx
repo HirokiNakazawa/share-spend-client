@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <ModalContainer />
       <HeaderContainer />
-      <CostManagementLayoutContainer />
+      <CostManagementLayoutContainer page="bulkAdd" />
     </>
   );
 };

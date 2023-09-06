@@ -3,9 +3,18 @@ export type PostAuthResponse = {
   name: string;
 };
 
-export type GetTypeResponse = {
+export type GetTypeListResponse = {
   id: number;
   type: string;
+};
+
+export type GetUserCostListResponse = {
+  id: number;
+  type_id: number;
+  name: string;
+  cost: number;
+  is_half_billing: boolean;
+  is_full_billing: boolean;
 };
 
 export type GetMonthlyCostByTypeResponse = {

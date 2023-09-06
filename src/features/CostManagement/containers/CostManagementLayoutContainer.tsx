@@ -5,11 +5,21 @@ import { useRecoilValue } from "recoil";
 import { selectDateState } from "@/recoil";
 import CostManagementLayout from "@/features/CostManagement/components/CostManagementLayout";
 
-const CostManagementLayoutContainer: FC = () => {
+type CostManagementLayoutContainerProps = {
+  page: string;
+};
+
+const CostManagementLayoutContainer: FC<CostManagementLayoutContainerProps> = (
+  props
+) => {
   const selectDate = useRecoilValue(selectDateState);
 
   return (
-    <CostManagementLayout year={selectDate.year} month={selectDate.month} />
+    <CostManagementLayout
+      page={props.page}
+      year={selectDate.year}
+      month={selectDate.month}
+    />
   );
 };
 

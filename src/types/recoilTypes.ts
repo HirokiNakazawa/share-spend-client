@@ -15,6 +15,15 @@ export type TypeState = {
   type: string;
 };
 
+export type CostState = {
+  id: number;
+  type_id: number;
+  name: string;
+  cost: number;
+  is_half_billing: boolean;
+  is_full_billing: boolean;
+};
+
 export type MonthlyCostByTypeState = {
   type_id: number;
   type_name: string;

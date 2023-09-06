@@ -4,7 +4,7 @@ export type Pages = {
   isPastDrawer: boolean;
 };
 
-const pages: Pages[] = [
+export const pages: Pages[] = [
   {
     url: "/",
     name: "Home",
@@ -31,5 +31,3 @@ const pages: Pages[] = [
     isPastDrawer: true,
   },
 ];
-
-export { pages };

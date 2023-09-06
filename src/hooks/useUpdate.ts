@@ -1,26 +1,41 @@
 import { useApi } from "@/hooks/useApi";
 import { useSetRecoilState } from "recoil";
-import { typeListState, monthlyCostByTypeState } from "@/recoil";
+import {
+  typeListState,
+  monthlyCostByTypeState,
+  userCostListState,
+} from "@/recoil";
+import { SelectDateState, UserState } from "@/types";
 
 const useUpdate = () => {
   const setTypeList = useSetRecoilState(typeListState);
+  const setUserCostList = useSetRecoilState(userCostListState);
   const setMonthlyCostByType = useSetRecoilState(monthlyCostByTypeState);
 
   const api = useApi();
 
-  const updateTypes = async () => {
-    const typeList = await api.getTypes();
+  const updateTypeList = async () => {
+    const typeList = await api.getTypeList();
     console.log(typeList);
     setTypeList(typeList);
   };
 
-  const updateMonthlyCostByType = async () => {
-    const monthlyCostByType = await api.getMonthlyCostByType();
+  const updateUserCostList = async (
+    id: number,
+    selectDate: SelectDateState
+  ) => {
+    const userCostList = await api.getUserCostList(id, selectDate);
+    console.log(userCostList);
+    setUserCostList(userCostList);
+  };
+
+  const updateMonthlyCostByType = async (selectDate: SelectDateState) => {
+    const monthlyCostByType = await api.getMonthlyCostByType(selectDate);
     console.log(monthlyCostByType);
     setMonthlyCostByType(monthlyCostByType);
   };
 
-  return { updateTypes, updateMonthlyCostByType };
+  return { updateTypeList, updateUserCostList, updateMonthlyCostByType };
 };
 
 export { useUpdate };
