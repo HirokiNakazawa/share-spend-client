@@ -5,17 +5,17 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TableRow,
   ThemeProvider,
 } from "@mui/material";
 import { FC } from "react";
-import { customTheme } from "../styles/customTheme";
+import { customTheme } from "@/features/CostManagement/styles/customTheme";
 import CheckFullBillingContainer from "@/features/Dashboard/RightBottomAria/containers/CheckFullBillingContainer";
 import CheckHalfBillingContainer from "@/features/Dashboard/RightBottomAria/containers/CheckHalfBillingContainer";
 import InputCostContainer from "@/features/Dashboard/RightBottomAria/containers/InputCostContainer";
 import InputCostNameContainer from "@/features/Dashboard/RightBottomAria/containers/InputCostNameContainer";
 import SelectTypeContainer from "@/features/Dashboard/RightBottomAria/containers/SelectTypeContainer";
+import CostManagementTableHeader from "@/features/CostManagement/components/CostManagementTableHeader";
 
 const CostBulkAdd: FC = () => {
   return (
@@ -24,23 +24,7 @@ const CostBulkAdd: FC = () => {
         sx={{ display: "flex", justifyContent: "center", paddingTop: 2 }}
       >
         <Table sx={{ width: "70vw" }}>
-          <TableHead>
-            <TableRow>
-              <TableCell align="center" sx={{ width: "15vw" }}>
-                種別
-              </TableCell>
-              <TableCell align="center" sx={{ width: "20vw" }}>
-                品名
-              </TableCell>
-              <TableCell align="center" sx={{ width: "10vw" }}>
-                金額
-              </TableCell>
-              <TableCell align="center" sx={{ width: "10vw" }}>
-                請求種別
-              </TableCell>
-              <TableCell></TableCell>
-            </TableRow>
-          </TableHead>
+          <CostManagementTableHeader />
           <TableBody>
             <TableRow>
               <TableCell>

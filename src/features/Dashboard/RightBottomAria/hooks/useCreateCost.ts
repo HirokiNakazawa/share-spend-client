@@ -25,10 +25,12 @@ const useCreateCost = () => {
   const reset = useReset();
 
   const createCost = async () => {
-    const targetType = typeList.find((item) => item.type === selectType);
+    const typeId = Object.keys(typeList).find(
+      (key) => typeList[key] === selectType
+    );
     const data = {
       user_id: user.id,
-      type_id: targetType?.id,
+      type_id: parseInt(typeId!),
       name: costName,
       cost: parseInt(cost),
       is_half_billing: costIsHalf,

@@ -8,7 +8,7 @@ import {
 } from "@/types";
 
 const useApi = () => {
-  const getTypeList = async (): Promise<GetTypeListResponse[]> => {
+  const getTypeList = async (): Promise<GetTypeListResponse> => {
     try {
       const url = `${API_BASE_URL}/types`;
       const response = await axios.get(url);

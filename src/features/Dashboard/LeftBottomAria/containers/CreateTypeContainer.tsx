@@ -12,7 +12,7 @@ const CreateTypeContainer: FC = () => {
 
   const handleCreateType = async () => {
     await createTypeService.createType();
-    await updateService.updateTypes();
+    await updateService.updateTypeList();
   };
 
   return <FormButton text={CREATE_BUTTON} handleClick={handleCreateType} />;

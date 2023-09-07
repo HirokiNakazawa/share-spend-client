@@ -4,8 +4,7 @@ export type PostAuthResponse = {
 };
 
 export type GetTypeListResponse = {
-  id: number;
-  type: string;
+  [key: string]: string;
 };
 
 export type GetUserCostListResponse = {

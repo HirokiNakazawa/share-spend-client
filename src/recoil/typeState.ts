@@ -1,9 +1,8 @@
 import { atom } from "recoil";
-import { TypeState } from "@/types";
 
-export const typeListState = atom<TypeState[]>({
+export const typeListState = atom<{ [key: string]: string }>({
   key: "typeList",
-  default: [],
+  default: {},
 });
 
 export const registerTypeState = atom<string>({
@@ -13,5 +12,10 @@ export const registerTypeState = atom<string>({
 
 export const selectTypeState = atom<string>({
   key: "selectType",
+  default: "",
+});
+
+export const editSelectTypeState = atom<string>({
+  key: "editSelectType",
   default: "",
 });
