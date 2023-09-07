@@ -26,23 +26,23 @@ const CostBulkAdd: FC = () => {
         <Table sx={{ width: "70vw" }}>
           <TableHead>
             <TableRow>
-              <TableCell align="center" width={"15vw"}>
+              <TableCell align="center" sx={{ width: "15vw" }}>
                 種別
               </TableCell>
-              <TableCell align="center" width={"20vw"}>
+              <TableCell align="center" sx={{ width: "20vw" }}>
                 品名
               </TableCell>
-              <TableCell align="center" width={"10vw"}>
+              <TableCell align="center" sx={{ width: "10vw" }}>
                 金額
               </TableCell>
-              <TableCell align="center" width={"10vw"}>
+              <TableCell align="center" sx={{ width: "10vw" }}>
                 請求種別
               </TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow sx={{ paddingY: 0 }}>
+            <TableRow>
               <TableCell>
                 <SelectTypeContainer width="15vw" />
               </TableCell>

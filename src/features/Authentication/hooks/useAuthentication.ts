@@ -1,5 +1,5 @@
 import { PostAuthResponse } from "@/types";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import {
   authNameState,
   authPasswordState,
@@ -18,7 +18,7 @@ const useAuthentication = () => {
   const selectDate = useRecoilValue(selectDateState);
   const setModal = useSetRecoilState(modalState);
   const setModalErrorMsg = useSetRecoilState(modalErrorMsgState);
-  const [user, setUser] = useRecoilState(userState);
+  const setUser = useSetRecoilState(userState);
 
   const api = authApi();
   const update = useUpdate();
@@ -41,24 +41,23 @@ const useAuthentication = () => {
     try {
       const response = await api.postLogin(data);
       console.log(response);
-      await handleAuthentication(response);
+      handleAuthentication(response);
+      await fetchData(response);
     } catch (error) {
       console.log(error);
       setModalErrorMsg("ログインに失敗しました");
     }
   };
 
-  const handleAuthentication = async (response: PostAuthResponse) => {
-    await setUserInfomation(response);
+  const handleAuthentication = (response: PostAuthResponse) => {
+    setUserInfomation(response);
     closeAndResetModal();
 
     reset.resetModalParams();
     reset.resetAuthenticationParams();
-
-    await fetchData(response.id);
   };
 
-  const setUserInfomation = async (response: PostAuthResponse) => {
+  const setUserInfomation = (response: PostAuthResponse) => {
     setUser({
       id: response.id,
       name: response.name,
@@ -70,9 +69,9 @@ const useAuthentication = () => {
     setModal({ isOpen: false, title: "", buttonText: "" });
   };
 
-  const fetchData = async (id: number) => {
+  const fetchData = async (response: PostAuthResponse) => {
     await update.updateTypeList();
-    await update.updateUserCostList(id, selectDate);
+    await update.updateUserCostList(response.id, selectDate);
     await update.updateMonthlyCostByType(selectDate);
   };
 

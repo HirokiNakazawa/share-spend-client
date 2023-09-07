@@ -5,7 +5,7 @@ import {
   monthlyCostByTypeState,
   userCostListState,
 } from "@/recoil";
-import { SelectDateState, UserState } from "@/types";
+import { SelectDateState } from "@/types";
 
 const useUpdate = () => {
   const setTypeList = useSetRecoilState(typeListState);
