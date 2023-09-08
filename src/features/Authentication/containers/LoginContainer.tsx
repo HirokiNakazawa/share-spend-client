@@ -2,7 +2,7 @@ import { FC } from "react";
 import { LOGIN_BUTTON } from "@/config/config";
 import { useSetRecoilState } from "recoil";
 import { isLoginState, modalState } from "@/recoil";
-import AuthenticationButton from "../components/AuthenticationButton";
+import AuthenticationButton from "@/features/Authentication/components/AuthenticationButton";
 
 const LoginContainer: FC = () => {
   const setModal = useSetRecoilState(modalState);

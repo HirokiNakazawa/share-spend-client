@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import { FC } from "react";
-import EditSelectTypeContainer from "../Edit/containers/EditSelectTypeContainer";
-import InputEditCostNameContainer from "../Edit/containers/InputEditCostNameContainer";
-import InputEditCostContainer from "../Edit/containers/InputEditCostContainer";
-import CheckEditHalfBillingContainer from "../Edit/containers/CheckEditHalfBillingContainer";
-import CheckEditFullBillingContainer from "../Edit/containers/CheckEditFullBillingContainer";
+import EditSelectTypeContainer from "../../CostManagement/Edit/containers/EditSelectTypeContainer";
+import InputEditCostNameContainer from "../../CostManagement/Edit/containers/InputEditCostNameContainer";
+import InputEditCostContainer from "../../CostManagement/Edit/containers/InputEditCostContainer";
+import CheckEditHalfBillingContainer from "../../CostManagement/Edit/containers/CheckEditHalfBillingContainer";
+import CheckEditFullBillingContainer from "../../CostManagement/Edit/containers/CheckEditFullBillingContainer";
 
 const ModalEditCostContent: FC = () => {
   return (

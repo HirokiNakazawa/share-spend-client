@@ -1,9 +1,9 @@
 "use client";
 
-import { editCostIsHalfState } from "@/recoil/editCostState";
-import { Checkbox, FormControlLabel } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
+import { editCostIsHalfState } from "@/recoil/editCostState";
+import CheckBillingType from "@/features/Form/components/CheckBillingType";
 
 type CheckEditHalfBillingContainerProps = {
   label: string;
@@ -20,10 +20,10 @@ const CheckEditHalfBillingContainer: FC<CheckEditHalfBillingContainerProps> = (
   };
 
   return (
-    <FormControlLabel
-      control={<Checkbox onChange={handleChange} checked={editCostIsHalf} />}
+    <CheckBillingType
       label={props.label}
-      labelPlacement="start"
+      isChecked={editCostIsHalf}
+      handleChange={handleChange}
     />
   );
 };

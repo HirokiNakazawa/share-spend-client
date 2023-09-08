@@ -3,7 +3,7 @@
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
 import { authPasswordState } from "@/recoil";
-import InputAuthPassword from "@/features/Authentication/components/InputAuthPassword";
+import InputAuthPassword from "@/features/Form/components/InputAuthPassword";
 
 const InputAuthPasswordContainer: FC = () => {
   const [authPassword, setAuthPassword] = useRecoilState(authPasswordState);

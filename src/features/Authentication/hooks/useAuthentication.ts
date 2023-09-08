@@ -1,4 +1,7 @@
 import { PostAuthResponse } from "@/types";
+import { authApi } from "@/features/Authentication/api/authApi";
+import { useUpdate } from "@/hooks/useUpdate";
+import { useReset } from "@/hooks/useReset";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import {
   authNameState,
@@ -8,9 +11,6 @@ import {
   selectDateState,
   userState,
 } from "@/recoil";
-import { authApi } from "../api/authApi";
-import { useUpdate } from "@/hooks/useUpdate";
-import { useReset } from "@/hooks/useReset";
 
 const useAuthentication = () => {
   const authName = useRecoilValue(authNameState);
@@ -49,7 +49,7 @@ const useAuthentication = () => {
     }
   };
 
-  const handleAuthentication = (response: PostAuthResponse) => {
+  const handleAuthentication = async (response: PostAuthResponse) => {
     setUserInfomation(response);
     closeAndResetModal();
 
@@ -66,7 +66,7 @@ const useAuthentication = () => {
   };
 
   const closeAndResetModal = () => {
-    setModal({ isOpen: false, title: "", buttonText: "" });
+    setModal({ isOpen: false, title: "", buttonText: "", width: 0 });
   };
 
   const fetchData = async (response: PostAuthResponse) => {

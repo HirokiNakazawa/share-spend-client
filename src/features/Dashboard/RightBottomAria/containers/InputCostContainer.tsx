@@ -3,7 +3,7 @@
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
 import { costState } from "@/recoil";
-import InputCost from "@/features/Dashboard/RightBottomAria/components/InputCost";
+import InputCost from "@/features/Form/components/InputCost";
 
 type InputCostContainerProps = {
   width: string;

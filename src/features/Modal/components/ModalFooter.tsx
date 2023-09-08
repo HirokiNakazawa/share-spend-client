@@ -1,5 +1,3 @@
-"use client";
-
 import { Box } from "@mui/material";
 import { FC } from "react";
 import ModalRegisterContainer from "@/features/Authentication/containers/ModalRegisterContainer";

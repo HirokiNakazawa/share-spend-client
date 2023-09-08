@@ -1,9 +1,9 @@
 "use client";
 
-import { Checkbox, FormControlLabel } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 import { useSetRecoilState } from "recoil";
 import { costIsFullState } from "@/recoil";
+import CheckBillingType from "@/features/Form/components/CheckBillingType";
 
 type CheckFullBillingContainerProps = {
   label: string;
@@ -18,13 +18,7 @@ const CheckFullBillingContainer: FC<CheckFullBillingContainerProps> = (
     setCostIsFull(e.target.checked);
   };
 
-  return (
-    <FormControlLabel
-      control={<Checkbox onChange={handleChange} />}
-      label={props.label}
-      labelPlacement="start"
-    />
-  );
+  return <CheckBillingType label={props.label} handleChange={handleChange} />;
 };
 
 export default CheckFullBillingContainer;

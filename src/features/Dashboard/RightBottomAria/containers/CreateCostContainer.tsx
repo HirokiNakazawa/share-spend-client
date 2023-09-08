@@ -4,9 +4,9 @@ import { FC } from "react";
 import { ADD_BUTTON } from "@/config/config";
 import { useCreateCost } from "@/features/Dashboard/RightBottomAria/hooks/useCreateCost";
 import { useUpdate } from "@/hooks/useUpdate";
-import FormButton from "@/features/Dashboard/components/FormButton";
 import { useRecoilValue } from "recoil";
 import { selectDateState } from "@/recoil";
+import FormButton from "@/features/Form/components/FormButton";
 
 const CreateCostContainer: FC = () => {
   const selectDate = useRecoilValue(selectDateState);

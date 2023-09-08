@@ -6,7 +6,6 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { FC } from "react";
-import { TypeState } from "@/types";
 
 type SelectTypeProps = {
   id: string;

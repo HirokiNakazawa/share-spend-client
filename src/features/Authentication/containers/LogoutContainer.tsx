@@ -2,7 +2,7 @@ import { FC } from "react";
 import { LOGOUT_BUTTON } from "@/config/config";
 import { useSetRecoilState } from "recoil";
 import { userState } from "@/recoil";
-import AuthenticationButton from "../components/AuthenticationButton";
+import AuthenticationButton from "@/features/Authentication/components/AuthenticationButton";
 
 const LogoutContainer: FC = () => {
   const setUser = useSetRecoilState(userState);

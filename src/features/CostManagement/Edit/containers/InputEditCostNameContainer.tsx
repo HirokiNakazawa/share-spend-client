@@ -1,9 +1,9 @@
 "use client";
 
-import InputCostName from "@/features/Dashboard/RightBottomAria/components/InputCostName";
-import { editCostNameState } from "@/recoil/editCostState";
 import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
+import { editCostNameState } from "@/recoil/editCostState";
+import InputCostName from "@/features/Form/components/InputCostName";
 
 type InputEditCostNameContainerProps = {
   width: string;

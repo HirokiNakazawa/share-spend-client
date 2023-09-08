@@ -1,10 +1,10 @@
 "use client";
 
-import SelectType from "@/features/Dashboard/RightBottomAria/components/SelectType";
-import { editSelectTypeState, typeListState } from "@/recoil";
 import { SelectChangeEvent } from "@mui/material";
 import { FC } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
+import { editSelectTypeState, typeListState } from "@/recoil";
+import SelectType from "@/features/Form/components/SelectType";
 
 type EditSelectTypeContainerProps = {
   width: string;

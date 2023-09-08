@@ -2,9 +2,9 @@ import { AppBar, Toolbar, Typography } from "@mui/material";
 import { FC } from "react";
 import { APP_NAME } from "@/config/config";
 import { UserState } from "@/types";
+import MenuDrawerContainer from "@/features/Drawer/containers/MenuDrawerContainer";
 import LoggedInUser from "@/features/Authentication/components/LoggedInUser";
 import Guest from "@/features/Authentication/components/Guest";
-import MenuDrawerContainer from "@/features/Drawer/containers/MenuDrawerContainer";
 
 const Header: FC<{ user: UserState }> = ({ user }) => {
   return (

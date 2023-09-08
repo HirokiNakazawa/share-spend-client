@@ -1,9 +1,9 @@
 import { Modal, Box } from "@mui/material";
 import { FC } from "react";
 import ModalHeaderContainer from "@/features/Modal/containers/ModalHeaderContainer";
-import ModalAuthContent from "@/features/Authentication/components/ModalAuthContent";
+import ModalAuthContent from "@/features/Modal/components/ModalAuthContent";
+import ModalEditCostContent from "@/features/Modal/components/ModalEditCostContent";
 import ModalFooterContainer from "@/features/Modal/containers/ModalFooterContainer";
-import ModalEditCostContent from "@/features/CostManagement/components/ModalEditCostContent";
 
 type CustomModalProps = {
   isOpen: boolean;
