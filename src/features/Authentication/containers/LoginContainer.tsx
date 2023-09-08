@@ -14,6 +14,7 @@ const LoginContainer: FC = () => {
       isOpen: true,
       title: LOGIN_BUTTON,
       buttonText: LOGIN_BUTTON,
+      width: 500,
     });
     setIsLogin(true);
   };

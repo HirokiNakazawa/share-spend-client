@@ -1,5 +1,7 @@
 import {
   editSelectTypeState,
+  isEditCostState,
+  modalState,
   typeListState,
   userCostListState,
 } from "@/recoil";
@@ -22,7 +24,8 @@ import {
   editCostIsHalfState,
   editCostNameState,
   editCostState,
-} from "@/recoil/costEditState";
+} from "@/recoil/editCostState";
+import { EDIT_BUTTON } from "@/config/config";
 
 const CostEdit: FC = () => {
   const typeList = useRecoilValue(typeListState);
@@ -32,10 +35,23 @@ const CostEdit: FC = () => {
   const setEditCost = useSetRecoilState(editCostState);
   const setEditCostIsHalf = useSetRecoilState(editCostIsHalfState);
   const setEditCostIsFull = useSetRecoilState(editCostIsFullState);
+  const setModal = useSetRecoilState(modalState);
+  const setIsCostEdit = useSetRecoilState(isEditCostState);
 
   const handleEdit = (item: CostState) => {
     console.log(item);
     setEditSelectType(typeList[item.type_id]);
+    setEditCostName(item.name);
+    setEditCost(String(item.cost));
+    setEditCostIsHalf(item.is_half_billing == true);
+    setEditCostIsFull(item.is_full_billing == true);
+    setModal({
+      isOpen: true,
+      title: EDIT_BUTTON,
+      buttonText: EDIT_BUTTON,
+      width: 1000,
+    });
+    setIsCostEdit(true);
   };
 
   return (

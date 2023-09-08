@@ -8,6 +8,7 @@ export type ModalState = {
   isOpen: boolean;
   title: string;
   buttonText: string;
+  width: number;
 };
 
 export type TypeState = {

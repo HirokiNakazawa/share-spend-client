@@ -3,11 +3,14 @@ import { FC } from "react";
 import ModalHeaderContainer from "@/features/Modal/containers/ModalHeaderContainer";
 import ModalAuthContent from "@/features/Authentication/components/ModalAuthContent";
 import ModalFooterContainer from "@/features/Modal/containers/ModalFooterContainer";
+import ModalEditCostContent from "@/features/CostManagement/components/ModalEditCostContent";
 
 type CustomModalProps = {
   isOpen: boolean;
   isRegister?: boolean;
   isLogin?: boolean;
+  isEditCost?: boolean;
+  width: number;
 };
 
 const CustomModal: FC<CustomModalProps> = (props) => {
@@ -22,7 +25,7 @@ const CustomModal: FC<CustomModalProps> = (props) => {
           bgcolor: "background.paper",
           borderRadius: 4,
           boxShadow: 24,
-          width: 500,
+          width: props.width,
         }}
       >
         <Box
@@ -36,6 +39,7 @@ const CustomModal: FC<CustomModalProps> = (props) => {
         >
           <ModalHeaderContainer />
           {props.isRegister || props.isLogin ? <ModalAuthContent /> : null}
+          {props.isEditCost ? <ModalEditCostContent /> : null}
           <ModalFooterContainer />
         </Box>
       </Box>

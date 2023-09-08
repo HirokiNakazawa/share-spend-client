@@ -9,6 +9,7 @@ import ModalCloseContainer from "@/features/Modal/containers/ModalCloseContainer
 type ModalFooterProps = {
   isRegister?: boolean;
   isLogin?: boolean;
+  isEditCost?: boolean;
 };
 
 const ModalFooter: FC<ModalFooterProps> = (props) => {

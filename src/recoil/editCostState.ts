@@ -1,7 +1,13 @@
 import { atom } from "recoil";
 
+export const editCostIdState = atom<number>({
+  key: "editCostId",
+  default: 0,
+});
+
 export const editCostNameState = atom<string>({
   key: "editCostName",
+  default: "",
 });
 
 export const editCostState = atom<string>({

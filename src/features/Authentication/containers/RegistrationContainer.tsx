@@ -13,6 +13,7 @@ const RegistrationContainer: FC = () => {
       isOpen: true,
       title: REGISTER_BUTTON,
       buttonText: REGISTER_BUTTON,
+      width: 500,
     });
     setIsRegister(true);
   };

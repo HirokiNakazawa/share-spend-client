@@ -4,6 +4,7 @@ const LOGIN_BUTTON: string = "ログイン";
 const LOGOUT_BUTTON: string = "ログアウト";
 const CREATE_BUTTON: string = "作成";
 const ADD_BUTTON: string = "追加";
+const EDIT_BUTTON: string = "編集";
 
 const MONTHLY_TOTAL_COST: string = "今月の支出";
 const MONTHLY_PREDICT_COST: string = "今月の予想";
@@ -21,6 +22,7 @@ export {
   LOGOUT_BUTTON,
   CREATE_BUTTON,
   ADD_BUTTON,
+  EDIT_BUTTON,
   MONTHLY_TOTAL_COST,
   MONTHLY_PREDICT_COST,
   COST_MONTHLY_LIST,

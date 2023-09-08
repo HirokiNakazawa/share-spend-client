@@ -12,6 +12,7 @@ import {
   costIsHalfState,
   costNameState,
   costState,
+  isEditCostState,
 } from "@/recoil";
 
 const useReset = () => {
@@ -22,6 +23,7 @@ const useReset = () => {
   const setAuthPassword = useSetRecoilState(authPasswordState);
   const setIsRegister = useSetRecoilState(isRegisterState);
   const setIsLogin = useSetRecoilState(isLoginState);
+  const setIsEditCost = useSetRecoilState(isEditCostState);
 
   const setType = useSetRecoilState(registerTypeState);
 
@@ -32,15 +34,16 @@ const useReset = () => {
   const setCostIsFull = useSetRecoilState(costIsFullState);
 
   const resetModalParams = () => {
-    setModal({ isOpen: false, title: "", buttonText: "" });
+    setModal({ isOpen: false, title: "", buttonText: "", width: 0 });
     setModalErrorMsg("");
+    setIsRegister(false);
+    setIsLogin(false);
+    setIsEditCost(false);
   };
 
   const resetAuthenticationParams = () => {
     setAuthName("");
     setAuthPassword("");
-    setIsRegister(false);
-    setIsLogin(false);
   };
 
   const resetTypeRegistrationParams = () => {
