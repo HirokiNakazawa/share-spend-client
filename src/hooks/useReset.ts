@@ -74,6 +74,7 @@ const useReset = () => {
   };
 
   const resetCostUpdateParams = () => {
+    resetModalParams();
     setEditCostId(0);
     setEditSelectType("");
     setEditCostName("");

@@ -1,15 +1,15 @@
 import { Typography } from "@mui/material";
 import { FC } from "react";
-import LogoutContainer from "../containers/LogoutContainer";
+import LogoutContainer from "@/features/Authentication/containers/LogoutContainer";
 
 type LoggedInUserProps = {
   name: string;
 };
 
-const LoggedInUser: FC<LoggedInUserProps> = ({ name }) => {
+const LoggedInUser: FC<LoggedInUserProps> = (props) => {
   return (
     <>
-      <Typography>{name}</Typography>
+      <Typography>{props.name}</Typography>
       <LogoutContainer />
     </>
   );

@@ -1,5 +1,5 @@
 export type UserState = {
-  id: number | null;
+  id: number;
   name: string;
   isLoggedIn: boolean;
 };

@@ -1,6 +1,6 @@
 import { FC } from "react";
-import RegistrationContainer from "../containers/RegistrationContainer";
-import LoginContainer from "../containers/LoginContainer";
+import RegistrationContainer from "@/features/Authentication/containers/RegistrationContainer";
+import LoginContainer from "@/features/Authentication/containers/LoginContainer";
 
 const Guest: FC = () => {
   return (

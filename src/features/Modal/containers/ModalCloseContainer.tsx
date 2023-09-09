@@ -1,8 +1,8 @@
 "use client";
 
 import { FC } from "react";
-import ModalButton from "@/features/Modal/components/ModalButton";
 import { useReset } from "@/hooks/useReset";
+import ModalButton from "@/features/Modal/components/ModalButton";
 
 const ModalCloseContainer: FC = () => {
   const reset = useReset();
