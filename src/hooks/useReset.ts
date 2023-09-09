@@ -13,7 +13,15 @@ import {
   costNameState,
   costState,
   isEditCostState,
+  editSelectTypeState,
 } from "@/recoil";
+import {
+  editCostIdState,
+  editCostIsFullState,
+  editCostIsHalfState,
+  editCostNameState,
+  editCostState,
+} from "@/recoil/editCostState";
 
 const useReset = () => {
   const setModal = useSetRecoilState(modalState);
@@ -32,6 +40,13 @@ const useReset = () => {
   const setCost = useSetRecoilState(costState);
   const setCostIsHalf = useSetRecoilState(costIsHalfState);
   const setCostIsFull = useSetRecoilState(costIsFullState);
+
+  const setEditCostId = useSetRecoilState(editCostIdState);
+  const setEditSelectType = useSetRecoilState(editSelectTypeState);
+  const setEditCostName = useSetRecoilState(editCostNameState);
+  const setEditCost = useSetRecoilState(editCostState);
+  const setEditCostIsHalf = useSetRecoilState(editCostIsHalfState);
+  const setEditCostIsFull = useSetRecoilState(editCostIsFullState);
 
   const resetModalParams = () => {
     setModal({ isOpen: false, title: "", buttonText: "", width: 0 });
@@ -58,11 +73,21 @@ const useReset = () => {
     setCostIsFull(false);
   };
 
+  const resetCostUpdateParams = () => {
+    setEditCostId(0);
+    setEditSelectType("");
+    setEditCostName("");
+    setEditCost("");
+    setEditCostIsHalf(false);
+    setEditCostIsFull(false);
+  };
+
   return {
     resetModalParams,
     resetAuthenticationParams,
     resetTypeRegistrationParams,
     resetCostRegistrationParams,
+    resetCostUpdateParams,
   };
 };
 

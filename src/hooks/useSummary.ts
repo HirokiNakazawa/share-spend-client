@@ -22,7 +22,7 @@ const useSummary = () => {
     const daysLeft = days - day;
 
     const dailyCost = totalCost / day;
-    const predictCost = totalCost + dailyCost * daysLeft;
+    const predictCost = Math.round(totalCost + dailyCost * daysLeft);
 
     return predictCost;
   };

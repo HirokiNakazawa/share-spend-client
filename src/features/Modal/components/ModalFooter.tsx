@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
 import { FC } from "react";
-import ModalRegisterContainer from "@/features/Authentication/containers/ModalRegisterContainer";
-import ModalLoginContainer from "@/features/Authentication/containers/ModalLoginContainer";
+import ModalRegisterContainer from "@/features/Modal/containers/ModalRegisterContainer";
+import ModalLoginContainer from "@/features/Modal/containers/ModalLoginContainer";
 import ModalCloseContainer from "@/features/Modal/containers/ModalCloseContainer";
+import ModalEditCostContainer from "../containers/ModalEditCostContainer";
 
 type ModalFooterProps = {
   isRegister?: boolean;
@@ -23,6 +24,7 @@ const ModalFooter: FC<ModalFooterProps> = (props) => {
     >
       {props.isRegister ? <ModalRegisterContainer /> : null}
       {props.isLogin ? <ModalLoginContainer /> : null}
+      {props.isEditCost ? <ModalEditCostContainer /> : null}
       <ModalCloseContainer />
     </Box>
   );

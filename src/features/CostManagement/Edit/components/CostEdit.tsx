@@ -20,16 +20,18 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import CostManagementTableHeader from "@/features/CostManagement/components/CostManagementTableHeader";
 import { CostState } from "@/types";
 import {
+  editCostIdState,
   editCostIsFullState,
   editCostIsHalfState,
   editCostNameState,
   editCostState,
 } from "@/recoil/editCostState";
-import { EDIT_BUTTON } from "@/config/config";
+import { EDIT_BUTTON, UPDATE_BUTTON } from "@/config/config";
 
 const CostEdit: FC = () => {
   const typeList = useRecoilValue(typeListState);
   const userCostList = useRecoilValue(userCostListState);
+  const setEditCostId = useSetRecoilState(editCostIdState);
   const setEditSelectType = useSetRecoilState(editSelectTypeState);
   const setEditCostName = useSetRecoilState(editCostNameState);
   const setEditCost = useSetRecoilState(editCostState);
@@ -40,6 +42,7 @@ const CostEdit: FC = () => {
 
   const handleEdit = (item: CostState) => {
     console.log(item);
+    setEditCostId(item.id);
     setEditSelectType(typeList[item.type_id]);
     setEditCostName(item.name);
     setEditCost(String(item.cost));
@@ -48,7 +51,7 @@ const CostEdit: FC = () => {
     setModal({
       isOpen: true,
       title: EDIT_BUTTON,
-      buttonText: EDIT_BUTTON,
+      buttonText: UPDATE_BUTTON,
       width: 1000,
     });
     setIsCostEdit(true);
@@ -71,7 +74,7 @@ const CostEdit: FC = () => {
                   {item.name}
                 </TableCell>
                 <TableCell align="center" width={"10vw"}>
-                  {item.cost}
+                  {`${item.cost.toLocaleString()} 円`}
                 </TableCell>
                 <TableCell align="center" width={"10vw"}>
                   {item.is_half_billing == true ? "半額" : "全額"}

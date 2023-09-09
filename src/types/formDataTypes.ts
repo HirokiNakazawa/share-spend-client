@@ -15,3 +15,12 @@ export type CreateCostFormData = {
   is_half_billing: boolean;
   is_full_billing: boolean;
 };
+
+export type UpdateCostFormData = {
+  user_id: number | null;
+  type_id: number | null | undefined;
+  name: string;
+  cost: number | null;
+  is_half_billing: boolean;
+  is_full_billing: boolean;
+};
