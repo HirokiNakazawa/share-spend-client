@@ -1,7 +1,7 @@
 import { Box, Divider, List, ListItem, Typography } from "@mui/material";
 import { FC } from "react";
-import CostBulkAdd from "../BulkAdd/components/CostBulkAdd";
-import CostEdit from "../Edit/components/CostEdit";
+import CostBulkAdd from "@/features/CostManagement/BulkAdd/components/CostBulkAdd";
+import CostEditContainer from "@/features/CostManagement/Edit/containers/CostEditContainer";
 
 type CostManagementLayoutProps = {
   page: string;
@@ -50,8 +50,7 @@ const CostManagementLayout: FC<CostManagementLayoutProps> = (props) => {
           {`${props.year}年${props.month}月`}
         </Typography>
         {props.page === "bulkAdd" ? <CostBulkAdd /> : null}
-        {props.page === "edit" ? <CostEdit /> : null}
-        {/* 登録ボタン */}
+        {props.page === "edit" ? <CostEditContainer /> : null}
       </Box>
     </Box>
   );
