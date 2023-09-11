@@ -1,7 +1,15 @@
+"use client";
+
 import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 
-const AriaClaim: FC = () => {
+type AriaClaimProps = {
+  sender: string;
+  receiver: string;
+  claim: number;
+};
+
+const AriaClaim: FC<AriaClaimProps> = (props) => {
   return (
     <Box
       sx={{
@@ -16,7 +24,9 @@ const AriaClaim: FC = () => {
       }}
     >
       <Typography sx={{ fontSize: "20px" }}>請求</Typography>
-      <Typography sx={{ fontSize: "18px" }}>ぴよこ → わんこ 8000円</Typography>
+      <Typography sx={{ fontSize: "18px" }}>{`${props.sender} → ${
+        props.receiver
+      } ${props.claim.toLocaleString()} 円`}</Typography>
     </Box>
   );
 };

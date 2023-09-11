@@ -5,6 +5,7 @@ import {
   GetMonthlyCostByTypeResponse,
   GetUserCostListResponse,
   SelectDateState,
+  GetMonthlyBillingAmountResponse,
 } from "@/types";
 
 const useApi = () => {
@@ -43,10 +44,23 @@ const useApi = () => {
     }
   };
 
+  const getMonthlyBillingAmount = async (
+    selectDate: SelectDateState
+  ): Promise<GetMonthlyBillingAmountResponse> => {
+    try {
+      const url = `${API_BASE_URL}/billing-amount?year=${selectDate.year}&month=${selectDate.month}`;
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
   return {
     getTypeList,
     getUserCostList,
     getMonthlyCostByType,
+    getMonthlyBillingAmount,
   };
 };
 

@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { FC } from "react";
-import AriaName from "@/features/Dashboard/LeftTopAria/components/AriaName";
-import AriaClaim from "@/features/Dashboard/LeftTopAria/components/AriaClaim";
 import dynamic from "next/dynamic";
+import AriaName from "@/features/Dashboard/LeftTopAria/components/AriaName";
+import AriaClaimContainer from "@/features/Dashboard/LeftTopAria/containers/AriaClaimContainer";
 
 const MainLeftAria: FC = () => {
   const PieChartContainer = dynamic(
@@ -14,7 +14,7 @@ const MainLeftAria: FC = () => {
     <Box sx={{ width: "70%", position: "relative" }}>
       <AriaName />
       <PieChartContainer />
-      <AriaClaim />
+      <AriaClaimContainer />
     </Box>
   );
 };

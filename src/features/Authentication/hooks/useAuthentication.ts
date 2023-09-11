@@ -73,6 +73,7 @@ const useAuthentication = () => {
     await update.updateTypeList();
     await update.updateUserCostList(response.id, selectDate);
     await update.updateMonthlyCostByType(selectDate);
+    await update.updateMonthlyClaim(selectDate);
   };
 
   return { register, login };

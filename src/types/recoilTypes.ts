@@ -35,3 +35,9 @@ export type SelectDateState = {
   year: number;
   month: number;
 };
+
+export type ClaimState = {
+  sender: string;
+  receiver: string;
+  claim: number;
+};

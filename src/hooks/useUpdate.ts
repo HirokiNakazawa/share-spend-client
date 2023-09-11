@@ -4,6 +4,7 @@ import {
   typeListState,
   monthlyCostByTypeState,
   userCostListState,
+  claimState,
 } from "@/recoil";
 import { SelectDateState } from "@/types";
 
@@ -11,6 +12,7 @@ const useUpdate = () => {
   const setTypeList = useSetRecoilState(typeListState);
   const setUserCostList = useSetRecoilState(userCostListState);
   const setMonthlyCostByType = useSetRecoilState(monthlyCostByTypeState);
+  const setClaim = useSetRecoilState(claimState);
 
   const api = useApi();
 
@@ -35,7 +37,18 @@ const useUpdate = () => {
     setMonthlyCostByType(monthlyCostByType);
   };
 
-  return { updateTypeList, updateUserCostList, updateMonthlyCostByType };
+  const updateMonthlyClaim = async (selectDate: SelectDateState) => {
+    const claim = await api.getMonthlyBillingAmount(selectDate);
+    console.log(claim);
+    setClaim(claim);
+  };
+
+  return {
+    updateTypeList,
+    updateUserCostList,
+    updateMonthlyCostByType,
+    updateMonthlyClaim,
+  };
 };
 
 export { useUpdate };

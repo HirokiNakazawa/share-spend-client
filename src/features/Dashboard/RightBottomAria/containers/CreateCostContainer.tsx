@@ -17,6 +17,7 @@ const CreateCostContainer: FC = () => {
   const handleCreateCost = async () => {
     await createCostService.createCost();
     await updateService.updateMonthlyCostByType(selectDate);
+    await updateService.updateMonthlyClaim(selectDate);
   };
 
   return <FormButton text={ADD_BUTTON} handleClick={handleCreateCost} />;
