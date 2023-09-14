@@ -1,20 +1,29 @@
-import { Button } from "@mui/material";
 import { FC } from "react";
 
+import { Button } from "@mui/material";
+
+/**
+ * モーダルのボタンコンポーネントの型定義
+ *
+ * @property {string} text - ボタンの表示名
+ * @property {()=>void} handleClick - クリックされた時に発火するコールバック
+ */
 type ModalButtonProps = {
   text: string;
   handleClick: () => void;
 };
 
-const ModalButton: FC<ModalButtonProps> = (props) => {
+/**
+ * モーダルのボタンコンポーネントです。
+ *
+ * @param {ModalButtonProps} props
+ */
+const ModalButton: FC<ModalButtonProps> = (props: ModalButtonProps) => {
+  const { text, handleClick } = props;
+
   return (
-    <Button
-      type="submit"
-      variant="contained"
-      color="primary"
-      onClick={props.handleClick}
-    >
-      {props.text}
+    <Button type="submit" variant="contained" color="primary" onClick={handleClick}>
+      {text}
     </Button>
   );
 };

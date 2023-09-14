@@ -1,15 +1,31 @@
-import { Box, Divider, List, ListItem, Typography } from "@mui/material";
 import { FC } from "react";
-import CostBulkAdd from "@/features/CostManagement/BulkAdd/components/CostBulkAdd";
-import CostEditContainer from "@/features/CostManagement/Edit/containers/CostEditContainer";
 
+import { Box, Divider, List, ListItem, Typography } from "@mui/material";
+
+import CostBulkAdd from "@/features/CostManagement/BulkAdd/components/CostBulkAdd";
+import EditCostContainer from "@/features/CostManagement/Edit/containers/EditCostContainer";
+
+/**
+ * 支出一括登録・支出編集に関するレイアウトのコンポーネントの型定義
+ *
+ * @property {string} page - 表示するページ内容
+ * @property {number} year - 対象年
+ * @property {number} month - 対象月
+ */
 type CostManagementLayoutProps = {
   page: string;
   year: number;
   month: number;
 };
 
-const CostManagementLayout: FC<CostManagementLayoutProps> = (props) => {
+/**
+ * 支出一括登録・支出編集に関するレイアウトのコンポーネントです。
+ *
+ * @param {CostManagementLayoutProps} props
+ */
+const CostManagementLayout: FC<CostManagementLayoutProps> = (props: CostManagementLayoutProps) => {
+  const { page, year, month } = props;
+
   return (
     <Box sx={{ display: "flex", flexDirection: "row" }}>
       <Box
@@ -46,11 +62,9 @@ const CostManagementLayout: FC<CostManagementLayoutProps> = (props) => {
           p: 2,
         }}
       >
-        <Typography sx={{ fontSize: "24px" }}>
-          {`${props.year}年${props.month}月`}
-        </Typography>
-        {props.page === "bulkAdd" ? <CostBulkAdd /> : null}
-        {props.page === "edit" ? <CostEditContainer /> : null}
+        <Typography sx={{ fontSize: "24px" }}>{`${year}年${month}月`}</Typography>
+        {page === "bulkAdd" ? <CostBulkAdd /> : null}
+        {page === "edit" ? <EditCostContainer /> : null}
       </Box>
     </Box>
   );

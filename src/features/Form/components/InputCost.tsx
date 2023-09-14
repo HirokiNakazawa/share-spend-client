@@ -1,6 +1,15 @@
-import { TextField } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 
+import { TextField } from "@mui/material";
+
+/**
+ * 支出金額の入力フォームコンポーネントの型定義
+ *
+ * @property {string} id - テキストフィールドの固有ID
+ * @property {string} cost - 支出金額
+ * @property {string} width - 入力フォームの横幅
+ * @property {(e: ChangeEvent<HTMLInputElement>) => void} handleChange - 入力時に発火するコールバック
+ */
 type InputCostProps = {
   id: string;
   cost: string;
@@ -8,16 +17,23 @@ type InputCostProps = {
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const InputCost: FC<InputCostProps> = (props) => {
+/**
+ * 支出金額の入力フォームコンポーネントです。
+ *
+ * @param {InputCostProps} props
+ */
+const InputCost: FC<InputCostProps> = (props: InputCostProps) => {
+  const { id, cost, width, handleChange } = props;
+
   return (
     <TextField
-      id={props.id}
+      id={id}
       label="支出"
       type="text"
       name="cost"
-      value={props.cost}
-      onChange={props.handleChange}
-      sx={{ width: props.width }}
+      value={cost}
+      onChange={handleChange}
+      sx={{ width: width }}
       required
     />
   );

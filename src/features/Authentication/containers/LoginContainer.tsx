@@ -1,14 +1,25 @@
 import { FC } from "react";
-import { LOGIN_BUTTON } from "@/config/config";
+
 import { useSetRecoilState } from "recoil";
+
+import { LOGIN_BUTTON } from "@/config/config";
+import { ModalState } from "@/types";
 import { isLoginState, modalState } from "@/recoil";
 import AuthenticationButton from "@/features/Authentication/components/AuthenticationButton";
 
+/**
+ * 認証領域のログインボタンコンテナコンポーネントです。
+ */
 const LoginContainer: FC = () => {
-  const setModal = useSetRecoilState(modalState);
-  const setIsLogin = useSetRecoilState(isLoginState);
+  const setModal = useSetRecoilState<ModalState>(modalState);
+  const setIsLogin = useSetRecoilState<boolean>(isLoginState);
 
-  const handleSetState = () => {
+  /**
+   * クリック時にモーダルの状態を処理するコールバック関数
+   *
+   * @returns {void}
+   */
+  const handleSetState = (): void => {
     console.log("ログインがクリックされました");
     setModal({
       isOpen: true,
@@ -19,9 +30,7 @@ const LoginContainer: FC = () => {
     setIsLogin(true);
   };
 
-  return (
-    <AuthenticationButton text={LOGIN_BUTTON} handleClick={handleSetState} />
-  );
+  return <AuthenticationButton text={LOGIN_BUTTON} handleClick={handleSetState} />;
 };
 
 export default LoginContainer;

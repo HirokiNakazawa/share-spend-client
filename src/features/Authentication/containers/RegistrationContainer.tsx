@@ -1,14 +1,26 @@
 import { FC } from "react";
-import { REGISTER_BUTTON } from "@/config/config";
+
 import { useSetRecoilState } from "recoil";
+
+import { REGISTER_BUTTON } from "@/config/config";
+import { ModalState } from "@/types";
 import { isRegisterState, modalState } from "@/recoil";
 import AuthenticationButton from "@/features/Authentication/components/AuthenticationButton";
 
+/**
+ * 認証領域のユーザー登録ボタンコンテナコンポーネントです。
+ */
 const RegistrationContainer: FC = () => {
-  const setModal = useSetRecoilState(modalState);
-  const setIsRegister = useSetRecoilState(isRegisterState);
+  const setModal = useSetRecoilState<ModalState>(modalState);
+  const setIsRegister = useSetRecoilState<boolean>(isRegisterState);
 
-  const handleSetState = () => {
+  /**
+   * クリック時にモーダルの状態を処理するコールバック関数
+   *
+   * @returns {void}
+   */
+  const handleSetState = (): void => {
+    console.log("新規登録がクリックされました");
     setModal({
       isOpen: true,
       title: REGISTER_BUTTON,
@@ -18,9 +30,7 @@ const RegistrationContainer: FC = () => {
     setIsRegister(true);
   };
 
-  return (
-    <AuthenticationButton text={REGISTER_BUTTON} handleClick={handleSetState} />
-  );
+  return <AuthenticationButton text={REGISTER_BUTTON} handleClick={handleSetState} />;
 };
 
 export default RegistrationContainer;

@@ -1,19 +1,33 @@
-import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 
+import { Box, Typography } from "@mui/material";
+
+/**
+ * モーダルヘッダーコンポーネントの型定義
+ *
+ * @property {string} title - ヘッダー名
+ * @property {string} errorMsg - エラーメッセージ
+ */
 type ModalHeaderProps = {
   title: string;
   errorMsg: string;
 };
 
-const ModalHeader: FC<ModalHeaderProps> = (props) => {
+/**
+ * モーダルヘッダーコンポーネントです。
+ *
+ * @param {ModalHeaderProps} props
+ */
+const ModalHeader: FC<ModalHeaderProps> = (props: ModalHeaderProps) => {
+  const { title, errorMsg } = props;
+
   return (
     <Box>
       <Box sx={{ borderBottom: "1px solid gray" }}>
-        <Typography variant="h4">{props.title}</Typography>
+        <Typography variant="h4">{title}</Typography>
       </Box>
       <Typography variant="h6" color="red">
-        {props.errorMsg}
+        {errorMsg}
       </Typography>
     </Box>
   );

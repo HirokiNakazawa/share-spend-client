@@ -1,33 +1,57 @@
-import { editSelectTypeState, typeListState, userState } from "@/recoil";
+import { useRecoilValue } from "recoil";
+
+import { UserState } from "@/types";
+import { updateCostApi } from "../api/updateCostApi";
+import { useReset } from "@/hooks/useReset";
 import {
+  editSelectTypeState,
+  typeListState,
+  userState,
   editCostIdState,
   editCostIsFullState,
   editCostIsHalfState,
   editCostNameState,
   editCostState,
-} from "@/recoil/editCostState";
-import { useRecoilValue } from "recoil";
-import { updateCostApi } from "../api/updateCostApi";
-import { useReset } from "@/hooks/useReset";
+} from "@/recoil";
 
-const useUpdateCost = () => {
-  const typeList = useRecoilValue(typeListState);
-  const user = useRecoilValue(userState);
+/**
+ * 支出編集に関するカスタムフックの型定義
+ */
+export type UpdateCostFunctions = {
+  /**
+   * 支出を更新する関数
+   *
+   * @returns {Promise<void>}
+   */
+  updateCost: () => Promise<void>;
+};
 
-  const editCostId = useRecoilValue(editCostIdState);
-  const editSelectType = useRecoilValue(editSelectTypeState);
-  const editCostName = useRecoilValue(editCostNameState);
-  const editCost = useRecoilValue(editCostState);
-  const editCostIsHalf = useRecoilValue(editCostIsHalfState);
-  const editCostIsFull = useRecoilValue(editCostIsFullState);
+/**
+ * 支出編集に関するカスタムフックです。
+ *
+ * @returns {UpdateCostFunctions} 支出編集に関する関数を含むオブジェクト
+ */
+const useUpdateCost = (): UpdateCostFunctions => {
+  const typeList = useRecoilValue<{ [key: string]: string }>(typeListState);
+  const user = useRecoilValue<UserState>(userState);
+
+  const editCostId = useRecoilValue<number>(editCostIdState);
+  const editSelectType = useRecoilValue<string>(editSelectTypeState);
+  const editCostName = useRecoilValue<string>(editCostNameState);
+  const editCost = useRecoilValue<string>(editCostState);
+  const editCostIsHalf = useRecoilValue<boolean>(editCostIsHalfState);
+  const editCostIsFull = useRecoilValue<boolean>(editCostIsFullState);
 
   const api = updateCostApi();
   const reset = useReset();
 
-  const updateCost = async () => {
-    const typeId = Object.keys(typeList).find(
-      (key) => typeList[key] === editSelectType
-    );
+  /**
+   * 支出を更新する関数
+   *
+   * @returns {Promise<void>}
+   */
+  const updateCost = async (): Promise<void> => {
+    const typeId = Object.keys(typeList).find((key) => typeList[key] === editSelectType);
     const data = {
       user_id: user.id,
       type_id: parseInt(typeId!),

@@ -1,13 +1,23 @@
 "use client";
 
 import { FC } from "react";
+
+import { ResetFunctions } from "@/hooks/useResetTypes";
 import { useReset } from "@/hooks/useReset";
 import ModalButton from "@/features/Modal/components/ModalButton";
 
+/**
+ * モーダルのクローズボタンコンテナコンポーネントです。
+ */
 const ModalCloseContainer: FC = () => {
-  const reset = useReset();
+  const reset: ResetFunctions = useReset();
 
-  const handleClose = () => {
+  /**
+   * クリック時に状態を処理するコールバック関数
+   *
+   * @returns {void}
+   */
+  const handleClose = (): void => {
     reset.resetModalParams();
     reset.resetAuthenticationParams();
   };

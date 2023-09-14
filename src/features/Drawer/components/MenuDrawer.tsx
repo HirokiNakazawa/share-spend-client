@@ -1,26 +1,41 @@
-import { IconButton, Drawer, Toolbar, List, ListItem } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import { FC } from "react";
-import { pages } from "@/config/pages";
 import Link from "next/link";
 
+import { IconButton, Drawer, Toolbar, List, ListItem } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+
+import { pages } from "@/config/pages";
+
+/**
+ * サイドメニューコンポーネントの型定義
+ *
+ * @property {boolean} isOpen - サイドメニューの開閉フラグ
+ * @property {()=>void} handleToggle - サイドメニュー開閉コールバック
+ */
 type MenuDrawerProps = {
   isOpen: boolean;
   handleToggle: () => void;
 };
 
-const MenuDrawer: FC<MenuDrawerProps> = (props) => {
+/**
+ * サイドメニューコンポーネントです。
+ *
+ * @param {MenuDrawerProps} props
+ */
+const MenuDrawer: FC<MenuDrawerProps> = (props: MenuDrawerProps) => {
+  const { isOpen, handleToggle } = props;
+
   return (
     <>
-      <IconButton color="inherit" onClick={props.handleToggle}>
+      <IconButton color="inherit" onClick={handleToggle}>
         <MenuIcon />
       </IconButton>
-      <Drawer anchor="left" open={props.isOpen} onClose={props.handleToggle}>
+      <Drawer anchor="left" open={isOpen} onClose={handleToggle}>
         <Toolbar />
         <List>
           {pages.map((item, index) => (
             <ListItem key={index}>
-              <Link href={item.url} onClick={props.handleToggle}>
+              <Link href={item.url} onClick={handleToggle}>
                 {item.name}
               </Link>
             </ListItem>

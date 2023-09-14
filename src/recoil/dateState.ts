@@ -1,10 +1,11 @@
-import { useUtils } from "@/hooks/useUtils";
-import { SelectDateState } from "@/types";
 import { atom } from "recoil";
+import { SelectDateState } from "@/types";
 
-const utils = useUtils();
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+const currentMonth = currentDate.getMonth() + 1;
 
 export const selectDateState = atom<SelectDateState>({
   key: "selectDate",
-  default: { year: utils.getFullYear(), month: utils.getMonth() },
+  default: { year: currentYear, month: currentMonth },
 });

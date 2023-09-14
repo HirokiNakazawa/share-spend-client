@@ -1,20 +1,29 @@
 import { FC } from "react";
-import { LOGOUT_BUTTON } from "@/config/config";
+
 import { useSetRecoilState } from "recoil";
+
+import { LOGOUT_BUTTON } from "@/config/config";
+import { UserState } from "@/types";
 import { userState } from "@/recoil";
 import AuthenticationButton from "@/features/Authentication/components/AuthenticationButton";
 
+/**
+ * 認証領域のログアウトボタンコンテナコンポーネントです。
+ */
 const LogoutContainer: FC = () => {
-  const setUser = useSetRecoilState(userState);
+  const setUser = useSetRecoilState<UserState>(userState);
 
-  const handleSetState = () => {
+  /**
+   * クリック時にユーザーの状態を処理するコールバック関数
+   *
+   * @returns {void}
+   */
+  const handleSetState = (): void => {
     console.log("ログアウトがクリックされました");
-    setUser({ id: null, name: "", isLoggedIn: false });
+    setUser({ id: 0, name: "", isLoggedIn: false });
   };
 
-  return (
-    <AuthenticationButton text={LOGOUT_BUTTON} handleClick={handleSetState} />
-  );
+  return <AuthenticationButton text={LOGOUT_BUTTON} handleClick={handleSetState} />;
 };
 
 export default LogoutContainer;

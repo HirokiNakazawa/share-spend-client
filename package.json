@@ -19,11 +19,16 @@
     "axios": "^1.4.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
+    "eslint-config-prettier": "^9.0.0",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "recharts": "^2.8.0",
     "recoil": "^0.7.7",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@tsconfig/next": "^2.0.0",
+    "prettier": "^3.0.3"
   }
 }

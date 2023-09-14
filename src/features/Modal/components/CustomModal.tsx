@@ -1,10 +1,21 @@
-import { Modal, Box } from "@mui/material";
 import { FC } from "react";
+
+import { Modal, Box } from "@mui/material";
+
 import ModalHeaderContainer from "@/features/Modal/containers/ModalHeaderContainer";
 import ModalAuthContent from "@/features/Modal/components/ModalAuthContent";
 import ModalEditCostContent from "@/features/Modal/components/ModalEditCostContent";
 import ModalFooterContainer from "@/features/Modal/containers/ModalFooterContainer";
 
+/**
+ * カスタムモーダルコンポーネントの型定義
+ *
+ * @property {boolean} isOpen - モーダル開閉フラグ
+ * @property {boolean} isRegister - ユーザー登録フラグ
+ * @property {boolean} isLogin - ユーザーログインフラグ
+ * @property {boolean} isEditCost - 支出編集フラグ
+ * @property {number} width - モーダルの横幅
+ */
 type CustomModalProps = {
   isOpen: boolean;
   isRegister?: boolean;
@@ -13,9 +24,16 @@ type CustomModalProps = {
   width: number;
 };
 
-const CustomModal: FC<CustomModalProps> = (props) => {
+/**
+ * カスタムモーダルコンポーネントです。
+ *
+ * @param {CustomModalProps} props
+ */
+const CustomModal: FC<CustomModalProps> = (props: CustomModalProps) => {
+  const { isOpen, isRegister, isLogin, isEditCost, width } = props;
+
   return (
-    <Modal open={props.isOpen}>
+    <Modal open={isOpen}>
       <Box
         sx={{
           position: "absolute",
@@ -25,7 +43,7 @@ const CustomModal: FC<CustomModalProps> = (props) => {
           bgcolor: "background.paper",
           borderRadius: 4,
           boxShadow: 24,
-          width: props.width,
+          width: width,
         }}
       >
         <Box
@@ -38,8 +56,8 @@ const CustomModal: FC<CustomModalProps> = (props) => {
           }}
         >
           <ModalHeaderContainer />
-          {props.isRegister || props.isLogin ? <ModalAuthContent /> : null}
-          {props.isEditCost ? <ModalEditCostContent /> : null}
+          {isRegister || isLogin ? <ModalAuthContent /> : null}
+          {isEditCost ? <ModalEditCostContent /> : null}
           <ModalFooterContainer />
         </Box>
       </Box>

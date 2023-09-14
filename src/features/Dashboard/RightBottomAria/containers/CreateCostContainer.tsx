@@ -1,21 +1,33 @@
 "use client";
 
 import { FC } from "react";
-import { ADD_BUTTON } from "@/config/config";
-import { useCreateCost } from "@/features/Dashboard/RightBottomAria/hooks/useCreateCost";
-import { useUpdate } from "@/hooks/useUpdate";
+
 import { useRecoilValue } from "recoil";
+
+import { ADD_BUTTON } from "@/config/config";
+import { SelectDateState, UserState } from "@/types";
+import { UpdateFunctions } from "@/hooks/useUpdateTypes";
+import { CreateCostFunctions, useCreateCost } from "@/features/Dashboard/RightBottomAria/hooks/useCreateCost";
+import { useUpdate } from "@/hooks/useUpdate";
 import { selectDateState, userState } from "@/recoil";
 import FormButton from "@/features/Form/components/FormButton";
 
+/**
+ * 支出登録エリアのコンテナコンポーネントです。
+ */
 const CreateCostContainer: FC = () => {
-  const user = useRecoilValue(userState);
-  const selectDate = useRecoilValue(selectDateState);
+  const user = useRecoilValue<UserState>(userState);
+  const selectDate = useRecoilValue<SelectDateState>(selectDateState);
 
-  const createCostService = useCreateCost();
-  const updateService = useUpdate();
+  const createCostService: CreateCostFunctions = useCreateCost();
+  const updateService: UpdateFunctions = useUpdate();
 
-  const handleCreateCost = async () => {
+  /**
+   * クリック時に支出を登録し、状態を更新するコールバック関数
+   *
+   * @returns {Promise<void>}
+   */
+  const handleCreateCost = async (): Promise<void> => {
     await createCostService.createCost();
     await updateService.updateUserCostList(user.id, selectDate);
     await updateService.updateMonthlyCostByType(selectDate);

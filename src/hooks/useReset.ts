@@ -1,4 +1,7 @@
 import { useSetRecoilState } from "recoil";
+
+import { ModalState } from "@/types";
+import { ResetFunctions } from "./useResetTypes";
 import {
   isLoginState,
   isRegisterState,
@@ -14,41 +17,49 @@ import {
   costState,
   isEditCostState,
   editSelectTypeState,
-} from "@/recoil";
-import {
   editCostIdState,
   editCostIsFullState,
   editCostIsHalfState,
   editCostNameState,
   editCostState,
-} from "@/recoil/editCostState";
+} from "@/recoil";
 
-const useReset = () => {
-  const setModal = useSetRecoilState(modalState);
-  const setModalErrorMsg = useSetRecoilState(modalErrorMsgState);
+/**
+ * 状態の初期化に関するカスタムフックです。
+ *
+ * @returns {ResetFunctions} 状態の初期化関連の関数を含むオブジェクト
+ */
+const useReset = (): ResetFunctions => {
+  const setModal: (value: ModalState) => void = useSetRecoilState<ModalState>(modalState);
+  const setModalErrorMsg: (value: string) => void = useSetRecoilState<string>(modalErrorMsgState);
 
-  const setAuthName = useSetRecoilState(authNameState);
-  const setAuthPassword = useSetRecoilState(authPasswordState);
-  const setIsRegister = useSetRecoilState(isRegisterState);
-  const setIsLogin = useSetRecoilState(isLoginState);
-  const setIsEditCost = useSetRecoilState(isEditCostState);
+  const setAuthName: (value: string) => void = useSetRecoilState<string>(authNameState);
+  const setAuthPassword: (value: string) => void = useSetRecoilState<string>(authPasswordState);
+  const setIsRegister: (value: boolean) => void = useSetRecoilState<boolean>(isRegisterState);
+  const setIsLogin: (value: boolean) => void = useSetRecoilState<boolean>(isLoginState);
+  const setIsEditCost: (value: boolean) => void = useSetRecoilState<boolean>(isEditCostState);
 
-  const setType = useSetRecoilState(registerTypeState);
+  const setType: (value: string) => void = useSetRecoilState<string>(registerTypeState);
 
-  const setSelectType = useSetRecoilState(selectTypeState);
-  const setCostName = useSetRecoilState(costNameState);
-  const setCost = useSetRecoilState(costState);
-  const setCostIsHalf = useSetRecoilState(costIsHalfState);
-  const setCostIsFull = useSetRecoilState(costIsFullState);
+  const setSelectType: (value: string) => void = useSetRecoilState<string>(selectTypeState);
+  const setCostName: (value: string) => void = useSetRecoilState<string>(costNameState);
+  const setCost: (value: string) => void = useSetRecoilState<string>(costState);
+  const setCostIsHalf: (value: boolean) => void = useSetRecoilState<boolean>(costIsHalfState);
+  const setCostIsFull: (value: boolean) => void = useSetRecoilState<boolean>(costIsFullState);
 
-  const setEditCostId = useSetRecoilState(editCostIdState);
-  const setEditSelectType = useSetRecoilState(editSelectTypeState);
-  const setEditCostName = useSetRecoilState(editCostNameState);
-  const setEditCost = useSetRecoilState(editCostState);
-  const setEditCostIsHalf = useSetRecoilState(editCostIsHalfState);
-  const setEditCostIsFull = useSetRecoilState(editCostIsFullState);
+  const setEditCostId: (value: number) => void = useSetRecoilState<number>(editCostIdState);
+  const setEditSelectType: (value: string) => void = useSetRecoilState<string>(editSelectTypeState);
+  const setEditCostName: (value: string) => void = useSetRecoilState<string>(editCostNameState);
+  const setEditCost: (value: string) => void = useSetRecoilState<string>(editCostState);
+  const setEditCostIsHalf: (value: boolean) => void = useSetRecoilState<boolean>(editCostIsHalfState);
+  const setEditCostIsFull: (value: boolean) => void = useSetRecoilState<boolean>(editCostIsFullState);
 
-  const resetModalParams = () => {
+  /**
+   * モーダルの状態を初期化する関数
+   *
+   * @returns {void}
+   */
+  const resetModalParams = (): void => {
     setModal({ isOpen: false, title: "", buttonText: "", width: 0 });
     setModalErrorMsg("");
     setIsRegister(false);
@@ -56,16 +67,31 @@ const useReset = () => {
     setIsEditCost(false);
   };
 
-  const resetAuthenticationParams = () => {
+  /**
+   * 認証情報の状態を初期化する関数
+   *
+   * @returns {void}
+   */
+  const resetAuthenticationParams = (): void => {
     setAuthName("");
     setAuthPassword("");
   };
 
-  const resetTypeRegistrationParams = () => {
+  /**
+   * 種別登録に関する状態を初期化する関数
+   *
+   * @returns {void}
+   */
+  const resetTypeRegistrationParams = (): void => {
     setType("");
   };
 
-  const resetCostRegistrationParams = () => {
+  /**
+   * 支出登録に関する状態を初期化する関数
+   *
+   * @returns {void}
+   */
+  const resetCostRegistrationParams = (): void => {
     setSelectType("");
     setCostName("");
     setCost("");
@@ -73,7 +99,12 @@ const useReset = () => {
     setCostIsFull(false);
   };
 
-  const resetCostUpdateParams = () => {
+  /**
+   * 支出編集に関する状態を初期化する関数
+   *
+   * @returns {void}
+   */
+  const resetCostUpdateParams = (): void => {
     resetModalParams();
     setEditCostId(0);
     setEditSelectType("");

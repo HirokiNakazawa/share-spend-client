@@ -1,24 +1,29 @@
 "use client";
 
 import { ChangeEvent, FC } from "react";
+
 import { useRecoilState } from "recoil";
+
 import { authPasswordState } from "@/recoil";
 import InputAuthPassword from "@/features/Form/components/InputAuthPassword";
 
+/**
+ * 認証パスワードの入力フォームコンテナコンポーネントです。
+ */
 const InputAuthPasswordContainer: FC = () => {
-  const [authPassword, setAuthPassword] = useRecoilState(authPasswordState);
+  const [authPassword, setAuthPassword] = useRecoilState<string>(authPasswordState);
 
-  const handleChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
+  /**
+   * パスワードの変更を処理するコールバック関数
+   *
+   * @param {ChangeEvent<HTMLInputElement>} e
+   * @returns {void}
+   */
+  const handleChangePassword = (e: ChangeEvent<HTMLInputElement>): void => {
     setAuthPassword(e.target.value);
   };
 
-  return (
-    <InputAuthPassword
-      id="auth-password"
-      password={authPassword}
-      handleChange={handleChangePassword}
-    />
-  );
+  return <InputAuthPassword id="auth-password" password={authPassword} handleChange={handleChangePassword} />;
 };
 
 export default InputAuthPasswordContainer;

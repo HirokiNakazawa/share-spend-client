@@ -1,6 +1,10 @@
-import { TableCell, TableHead, TableRow } from "@mui/material";
 import { FC } from "react";
 
+import { TableCell, TableHead, TableRow } from "@mui/material";
+
+/**
+ * 支出一括登録・支出編集の共通テーブルヘッダーコンポーネントです
+ */
 const CostManagementTableHeader: FC = () => {
   return (
     <TableHead>

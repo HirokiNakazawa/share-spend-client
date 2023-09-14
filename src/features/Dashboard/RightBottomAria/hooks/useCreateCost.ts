@@ -1,6 +1,9 @@
-import { createCostApi } from "@/features/Dashboard/RightBottomAria/api/createCostApi";
-import { useReset } from "@/hooks/useReset";
 import { useRecoilValue } from "recoil";
+
+import { UserState } from "@/types";
+import { ResetFunctions } from "@/hooks/useResetTypes";
+import { CreateCostApiFunctions, createCostApi } from "@/features/Dashboard/RightBottomAria/api/createCostApi";
+import { useReset } from "@/hooks/useReset";
 import {
   costIsFullState,
   costIsHalfState,
@@ -11,23 +14,43 @@ import {
   typeListState,
 } from "@/recoil";
 
-const useCreateCost = () => {
-  const typeList = useRecoilValue(typeListState);
-  const user = useRecoilValue(userState);
+/**
+ * 支出登録に関するカスタムフックの型定義
+ */
+export type CreateCostFunctions = {
+  /**
+   * 支出を登録する関数
+   *
+   * @returns {Promise<void>}
+   */
+  createCost: () => Promise<void>;
+};
 
-  const selectType = useRecoilValue(selectTypeState);
-  const costName = useRecoilValue(costNameState);
-  const cost = useRecoilValue(costState);
-  const costIsHalf = useRecoilValue(costIsHalfState);
-  const costIsFull = useRecoilValue(costIsFullState);
+/**
+ * 支出登録に関するカスタムフックです。
+ *
+ * @returns {CreateCostFunctions} 支出登録に関する関数を含むオブジェクト
+ */
+const useCreateCost = (): CreateCostFunctions => {
+  const typeList = useRecoilValue<{ [key: string]: string }>(typeListState);
+  const user = useRecoilValue<UserState>(userState);
 
-  const api = createCostApi();
-  const reset = useReset();
+  const selectType = useRecoilValue<string>(selectTypeState);
+  const costName = useRecoilValue<string>(costNameState);
+  const cost = useRecoilValue<string>(costState);
+  const costIsHalf = useRecoilValue<boolean>(costIsHalfState);
+  const costIsFull = useRecoilValue<boolean>(costIsFullState);
 
-  const createCost = async () => {
-    const typeId = Object.keys(typeList).find(
-      (key) => typeList[key] === selectType
-    );
+  const api: CreateCostApiFunctions = createCostApi();
+  const reset: ResetFunctions = useReset();
+
+  /**
+   * 支出を登録する関数
+   *
+   * @returns {Promise<void>}
+   */
+  const createCost = async (): Promise<void> => {
+    const typeId = Object.keys(typeList).find((key) => typeList[key] === selectType);
     const data = {
       user_id: user.id,
       type_id: parseInt(typeId!),

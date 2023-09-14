@@ -1,15 +1,30 @@
 "use client";
 
-import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 
+import { Box, Typography } from "@mui/material";
+
+/**
+ * 請求金額表示領域コンポーネントの型定義
+ *
+ * @property {string} sender - 送金者名
+ * @property {string} receiver - 受金者名
+ * @property {number} claim - 請求金額
+ */
 type AriaClaimProps = {
   sender: string;
   receiver: string;
   claim: number;
 };
 
-const AriaClaim: FC<AriaClaimProps> = (props) => {
+/**
+ * 請求金額表示領域コンポーネントです。
+ *
+ * @param {AriaClaimProps} props
+ */
+const AriaClaim: FC<AriaClaimProps> = (props: AriaClaimProps) => {
+  const { sender, receiver, claim } = props;
+
   return (
     <Box
       sx={{
@@ -24,9 +39,7 @@ const AriaClaim: FC<AriaClaimProps> = (props) => {
       }}
     >
       <Typography sx={{ fontSize: "20px" }}>請求</Typography>
-      <Typography sx={{ fontSize: "18px" }}>{`${props.sender} → ${
-        props.receiver
-      } ${props.claim.toLocaleString()} 円`}</Typography>
+      <Typography sx={{ fontSize: "18px" }}>{`${sender} → ${receiver} ${claim.toLocaleString()} 円`}</Typography>
     </Box>
   );
 };

@@ -1,16 +1,26 @@
 "use client";
 
 import { FC } from "react";
+
 import { CREATE_BUTTON } from "@/config/config";
-import { useCreateType } from "@/features/Dashboard/LeftBottomAria/hooks/useCreateType";
+import { UpdateFunctions } from "@/hooks/useUpdateTypes";
+import { CreateTypeFunctions, useCreateType } from "@/features/Dashboard/LeftBottomAria/hooks/useCreateType";
 import { useUpdate } from "@/hooks/useUpdate";
 import FormButton from "@/features/Form/components/FormButton";
 
+/**
+ * 種別登録エリアのコンテナコンポーネントです。
+ */
 const CreateTypeContainer: FC = () => {
-  const createTypeService = useCreateType();
-  const updateService = useUpdate();
+  const createTypeService: CreateTypeFunctions = useCreateType();
+  const updateService: UpdateFunctions = useUpdate();
 
-  const handleCreateType = async () => {
+  /**
+   * クリック時に種別を登録し、状態を更新するコールバック関数
+   *
+   * @returns {Promise<void>}
+   */
+  const handleCreateType = async (): Promise<void> => {
     await createTypeService.createType();
     await updateService.updateTypeList();
   };

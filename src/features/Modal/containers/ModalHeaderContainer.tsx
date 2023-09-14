@@ -1,13 +1,19 @@
 "use client";
 
 import { FC } from "react";
+
 import { useRecoilValue } from "recoil";
+
+import { ModalState } from "@/types";
 import { modalErrorMsgState, modalState } from "@/recoil";
 import ModalHeader from "@/features/Modal/components/ModalHeader";
 
+/**
+ * モーダルヘッダーコンテナコンポーネントです。
+ */
 const ModalHeaderContainer: FC = () => {
-  const modal = useRecoilValue(modalState);
-  const modalErrorMsg = useRecoilValue(modalErrorMsgState);
+  const modal = useRecoilValue<ModalState>(modalState);
+  const modalErrorMsg = useRecoilValue<string>(modalErrorMsgState);
 
   return <ModalHeader title={modal.title} errorMsg={modalErrorMsg} />;
 };

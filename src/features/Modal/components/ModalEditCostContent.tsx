@@ -1,11 +1,16 @@
-import { Box } from "@mui/material";
 import { FC } from "react";
-import EditSelectTypeContainer from "../../CostManagement/Edit/containers/EditSelectTypeContainer";
+
+import { Box } from "@mui/material";
+
+import EditSelectTypeContainer from "../../CostManagement/Edit/containers/SelectEditTypeContainer";
 import InputEditCostNameContainer from "../../CostManagement/Edit/containers/InputEditCostNameContainer";
 import InputEditCostContainer from "../../CostManagement/Edit/containers/InputEditCostContainer";
 import CheckEditHalfBillingContainer from "../../CostManagement/Edit/containers/CheckEditHalfBillingContainer";
 import CheckEditFullBillingContainer from "../../CostManagement/Edit/containers/CheckEditFullBillingContainer";
 
+/**
+ * 支出編集用のモーダルコンポーネントです。
+ */
 const ModalEditCostContent: FC = () => {
   return (
     <Box

@@ -1,8 +1,13 @@
-import { Box } from "@mui/material";
 import { FC } from "react";
+
+import { Box } from "@mui/material";
+
 import MonthlyTotalCostContainer from "@/features/Dashboard/LeftTopAria/containers/MonthlyTotalCostContainer";
 import MonthlyPredictCostContainer from "@/features/Dashboard/LeftTopAria/containers/MonthlyPredictCostContainer";
 
+/**
+ * メインエリアの右側のコンポーネントです。
+ */
 const MainRightAria: FC = () => {
   return (
     <Box

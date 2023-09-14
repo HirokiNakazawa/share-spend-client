@@ -1,10 +1,15 @@
-import { Container, Grid } from "@mui/material";
 import { FC } from "react";
+
+import { Container, Grid } from "@mui/material";
+
 import MainAria from "@/features/Dashboard/LeftTopAria/components/MainAria";
 import MonthlyList from "@/features/Dashboard/RightTopAria/components/MonthlyList";
 import TypeRegistration from "@/features/Dashboard/LeftBottomAria/components/TypeRegistration";
 import CostRegistration from "@/features/Dashboard/RightBottomAria/components/CostRegistration";
 
+/**
+ * ダッシュボードコンポーネントです。
+ */
 const Dashboard: FC = () => {
   return (
     <Container style={{ maxWidth: "90%" }}>
