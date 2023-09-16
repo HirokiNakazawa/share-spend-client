@@ -22,11 +22,16 @@ export type GetMonthlyCostByTypeResponse = {
   total_cost: number;
 };
 
-export type GetMonthlyBillingAmountResponse = {
-  sender: string;
-  receiver: string;
-  claim: number;
-};
+export type GetMonthlyBillingAmountResponse =
+  | {
+      sender: string;
+      receiver: string;
+      claim: number;
+      message?: never;
+    }
+  | {
+      message: string;
+    };
 
 export type PostTypeResponse = {
   id: number;
