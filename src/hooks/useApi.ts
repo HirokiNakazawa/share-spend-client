@@ -7,6 +7,7 @@ import {
   GetUserCostListResponse,
   SelectDateState,
   GetMonthlyBillingAmountResponse,
+  GetUserFixedCostListResponse,
 } from "@/types";
 import { ApiFunctions } from "./useApiTypes";
 
@@ -33,11 +34,11 @@ const useApi = (): ApiFunctions => {
   };
 
   /**
-   * 月別のユーザー毎の支出一覧を取得するAPI関数
+   * 月次ユーザー毎の支出一覧を取得するAPI関数
    *
    * @param {number} id - ログインユーザーのID
    * @param {SelectDateState} selectDate - 対象の年月
-   * @returns {Promise<GetUserCostListResponse>} 月別のユーザー毎の支出一覧取得結果を表すPromise
+   * @returns {Promise<GetUserCostListResponse[]>} 月次ユーザー毎の支出一覧取得結果を表すPromise
    * @throws {Error} API呼び出し時のエラー
    */
   const getUserCostList = async (id: number, selectDate: SelectDateState): Promise<GetUserCostListResponse[]> => {
@@ -51,10 +52,27 @@ const useApi = (): ApiFunctions => {
   };
 
   /**
+   * 月次ユーザー毎の固定費一覧を取得するAPI関数
+   *
+   * @param {number} id - ログインユーザーのID
+   * @returns {Promise<GetUserFixedCostListResponse[]>} 月次ユーザー毎の固定費一覧取得結果を表すPromise
+   * @throws {Error} API呼び出し時のエラー
+   */
+  const getUserFixedCostList = async (id: number): Promise<GetUserFixedCostListResponse[]> => {
+    try {
+      const url = `${API_BASE_URL}/fixed-costs/${id}`;
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  /**
    * 月別の種別毎の支出合計を取得するAPI関数
    *
    * @param {SelectDateState} selectDate - 対象の年月
-   * @returns {Promise<GetMonthlyCostByTypeResponse>} 月別の種別毎の支出合計取得結果を表すPromise
+   * @returns {Promise<GetMonthlyCostByTypeResponse[]>} 月次種別毎の支出合計取得結果を表すPromise
    * @throws {Error} API呼び出し時のエラー
    */
   const getMonthlyCostByType = async (selectDate: SelectDateState): Promise<GetMonthlyCostByTypeResponse[]> => {
@@ -71,7 +89,7 @@ const useApi = (): ApiFunctions => {
    * 月別の請求金額を取得するAPI関数
    *
    * @param {SelectDateState} selectDate - 対象の年月
-   * @returns {Promise<GetMonthlyBillingAmountResponse>} 月別の請求金額取得結果を表すPromise
+   * @returns {Promise<GetMonthlyBillingAmountResponse>} 月次請求金額取得結果を表すPromise
    * @throws {Error} API呼び出し時のエラー
    */
   const getMonthlyBillingAmount = async (selectDate: SelectDateState): Promise<GetMonthlyBillingAmountResponse> => {
@@ -87,6 +105,7 @@ const useApi = (): ApiFunctions => {
   return {
     getTypeList,
     getUserCostList,
+    getUserFixedCostList,
     getMonthlyCostByType,
     getMonthlyBillingAmount,
   };

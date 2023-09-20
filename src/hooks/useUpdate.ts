@@ -5,7 +5,7 @@ import { UpdateFunctions } from "./useUpdateTypes";
 import { ApiFunctions } from "./useApiTypes";
 import { ConvertFunctions } from "./useConvertTypes";
 import { useApi } from "@/hooks/useApi";
-import { typeListState, monthlyCostByTypeState, userCostListState, claimState } from "@/recoil";
+import { typeListState, monthlyCostByTypeState, userCostListState, claimState, userFixedCostListState } from "@/recoil";
 import { useConvert } from "./useConvert";
 
 /**
@@ -14,13 +14,11 @@ import { useConvert } from "./useConvert";
  * @returns {UpdateFunctions} 状態更新関連の関数を含むオブジェクト
  */
 const useUpdate = (): UpdateFunctions => {
-  const setTypeList: (value: { [key: string]: string }) => void = useSetRecoilState<{ [key: string]: string }>(
-    typeListState
-  );
-  const setUserCostList: (value: CostState[]) => void = useSetRecoilState<CostState[]>(userCostListState);
-  const setMonthlyCostByType: (value: MonthlyCostByTypeState[]) => void =
-    useSetRecoilState<MonthlyCostByTypeState[]>(monthlyCostByTypeState);
-  const setClaim: (value: ClaimState) => void = useSetRecoilState<ClaimState>(claimState);
+  const setTypeList = useSetRecoilState<{ [key: string]: string }>(typeListState);
+  const setUserCostList = useSetRecoilState<CostState[]>(userCostListState);
+  const setUserFixedCostList = useSetRecoilState<CostState[]>(userFixedCostListState);
+  const setMonthlyCostByType = useSetRecoilState<MonthlyCostByTypeState[]>(monthlyCostByTypeState);
+  const setClaim = useSetRecoilState<ClaimState>(claimState);
 
   const api: ApiFunctions = useApi();
   const convert: ConvertFunctions = useConvert();
@@ -37,7 +35,7 @@ const useUpdate = (): UpdateFunctions => {
   };
 
   /**
-   * 月別のユーザー毎の支出一覧を更新する関数
+   * 月次ユーザー毎の支出一覧を更新する関数
    *
    * @param {number} id - ログインユーザーのID
    * @param {SelectDateState} selectDate - 対象の年月
@@ -50,7 +48,19 @@ const useUpdate = (): UpdateFunctions => {
   };
 
   /**
-   * 月別の種別毎の支出合計を更新する関数
+   * 月次ユーザー毎の固定費一覧を更新する関数
+   *
+   * @param {number} id - ログインユーザーのID
+   * @returns {Promise<void>}
+   */
+  const updateUserFixedCostList = async (id: number): Promise<void> => {
+    const userFixedCostList = await api.getUserFixedCostList(id);
+    console.log(userFixedCostList);
+    setUserFixedCostList(userFixedCostList);
+  };
+
+  /**
+   * 月次種別毎の支出合計を更新する関数
    *
    * @param {SelectDateState} selectDate - 対象の年月
    * @returns {Promise<void>}
@@ -62,7 +72,7 @@ const useUpdate = (): UpdateFunctions => {
   };
 
   /**
-   * 月別の請求金額を更新する関数
+   * 月次請求金額を更新する関数
    *
    * @param {SelectDateState} selectDate - 対象の年月
    * @returns {Promise<void>}
@@ -76,6 +86,7 @@ const useUpdate = (): UpdateFunctions => {
   return {
     updateTypeList,
     updateUserCostList,
+    updateUserFixedCostList,
     updateMonthlyCostByType,
     updateMonthlyClaim,
   };

@@ -10,3 +10,8 @@ export const userCostListState = atom<CostState[]>({
   key: "userCostList",
   default: [],
 });
+
+export const userFixedCostListState = atom<CostState[]>({
+  key: "userFixedCostList",
+  default: [],
+});

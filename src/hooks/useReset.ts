@@ -30,29 +30,29 @@ import {
  * @returns {ResetFunctions} 状態の初期化関連の関数を含むオブジェクト
  */
 const useReset = (): ResetFunctions => {
-  const setModal: (value: ModalState) => void = useSetRecoilState<ModalState>(modalState);
-  const setModalErrorMsg: (value: string) => void = useSetRecoilState<string>(modalErrorMsgState);
+  const setModal = useSetRecoilState<ModalState>(modalState);
+  const setModalErrorMsg = useSetRecoilState<string>(modalErrorMsgState);
 
-  const setAuthName: (value: string) => void = useSetRecoilState<string>(authNameState);
-  const setAuthPassword: (value: string) => void = useSetRecoilState<string>(authPasswordState);
-  const setIsRegister: (value: boolean) => void = useSetRecoilState<boolean>(isRegisterState);
-  const setIsLogin: (value: boolean) => void = useSetRecoilState<boolean>(isLoginState);
-  const setIsEditCost: (value: boolean) => void = useSetRecoilState<boolean>(isEditCostState);
+  const setAuthName = useSetRecoilState<string>(authNameState);
+  const setAuthPassword = useSetRecoilState<string>(authPasswordState);
+  const setIsRegister = useSetRecoilState<boolean>(isRegisterState);
+  const setIsLogin = useSetRecoilState<boolean>(isLoginState);
+  const setIsEditCost = useSetRecoilState<boolean>(isEditCostState);
 
-  const setType: (value: string) => void = useSetRecoilState<string>(registerTypeState);
+  const setType = useSetRecoilState<string>(registerTypeState);
 
-  const setSelectType: (value: string) => void = useSetRecoilState<string>(selectTypeState);
-  const setCostName: (value: string) => void = useSetRecoilState<string>(costNameState);
-  const setCost: (value: string) => void = useSetRecoilState<string>(costState);
-  const setCostIsHalf: (value: boolean) => void = useSetRecoilState<boolean>(costIsHalfState);
-  const setCostIsFull: (value: boolean) => void = useSetRecoilState<boolean>(costIsFullState);
+  const setSelectType = useSetRecoilState<string>(selectTypeState);
+  const setCostName = useSetRecoilState<string>(costNameState);
+  const setCost = useSetRecoilState<string>(costState);
+  const setCostIsHalf = useSetRecoilState<boolean>(costIsHalfState);
+  const setCostIsFull = useSetRecoilState<boolean>(costIsFullState);
 
-  const setEditCostId: (value: number) => void = useSetRecoilState<number>(editCostIdState);
-  const setEditSelectType: (value: string) => void = useSetRecoilState<string>(editSelectTypeState);
-  const setEditCostName: (value: string) => void = useSetRecoilState<string>(editCostNameState);
-  const setEditCost: (value: string) => void = useSetRecoilState<string>(editCostState);
-  const setEditCostIsHalf: (value: boolean) => void = useSetRecoilState<boolean>(editCostIsHalfState);
-  const setEditCostIsFull: (value: boolean) => void = useSetRecoilState<boolean>(editCostIsFullState);
+  const setEditCostId = useSetRecoilState<number>(editCostIdState);
+  const setEditSelectType = useSetRecoilState<string>(editSelectTypeState);
+  const setEditCostName = useSetRecoilState<string>(editCostNameState);
+  const setEditCost = useSetRecoilState<string>(editCostState);
+  const setEditCostIsHalf = useSetRecoilState<boolean>(editCostIsHalfState);
+  const setEditCostIsFull = useSetRecoilState<boolean>(editCostIsFullState);
 
   /**
    * モーダルの状態を初期化する関数

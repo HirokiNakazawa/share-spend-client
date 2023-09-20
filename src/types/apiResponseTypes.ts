@@ -16,6 +16,17 @@ export type GetUserCostListResponse = {
   is_full_billing: boolean;
 };
 
+export type GetUserFixedCostListResponse = {
+  id: number;
+  end_date: Date;
+  user_id: number;
+  type_id: number;
+  name: string;
+  cost: number;
+  is_half_billing: boolean;
+  is_full_billing: boolean;
+};
+
 export type GetMonthlyCostByTypeResponse = {
   type_id: number;
   type_name: string;

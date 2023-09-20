@@ -11,7 +11,7 @@ import { monthlyCostByTypeState } from "../recoil";
  * @returns {SummaryFunctions}
  */
 const useSummary = (): SummaryFunctions => {
-  const monthlyCostByType: MonthlyCostByTypeState[] = useRecoilValue<MonthlyCostByTypeState[]>(monthlyCostByTypeState);
+  const monthlyCostByType = useRecoilValue<MonthlyCostByTypeState[]>(monthlyCostByTypeState);
 
   const utils: UtilsFunctions = useUtils();
 

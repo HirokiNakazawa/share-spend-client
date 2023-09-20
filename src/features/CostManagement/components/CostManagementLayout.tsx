@@ -47,9 +47,9 @@ const CostManagementLayout: FC<CostManagementLayoutProps> = (props: CostManageme
       </Box>
       <Divider
         orientation="vertical"
-        style={{
+        sx={{
           height: "90vh",
-          marginTop: 8,
+          marginTop: 2,
           border: "1px solid lightGray",
         }}
       />

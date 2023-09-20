@@ -23,6 +23,7 @@ export type CostState = {
   cost: number;
   is_half_billing: boolean;
   is_full_billing: boolean;
+  end_date?: Date;
 };
 
 export type MonthlyCostByTypeState = {

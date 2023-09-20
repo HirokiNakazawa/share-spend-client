@@ -12,7 +12,7 @@ import CostRegistration from "@/features/Dashboard/RightBottomAria/components/Co
  */
 const Dashboard: FC = () => {
   return (
-    <Container style={{ maxWidth: "90%" }}>
+    <Container style={{ maxWidth: "95%" }}>
       <Grid container spacing={1} mt={1}>
         <Grid item xs={8} height="60vh">
           <MainAria />

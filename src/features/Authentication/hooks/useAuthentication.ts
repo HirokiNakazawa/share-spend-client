@@ -105,6 +105,7 @@ const useAuthentication = (): AuthenticationFunctions => {
   const fetchData = async (response: PostAuthResponse): Promise<void> => {
     await update.updateTypeList();
     await update.updateUserCostList(response.id, selectDate);
+    await update.updateUserFixedCostList(response.id);
     await update.updateMonthlyCostByType(selectDate);
     await update.updateMonthlyClaim(selectDate);
   };
