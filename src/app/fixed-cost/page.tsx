@@ -5,7 +5,7 @@ import HeaderContainer from "@/features/Header/containers/HeaderContainer";
 const Home: FC = () => {
   return (
     <>
-      <HeaderContainer />
+      <HeaderContainer title="固定費関連" />
     </>
   );
 };

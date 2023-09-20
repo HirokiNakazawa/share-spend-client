@@ -9,12 +9,24 @@ import { userState } from "@/recoil";
 import Header from "@/features/Header/components/Header";
 
 /**
- * ヘッダーコンテナコンポーネントです。
+ * ヘッダーコンテナコンポーネントの型定義
+ * @property {string} title - ヘッダーのタイトル
  */
-const HeaderContainer: FC = () => {
+type HeaderContainerTypes = {
+  title: string;
+};
+
+/**
+ * ヘッダーコンテナコンポーネントです。
+ *
+ * @param {HeaderContainerTypes} props
+ */
+const HeaderContainer: FC<HeaderContainerTypes> = (props: HeaderContainerTypes) => {
+  const { title } = props;
+
   const user = useRecoilValue<UserState>(userState);
 
-  return <Header isLoggedIn={user.isLoggedIn} name={user.name} />;
+  return <Header title={title} isLoggedIn={user.isLoggedIn} name={user.name} />;
 };
 
 export default HeaderContainer;

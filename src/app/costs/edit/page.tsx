@@ -8,7 +8,7 @@ const Home: FC = () => {
   return (
     <>
       <ModalContainer />
-      <HeaderContainer />
+      <HeaderContainer title="支出編集" />
       <CostManagementLayoutContainer page="edit" />
     </>
   );
