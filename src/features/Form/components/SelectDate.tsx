@@ -18,8 +18,10 @@ type SelectDateProps = {
 
 /**
  * DatePickerコンポーネントです。
+ *
+ * @param {SelectDateProps} props
  */
-const SelectDate: FC<SelectDateProps> = (props) => {
+const SelectDate: FC<SelectDateProps> = (props: SelectDateProps) => {
   const { label, date, handleChange } = props;
 
   return (
