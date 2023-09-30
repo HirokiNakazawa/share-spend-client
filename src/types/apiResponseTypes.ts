@@ -53,3 +53,9 @@ export type PostCostResponse = {
   name: string;
   cost: number;
 };
+
+export type PostFixedCostResponse = {
+  name: string;
+  cost: number;
+  end_date: Date | null;
+};

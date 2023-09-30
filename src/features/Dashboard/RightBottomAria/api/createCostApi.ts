@@ -20,7 +20,7 @@ export type CreateCostApiFunctions = {
 /**
  * 支出登録に関するAPIをハンドリングするカスタムフックです。
  *
- * @returns {CreateCostFunctions}
+ * @returns {CreateCostApiFunctions}
  */
 const createCostApi = (): CreateCostApiFunctions => {
   /**

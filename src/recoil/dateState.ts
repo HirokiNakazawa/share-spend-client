@@ -9,3 +9,8 @@ export const selectDateState = atom<SelectDateState>({
   key: "selectDate",
   default: { year: currentYear, month: currentMonth },
 });
+
+export const limitDateState = atom<Date | null>({
+  key: "limitDate",
+  default: null,
+});
