@@ -1,6 +1,6 @@
 import { FC } from "react";
-
 import dynamic from "next/dynamic";
+
 import { Box } from "@mui/material";
 
 import AriaName from "@/features/Dashboard/LeftTopAria/components/AriaName";
