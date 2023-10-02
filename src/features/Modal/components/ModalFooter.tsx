@@ -6,6 +6,7 @@ import ModalRegisterContainer from "@/features/Modal/containers/ModalRegisterCon
 import ModalLoginContainer from "@/features/Modal/containers/ModalLoginContainer";
 import ModalCloseContainer from "@/features/Modal/containers/ModalCloseContainer";
 import ModalEditCostContainer from "../containers/ModalEditCostContainer";
+import ModalEditFixedCostContainer from "../containers/ModalEditFixedCostContainer";
 
 /**
  * モーダルフッターコンポーネントの型定義
@@ -13,11 +14,13 @@ import ModalEditCostContainer from "../containers/ModalEditCostContainer";
  * @property {boolean} isRegister - ユーザー登録フラグ
  * @property {boolean} isLogin - ユーザーログインフラグ
  * @property {boolean} isEditCost - 支出編集フラグ
+ * @property {boolean} isEditFixedCost - 固定費編集フラグ
  */
 type ModalFooterProps = {
   isRegister?: boolean;
   isLogin?: boolean;
   isEditCost?: boolean;
+  isEditFixedCost?: boolean;
 };
 
 /**
@@ -26,7 +29,7 @@ type ModalFooterProps = {
  * @param {ModalFooterProps} props
  */
 const ModalFooter: FC<ModalFooterProps> = (props: ModalFooterProps) => {
-  const { isRegister, isLogin, isEditCost } = props;
+  const { isRegister, isLogin, isEditCost, isEditFixedCost } = props;
 
   return (
     <Box
@@ -41,6 +44,7 @@ const ModalFooter: FC<ModalFooterProps> = (props: ModalFooterProps) => {
       {isRegister ? <ModalRegisterContainer /> : null}
       {isLogin ? <ModalLoginContainer /> : null}
       {isEditCost ? <ModalEditCostContainer /> : null}
+      {isEditFixedCost ? <ModalEditFixedCostContainer /> : null}
       <ModalCloseContainer />
     </Box>
   );

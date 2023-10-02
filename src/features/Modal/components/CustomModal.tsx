@@ -6,6 +6,7 @@ import ModalHeaderContainer from "@/features/Modal/containers/ModalHeaderContain
 import ModalAuthContent from "@/features/Modal/components/ModalAuthContent";
 import ModalEditCostContent from "@/features/Modal/components/ModalEditCostContent";
 import ModalFooterContainer from "@/features/Modal/containers/ModalFooterContainer";
+import ModalEditFixedCostContent from "./ModalEditFixedCostContent";
 
 /**
  * カスタムモーダルコンポーネントの型定義
@@ -14,6 +15,7 @@ import ModalFooterContainer from "@/features/Modal/containers/ModalFooterContain
  * @property {boolean} isRegister - ユーザー登録フラグ
  * @property {boolean} isLogin - ユーザーログインフラグ
  * @property {boolean} isEditCost - 支出編集フラグ
+ * @property {boolean} isEditFixedCost - 固定費編集フラグ
  * @property {number} width - モーダルの横幅
  */
 type CustomModalProps = {
@@ -21,6 +23,7 @@ type CustomModalProps = {
   isRegister?: boolean;
   isLogin?: boolean;
   isEditCost?: boolean;
+  isEditFixedCost?: boolean;
   width: number;
 };
 
@@ -30,7 +33,7 @@ type CustomModalProps = {
  * @param {CustomModalProps} props
  */
 const CustomModal: FC<CustomModalProps> = (props: CustomModalProps) => {
-  const { isOpen, isRegister, isLogin, isEditCost, width } = props;
+  const { isOpen, isRegister, isLogin, isEditCost, isEditFixedCost, width } = props;
 
   return (
     <Modal open={isOpen}>
@@ -58,6 +61,7 @@ const CustomModal: FC<CustomModalProps> = (props: CustomModalProps) => {
           <ModalHeaderContainer />
           {isRegister || isLogin ? <ModalAuthContent /> : null}
           {isEditCost ? <ModalEditCostContent /> : null}
+          {isEditFixedCost ? <ModalEditFixedCostContent /> : null}
           <ModalFooterContainer />
         </Box>
       </Box>

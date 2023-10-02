@@ -8,7 +8,7 @@ import { limitDateState } from "@/recoil";
 import SelectDate from "@/features/Form/components/SelectDate";
 
 /**
- * 固定費登録のDatePickerコンポーネントです。コンテナコンポーネントです。
+ * 固定費登録のDatePickerコンテナコンポーネントです。
  */
 const SelectDateContainer: FC = () => {
   const [limitDate, setLimitDate] = useRecoilState<Date | null>(limitDateState);

@@ -23,6 +23,7 @@ import {
   editCostNameState,
   editCostState,
   limitDateState,
+  isEditFixedCostState,
 } from "@/recoil";
 
 /**
@@ -39,6 +40,7 @@ const useReset = (): ResetFunctions => {
   const setIsRegister = useSetRecoilState<boolean>(isRegisterState);
   const setIsLogin = useSetRecoilState<boolean>(isLoginState);
   const setIsEditCost = useSetRecoilState<boolean>(isEditCostState);
+  const setIsEditFixedCost = useSetRecoilState<boolean>(isEditFixedCostState);
 
   const setType = useSetRecoilState<string>(registerTypeState);
 
@@ -68,6 +70,7 @@ const useReset = (): ResetFunctions => {
     setIsRegister(false);
     setIsLogin(false);
     setIsEditCost(false);
+    setIsEditFixedCost(false);
   };
 
   /**

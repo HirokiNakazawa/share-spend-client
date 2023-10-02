@@ -18,6 +18,7 @@ export type GetUserCostListResponse = {
 
 export type GetUserFixedCostListResponse = {
   id: number;
+  cost_id: number;
   end_date: string;
   user_id: number;
   type_id: number;

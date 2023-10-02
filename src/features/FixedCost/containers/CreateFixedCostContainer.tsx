@@ -4,8 +4,9 @@ import { useRecoilValue } from "recoil";
 
 import { ADD_BUTTON } from "@/config/config";
 import { UserState } from "@/types";
+import { UseFixedCostFunctions } from "../hooks/useFixedCostType";
 import { UpdateFunctions } from "@/hooks/useUpdateTypes";
-import { CreateFixedCostFunctions, useCreateFixedCost } from "../hooks/useCreateFixedCost";
+import { useFixedCost } from "../hooks/useFixedCost";
 import { useUpdate } from "@/hooks/useUpdate";
 import { userState } from "@/recoil";
 import FormButton from "@/features/Form/components/FormButton";
@@ -16,7 +17,7 @@ import FormButton from "@/features/Form/components/FormButton";
 const CreateFixedCostContainer: FC = () => {
   const user = useRecoilValue<UserState>(userState);
 
-  const createFixedCostService: CreateFixedCostFunctions = useCreateFixedCost();
+  const fixedCostService: UseFixedCostFunctions = useFixedCost();
   const updateService: UpdateFunctions = useUpdate();
 
   /**
@@ -25,7 +26,7 @@ const CreateFixedCostContainer: FC = () => {
    * @returns {Promise<void>}
    */
   const handleCreateFixedCost = async (): Promise<void> => {
-    await createFixedCostService.createFixedCost();
+    await fixedCostService.createFixedCost();
     await updateService.updateUserFixedCostList(user.id);
   };
 

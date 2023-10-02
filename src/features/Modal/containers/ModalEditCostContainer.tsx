@@ -31,6 +31,7 @@ const ModalEditCostContainer: FC = () => {
     console.log("支出更新ボタンがクリックされました");
     await updateCostService.updateCost();
     await updateService.updateUserCostList(user.id, selectDate);
+    await updateService.updateUserFixedCostList(user.id);
     await updateService.updateMonthlyCostByType(selectDate);
   };
 
