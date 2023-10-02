@@ -22,6 +22,7 @@ import {
   editCostIsHalfState,
   editCostNameState,
   editCostState,
+  limitDateState,
 } from "@/recoil";
 
 /**
@@ -53,6 +54,8 @@ const useReset = (): ResetFunctions => {
   const setEditCost = useSetRecoilState<string>(editCostState);
   const setEditCostIsHalf = useSetRecoilState<boolean>(editCostIsHalfState);
   const setEditCostIsFull = useSetRecoilState<boolean>(editCostIsFullState);
+
+  const setLimitDate = useSetRecoilState<Date | null>(limitDateState);
 
   /**
    * モーダルの状態を初期化する関数
@@ -114,12 +117,22 @@ const useReset = (): ResetFunctions => {
     setEditCostIsFull(false);
   };
 
+  /**
+   * 固定費登録に関する状態を初期化する関数
+   *
+   * @returns {void}
+   */
+  const resetFixedCostParams = (): void => {
+    setLimitDate(null);
+  };
+
   return {
     resetModalParams,
     resetAuthenticationParams,
     resetTypeRegistrationParams,
     resetCostRegistrationParams,
     resetCostUpdateParams,
+    resetFixedCostParams,
   };
 };
 

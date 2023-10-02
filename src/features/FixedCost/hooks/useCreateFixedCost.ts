@@ -1,3 +1,10 @@
+import { useRecoilValue } from "recoil";
+import dayjs from "dayjs";
+
+import { UserState } from "@/types";
+import { ResetFunctions } from "@/hooks/useResetTypes";
+import { CreateFixedCostApiFunctions, createFixedCostApi } from "../api/createFixedCostApi";
+import { useReset } from "@/hooks/useReset";
 import {
   costIsFullState,
   costIsHalfState,
@@ -8,10 +15,6 @@ import {
   typeListState,
   userState,
 } from "@/recoil";
-import { UserState } from "@/types";
-import { useRecoilValue } from "recoil";
-import { CreateFixedCostApiFunctions, createFixedCostApi } from "../api/createFixedCostApi";
-import dayjs from "dayjs";
 
 /**
  * 固定費登録に関するカスタムフックの型定義
@@ -42,6 +45,7 @@ const useCreateFixedCost = (): CreateFixedCostFunctions => {
   const limitDate = useRecoilValue<Date | null>(limitDateState);
 
   const api: CreateFixedCostApiFunctions = createFixedCostApi();
+  const reset: ResetFunctions = useReset();
 
   /**
    * 固定費を登録する関数
@@ -62,6 +66,7 @@ const useCreateFixedCost = (): CreateFixedCostFunctions => {
     try {
       const response = await api.postCreateFixedCost(data);
       console.log(response);
+      reset.resetCostRegistrationParams();
     } catch (error) {
       console.log(error);
     }

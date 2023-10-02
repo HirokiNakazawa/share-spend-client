@@ -36,4 +36,11 @@ export type ResetFunctions = {
    * @returns {void}
    */
   resetCostUpdateParams: () => void;
+
+  /**
+   * 固定費登録に関する状態を初期化する関数
+   *
+   * @returns {void}
+   */
+  resetFixedCostParams: () => void;
 };

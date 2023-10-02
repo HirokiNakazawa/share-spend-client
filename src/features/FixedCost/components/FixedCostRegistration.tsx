@@ -23,8 +23,8 @@ const FixedCostRegistration: FC = () => {
       <FormControl>
         <Box sx={{ display: "flex", flexDirection: "row" }}>
           <SelectTypeContainer width="10vw" />
-          <InputCostContainer width="10vw" />
           <InputCostNameContainer width="10vw" />
+          <InputCostContainer width="10vw" />
           <CheckHalfBillingContainer label="半額請求" />
           <CheckFullBillingContainer label="全額請求" />
           <Box sx={{ marginLeft: 2 }}>
