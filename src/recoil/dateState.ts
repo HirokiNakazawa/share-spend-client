@@ -14,3 +14,8 @@ export const limitDateState = atom<Date | null>({
   key: "limitDate",
   default: null,
 });
+
+export const editLimitDateState = atom<Date | null>({
+  key: "editLimitDate",
+  default: null,
+});

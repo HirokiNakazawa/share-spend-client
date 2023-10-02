@@ -1,17 +1,21 @@
 import { FC } from "react";
 
+import { Button, TableBody, TableCell, TableRow } from "@mui/material";
+
+import { EDIT_BUTTON } from "@/config/config";
 import { CostState } from "@/types";
-import { TableBody, TableCell, TableRow } from "@mui/material";
 
 /**
  * 固定費一覧のテーブルボディコンポーネントの型定義
  *
  * @property {[key:string]:string} typeList - 種別一覧
  * @property {CostState[]} userFixedCostList - ユーザー別固定費一覧
+ * @property {(item:CostState)=>void} handleEdit - 編集ボタンをクリックした時に発火するコールバック
  */
 type FixedCostTableBodyProps = {
   typeList: { [key: string]: string };
   userFixedCostList: CostState[];
+  handleEdit: (item: CostState) => void;
 };
 
 /**
@@ -20,7 +24,7 @@ type FixedCostTableBodyProps = {
  * @param {FixedCostTableBodyProps} props
  */
 const FixedCostTableBody: FC<FixedCostTableBodyProps> = (props: FixedCostTableBodyProps) => {
-  const { typeList, userFixedCostList } = props;
+  const { typeList, userFixedCostList, handleEdit } = props;
 
   return (
     <TableBody>
@@ -39,7 +43,11 @@ const FixedCostTableBody: FC<FixedCostTableBodyProps> = (props: FixedCostTableBo
           <TableCell align="center" sx={{ width: "15vw" }}>
             {item.end_date != null ? item.end_date : "期限なし"}
           </TableCell>
-          <TableCell></TableCell>
+          <TableCell align="center">
+            <Button variant="contained" color="primary" onClick={() => handleEdit(item)}>
+              {EDIT_BUTTON}
+            </Button>
+          </TableCell>
         </TableRow>
       ))}
     </TableBody>

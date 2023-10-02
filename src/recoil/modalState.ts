@@ -21,6 +21,11 @@ export const isEditCostState = atom<boolean>({
   default: false,
 });
 
+export const isEditFixedCostState = atom<boolean>({
+  key: "isEditFixedCost",
+  default: false,
+});
+
 export const modalErrorMsgState = atom<string>({
   key: "modalErrorMsg",
   default: "",
