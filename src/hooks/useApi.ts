@@ -8,8 +8,8 @@ import {
   SelectDateState,
   GetMonthlyBillingAmountResponse,
   GetUserFixedCostListResponse,
+  ApiFunctions,
 } from "@/types";
-import { ApiFunctions } from "./useApiTypes";
 
 /**
  * 汎用APIをハンドリングするカスタムフックです

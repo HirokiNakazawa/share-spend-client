@@ -1,5 +1,4 @@
-import { ClaimState, GetMonthlyBillingAmountResponse } from "@/types";
-import { ConvertFunctions } from "./useConvertTypes";
+import { ClaimState, GetMonthlyBillingAmountResponse, ConvertFunctions } from "@/types";
 
 /**
  * APIレスポンスをコンバートし、Recoilアトムの型に変換するカスタムフックです。

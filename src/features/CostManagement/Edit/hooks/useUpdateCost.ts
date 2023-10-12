@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
 
-import { UserState } from "@/types";
+import { UpdateCostFunctions, UserState } from "@/types";
 import { updateCostApi } from "../api/updateCostApi";
 import { useReset } from "@/hooks/useReset";
 import {
@@ -13,18 +13,6 @@ import {
   editCostNameState,
   editCostState,
 } from "@/recoil";
-
-/**
- * 支出編集に関するカスタムフックの型定義
- */
-export type UpdateCostFunctions = {
-  /**
-   * 支出を更新する関数
-   *
-   * @returns {Promise<void>}
-   */
-  updateCost: () => Promise<void>;
-};
 
 /**
  * 支出編集に関するカスタムフックです。

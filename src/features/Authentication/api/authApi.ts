@@ -1,8 +1,7 @@
 import axios from "axios";
 
 import { API_BASE_URL } from "@/config/config";
-import { AuthFormData, PostAuthResponse } from "@/types";
-import { AuthApiFunctions } from "./authApiTypes";
+import { AuthApiFunctions, AuthFormData, PostAuthResponse } from "@/types";
 
 /**
  * ユーザー認証に関するAPIをハンドリングするカスタムフックです。

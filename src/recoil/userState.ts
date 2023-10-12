@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+
 import { CostState, UserState } from "@/types";
 
 export const userState = atom<UserState>({

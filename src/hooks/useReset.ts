@@ -1,7 +1,6 @@
 import { useSetRecoilState } from "recoil";
 
-import { ModalState } from "@/types";
-import { ResetFunctions } from "./useResetTypes";
+import { ModalState, ResetFunctions } from "@/types";
 import {
   isLoginState,
   isRegisterState,

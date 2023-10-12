@@ -1,5 +1,6 @@
-import { ClaimState } from "@/types";
 import { atom } from "recoil";
+
+import { ClaimState } from "@/types";
 
 export const claimState = atom<ClaimState>({
   key: "claim",

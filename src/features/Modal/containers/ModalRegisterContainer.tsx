@@ -5,7 +5,7 @@ import { FC } from "react";
 import { useRecoilValue } from "recoil";
 
 import { ModalState } from "@/types";
-import { AuthenticationFunctions } from "@/features/Authentication/hooks/useAuthenticationTypes";
+import { AuthenticationFunctions } from "../../../../old/useAuthenticationTypes";
 import { useAuthentication } from "@/features/Authentication/hooks/useAuthentication";
 import { modalState } from "@/recoil";
 import ModalButton from "@/features/Modal/components/ModalButton";

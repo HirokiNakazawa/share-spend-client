@@ -3,9 +3,6 @@ import { ClaimState, GetMonthlyBillingAmountResponse } from "@/types";
 /**
  * コンバートカスタムフックの型定義
  */
-export type ConvertFunctions = {
-  /**
-   * @param {GetMonthlyBillingAmountResponse} response
-   */
+export declare type ConvertFunctions = {
   convertToClaimState: (response: GetMonthlyBillingAmountResponse) => ClaimState;
 };

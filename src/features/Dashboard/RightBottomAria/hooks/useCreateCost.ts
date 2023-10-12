@@ -1,8 +1,7 @@
 import { useRecoilValue } from "recoil";
 
-import { UserState } from "@/types";
-import { ResetFunctions } from "@/hooks/useResetTypes";
-import { CreateCostApiFunctions, createCostApi } from "@/features/Dashboard/RightBottomAria/api/createCostApi";
+import { UserState, CreateCostFunctions, CreateCostApiFunctions, ResetFunctions } from "@/types";
+import { createCostApi } from "@/features/Dashboard/RightBottomAria/api/createCostApi";
 import { useReset } from "@/hooks/useReset";
 import {
   costIsFullState,
@@ -13,18 +12,6 @@ import {
   selectTypeState,
   typeListState,
 } from "@/recoil";
-
-/**
- * 支出登録に関するカスタムフックの型定義
- */
-export type CreateCostFunctions = {
-  /**
-   * 支出を登録する関数
-   *
-   * @returns {Promise<void>}
-   */
-  createCost: () => Promise<void>;
-};
 
 /**
  * 支出登録に関するカスタムフックです。

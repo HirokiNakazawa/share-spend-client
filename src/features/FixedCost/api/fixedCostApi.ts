@@ -1,31 +1,7 @@
 import axios from "axios";
 
 import { API_BASE_URL } from "@/config/config";
-import { CreateFixedCostFormData, PostFixedCostResponse, UpdateCostFormData } from "@/types";
-
-/**
- * 固定費登録に関するAPI関数の型定義
- */
-export type FixedCostApiFunctions = {
-  /**
-   * 固定費を登録するAPI関数
-   *
-   * @param {CreateFixedCostFormData} data - 登録する固定費データ
-   * @returns {Promise<PostFixedCostResponse>} 固定費登録の結果を表すPromise
-   * @throws {Error} API呼び出しエラー
-   */
-  postCreateFixedCost: (data: CreateFixedCostFormData) => Promise<PostFixedCostResponse>;
-
-  /**
-   * 固定費を更新するAPI関数
-   *
-   * @param {UpdateCostFormData} data - 更新する固定費データ
-   * @param {number} id - 更新対象の支出データID
-   * @returns {Promise<PostFixedCostResponse>} 固定費更新の結果を表すPromise
-   * @throws {Error} API呼び出しエラー
-   */
-  postUpdateFixedCost: (data: UpdateCostFormData, id: number) => Promise<PostFixedCostResponse>;
-};
+import { FixedCostApiFunctions, CreateFixedCostFormData, PostFixedCostResponse, UpdateCostFormData } from "@/types";
 
 /**
  * 固定費登録に関するAPIをハンドリングするカスタムフックです。

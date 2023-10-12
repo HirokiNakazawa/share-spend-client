@@ -1,10 +1,8 @@
 import { useRecoilValue } from "recoil";
 import dayjs from "dayjs";
 
-import { UserState } from "@/types";
-import { UseFixedCostFunctions } from "./useFixedCostType";
-import { ResetFunctions } from "@/hooks/useResetTypes";
-import { FixedCostApiFunctions, fixedCostApi } from "../api/fixedCostApi";
+import { UseFixedCostFunctions, UserState, FixedCostApiFunctions, ResetFunctions } from "@/types";
+import { fixedCostApi } from "../api/fixedCostApi";
 import { useReset } from "@/hooks/useReset";
 import {
   costIsFullState,

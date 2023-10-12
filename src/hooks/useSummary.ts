@@ -1,7 +1,7 @@
 import { useRecoilValue } from "recoil";
 
 import { MonthlyCostByTypeState } from "@/types";
-import { SummaryFunctions } from "./useSummaryTypes";
+import { SummaryFunctions } from "../types/useSummaryTypes";
 import { UtilsFunctions, useUtils } from "./useUtils";
 import { monthlyCostByTypeState } from "../recoil";
 

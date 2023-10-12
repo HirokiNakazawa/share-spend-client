@@ -1,21 +1,9 @@
 import { useRecoilValue } from "recoil";
 
-import { ResetFunctions } from "@/hooks/useResetTypes";
-import { CreateTypeApiFunctions, createTypeApi } from "@/features/Dashboard/LeftBottomAria/api/createTypeApi";
+import { CreateTypeFunctions, CreateTypeApiFunctions, ResetFunctions } from "@/types";
+import { createTypeApi } from "@/features/Dashboard/LeftBottomAria/api/createTypeApi";
 import { useReset } from "@/hooks/useReset";
 import { registerTypeState } from "@/recoil";
-
-/**
- * 種別登録に関するカスタムフックの型定義
- */
-export type CreateTypeFunctions = {
-  /**
-   * 種別を登録する関数
-   *
-   * @returns {Promise<void>}
-   */
-  createType: () => Promise<void>;
-};
 
 /**
  * 種別登録に関するカスタムフックです。

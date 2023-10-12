@@ -1,7 +1,6 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
 
-import { ModalState, PostAuthResponse, SelectDateState, UserState } from "@/types";
-import { AuthenticationFunctions } from "./useAuthenticationTypes";
+import { AuthenticationFunctions, ModalState, PostAuthResponse, SelectDateState, UserState } from "@/types";
 import { authApi } from "@/features/Authentication/api/authApi";
 import { useUpdate } from "@/hooks/useUpdate";
 import { useReset } from "@/hooks/useReset";

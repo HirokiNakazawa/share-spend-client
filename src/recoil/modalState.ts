@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+
 import { ModalState } from "@/types";
 
 export const modalState = atom<ModalState>({
