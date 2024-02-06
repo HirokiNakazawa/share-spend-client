@@ -30,4 +30,9 @@ export const pages: Pages[] = [
     name: "過去データ",
     isPastDrawer: true,
   },
+  {
+    url: "/admin",
+    name: "管理者ページ",
+    isPastDrawer: true,
+  },
 ];
