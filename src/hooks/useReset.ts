@@ -23,6 +23,7 @@ import {
   editCostState,
   limitDateState,
   isEditFixedCostState,
+  registrationDateState,
 } from "@/recoil";
 
 /**
@@ -56,6 +57,7 @@ const useReset = (): ResetFunctions => {
   const setEditCostIsHalf = useSetRecoilState<boolean>(editCostIsHalfState);
   const setEditCostIsFull = useSetRecoilState<boolean>(editCostIsFullState);
 
+  const setRegistrationDate = useSetRecoilState<Date | null>(registrationDateState);
   const setLimitDate = useSetRecoilState<Date | null>(limitDateState);
 
   /**
@@ -102,6 +104,7 @@ const useReset = (): ResetFunctions => {
     setCost("");
     setCostIsHalf(false);
     setCostIsFull(false);
+    setRegistrationDate(null);
   };
 
   /**

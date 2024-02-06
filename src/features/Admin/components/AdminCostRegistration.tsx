@@ -8,6 +8,7 @@ import InputCostNameContainer from "@/features/Dashboard/RightBottomAria/contain
 import InputCostContainer from "@/features/Dashboard/RightBottomAria/containers/InputCostContainer";
 import CheckHalfBillingContainer from "@/features/Dashboard/RightBottomAria/containers/CheckHalfBillingContainer";
 import CheckFullBillingContainer from "@/features/Dashboard/RightBottomAria/containers/CheckFullBillingContainer";
+import CreateCostContainer from "@/features/Dashboard/RightBottomAria/containers/CreateCostContainer";
 
 /**
  * 管理者ページの支出登録エリアコンポーネントです。
@@ -29,6 +30,7 @@ const AdminCostRegistration: FC = () => {
           <Box sx={{ marginLeft: 2 }}>
             <SelectDateContainer />
           </Box>
+          <CreateCostContainer />
         </Box>
       </FormControl>
     </Box>

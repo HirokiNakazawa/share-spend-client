@@ -11,7 +11,9 @@ import {
   userState,
   selectTypeState,
   typeListState,
+  registrationDateState,
 } from "@/recoil";
+import dayjs from "dayjs";
 
 /**
  * 支出登録に関するカスタムフックです。
@@ -27,6 +29,7 @@ const useCreateCost = (): CreateCostFunctions => {
   const cost = useRecoilValue<string>(costState);
   const costIsHalf = useRecoilValue<boolean>(costIsHalfState);
   const costIsFull = useRecoilValue<boolean>(costIsFullState);
+  const registrationDate = useRecoilValue<Date | null>(registrationDateState);
 
   const api: CreateCostApiFunctions = createCostApi();
   const reset: ResetFunctions = useReset();
@@ -45,6 +48,7 @@ const useCreateCost = (): CreateCostFunctions => {
       cost: parseInt(cost),
       is_half_billing: costIsHalf,
       is_full_billing: costIsFull,
+      registration_date: registrationDate ? dayjs(registrationDate).format("YYYY/MM/DD") : null,
     };
     try {
       const response = await api.postCreateCost(data);

@@ -65,6 +65,7 @@ export type CreateCostFormData = {
   cost: number | null;
   is_half_billing: boolean;
   is_full_billing: boolean;
+  registration_date?: string | null;
 };
 
 export type UpdateCostFormData = {

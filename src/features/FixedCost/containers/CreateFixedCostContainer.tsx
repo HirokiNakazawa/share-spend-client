@@ -3,9 +3,7 @@ import { FC } from "react";
 import { useRecoilValue } from "recoil";
 
 import { ADD_BUTTON } from "@/config/config";
-import { UserState } from "@/types";
-import { UseFixedCostFunctions } from "../hooks/useFixedCostType";
-import { UpdateFunctions } from "@/hooks/useUpdateTypes";
+import { UpdateFunctions, UseFixedCostFunctions, UserState } from "@/types";
 import { useFixedCost } from "../hooks/useFixedCost";
 import { useUpdate } from "@/hooks/useUpdate";
 import { userState } from "@/recoil";

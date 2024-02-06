@@ -13,7 +13,7 @@ export const selectDateState = atom<SelectDateState>({
 
 export const registrationDateState = atom<Date | null>({
   key: "registrationDate",
-  default: currentDate,
+  default: null,
 });
 
 export const limitDateState = atom<Date | null>({

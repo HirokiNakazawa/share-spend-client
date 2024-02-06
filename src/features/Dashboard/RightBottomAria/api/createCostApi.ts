@@ -17,6 +17,7 @@ const createCostApi = (): CreateCostApiFunctions => {
    * @throws {Error} API呼び出しエラー
    */
   const postCreateCost = async (data: CreateCostFormData): Promise<PostCostResponse> => {
+    console.log(data);
     try {
       const url = `${API_BASE_URL}/costs/create`;
       const response = await axios.post(url, data);
