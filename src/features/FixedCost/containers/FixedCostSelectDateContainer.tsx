@@ -10,7 +10,7 @@ import SelectDate from "@/features/Form/components/SelectDate";
 /**
  * 固定費登録のDatePickerコンテナコンポーネントです。
  */
-const SelectDateContainer: FC = () => {
+const FixedCostSelectDateContainer: FC = () => {
   const [limitDate, setLimitDate] = useRecoilState<Date | null>(limitDateState);
 
   /**
@@ -26,4 +26,4 @@ const SelectDateContainer: FC = () => {
   return <SelectDate label="期限" date={limitDate} handleChange={handleChangeDate} />;
 };
 
-export default SelectDateContainer;
+export default FixedCostSelectDateContainer;
