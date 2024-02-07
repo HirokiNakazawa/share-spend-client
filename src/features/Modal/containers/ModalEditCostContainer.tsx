@@ -4,9 +4,8 @@ import { FC } from "react";
 
 import { useRecoilValue } from "recoil";
 
-import { ModalState, SelectDateState, UserState } from "@/types";
-import { UpdateCostFunctions, useUpdateCost } from "@/features/CostManagement/Edit/hooks/useUpdateCost";
-import { UpdateFunctions } from "@/hooks/useUpdateTypes";
+import { ModalState, SelectDateState, UpdateCostFunctions, UpdateFunctions, UserState } from "@/types";
+import { useUpdateCost } from "@/features/CostManagement/Edit/hooks/useUpdateCost";
 import { useUpdate } from "@/hooks/useUpdate";
 import { modalState, selectDateState, userState } from "@/recoil";
 import ModalButton from "@/features/Modal/components/ModalButton";

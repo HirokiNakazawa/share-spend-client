@@ -4,6 +4,8 @@ import { Box, Divider, List, ListItem, Typography } from "@mui/material";
 
 import CostBulkAdd from "@/features/CostManagement/BulkAdd/components/CostBulkAdd";
 import EditCostContainer from "@/features/CostManagement/Edit/containers/EditCostContainer";
+import { pastDateList } from "@/config/property";
+import SelectDateContainer from "../containers/SelectDateContainer";
 
 /**
  * 支出一括登録・支出編集に関するレイアウトのコンポーネントの型定義
@@ -32,17 +34,16 @@ const CostManagementLayout: FC<CostManagementLayoutProps> = (props: CostManageme
         sx={{
           display: "flex",
           justifyContent: "center",
-          width: "10vw",
+          width: "8vw",
           height: "85vh",
         }}
       >
         <List>
-          <ListItem>
-            <Typography>2023年9月</Typography>
-          </ListItem>
-          <ListItem>
-            <Typography>2023年8月</Typography>
-          </ListItem>
+          {pastDateList.map((item, index) => (
+            <ListItem key={index} sx={{ p: 0 }}>
+              <SelectDateContainer date={item} />
+            </ListItem>
+          ))}
         </List>
       </Box>
       <Divider

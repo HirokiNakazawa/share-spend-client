@@ -18,6 +18,7 @@ type CheckFullBillingContainerProps = {
 
 /**
  * 支出登録時の全額請求チェックボックスのコンテナコンポーネントです。
+ *
  * @param {CheckFullBillingContainerProps} props
  */
 const CheckFullBillingContainer: FC<CheckFullBillingContainerProps> = (props: CheckFullBillingContainerProps) => {

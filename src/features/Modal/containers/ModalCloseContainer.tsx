@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 
-import { ResetFunctions } from "@/hooks/useResetTypes";
+import { ResetFunctions } from "@/types";
 import { useReset } from "@/hooks/useReset";
 import ModalButton from "@/features/Modal/components/ModalButton";
 

@@ -2,13 +2,11 @@ import { FC } from "react";
 
 import { useRecoilValue } from "recoil";
 
-import { ModalState, UserState } from "@/types";
-import { UpdateFunctions } from "@/hooks/useUpdateTypes";
+import { ModalState, UpdateFunctions, UseFixedCostFunctions, UserState } from "@/types";
 import { useUpdate } from "@/hooks/useUpdate";
 import { modalState, userState } from "@/recoil";
-import ModalButton from "../components/ModalButton";
-import { UseFixedCostFunctions } from "@/features/FixedCost/hooks/useFixedCostType";
 import { useFixedCost } from "@/features/FixedCost/hooks/useFixedCost";
+import ModalButton from "../components/ModalButton";
 
 const ModalEditFixedCostContainer: FC = () => {
   const modal = useRecoilValue<ModalState>(modalState);

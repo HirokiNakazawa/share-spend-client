@@ -12,16 +12,16 @@ import Header from "@/features/Header/components/Header";
  * ヘッダーコンテナコンポーネントの型定義
  * @property {string} title - ヘッダーのタイトル
  */
-type HeaderContainerTypes = {
+type HeaderContainerProps = {
   title: string;
 };
 
 /**
  * ヘッダーコンテナコンポーネントです。
  *
- * @param {HeaderContainerTypes} props
+ * @param {HeaderContainerProps} props
  */
-const HeaderContainer: FC<HeaderContainerTypes> = (props: HeaderContainerTypes) => {
+const HeaderContainer: FC<HeaderContainerProps> = (props: HeaderContainerProps) => {
   const { title } = props;
 
   const user = useRecoilValue<UserState>(userState);

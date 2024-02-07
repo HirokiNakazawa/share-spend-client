@@ -3,8 +3,8 @@
 import { FC } from "react";
 
 import { CREATE_BUTTON } from "@/config/config";
-import { UpdateFunctions } from "@/hooks/useUpdateTypes";
-import { CreateTypeFunctions, useCreateType } from "@/features/Dashboard/LeftBottomAria/hooks/useCreateType";
+import { CreateTypeFunctions, UpdateFunctions } from "@/types";
+import { useCreateType } from "@/features/Dashboard/LeftBottomAria/hooks/useCreateType";
 import { useUpdate } from "@/hooks/useUpdate";
 import FormButton from "@/features/Form/components/FormButton";
 
