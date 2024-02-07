@@ -1,28 +1,19 @@
-import {
-  Box,
-  Button,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow,
-  ThemeProvider,
-} from "@mui/material";
 import { FC } from "react";
+
+import { Box, Button, Table, TableBody, TableCell, TableContainer, TableRow, ThemeProvider } from "@mui/material";
+
 import { customTheme } from "@/features/CostManagement/styles/customTheme";
-import CheckFullBillingContainer from "@/features/Dashboard/RightBottomAria/containers/CheckFullBillingContainer";
-import CheckHalfBillingContainer from "@/features/Dashboard/RightBottomAria/containers/CheckHalfBillingContainer";
-import InputCostContainer from "@/features/Dashboard/RightBottomAria/containers/InputCostContainer";
-import InputCostNameContainer from "@/features/Dashboard/RightBottomAria/containers/InputCostNameContainer";
-import SelectTypeContainer from "@/features/Dashboard/RightBottomAria/containers/SelectTypeContainer";
 import CostManagementTableHeader from "@/features/CostManagement/components/CostManagementTableHeader";
+import SelectTypeContainer from "@/features/Dashboard/RightBottomAria/containers/SelectTypeContainer";
+import InputCostNameContainer from "@/features/Dashboard/RightBottomAria/containers/InputCostNameContainer";
+import InputCostContainer from "@/features/Dashboard/RightBottomAria/containers/InputCostContainer";
+import CheckHalfBillingContainer from "@/features/Dashboard/RightBottomAria/containers/CheckHalfBillingContainer";
+import CheckFullBillingContainer from "@/features/Dashboard/RightBottomAria/containers/CheckFullBillingContainer";
 
 const CostBulkAdd: FC = () => {
   return (
     <ThemeProvider theme={customTheme}>
-      <TableContainer
-        sx={{ display: "flex", justifyContent: "center", paddingTop: 2 }}
-      >
+      <TableContainer sx={{ display: "flex", justifyContent: "center", paddingTop: 2 }}>
         <Table sx={{ width: "70vw" }}>
           <CostManagementTableHeader />
           <TableBody>

@@ -3,8 +3,8 @@ import { FC } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 
 import { SelectDateState, UpdateFunctions, UserState } from "@/types";
-import { selectDateState, userState } from "@/recoil";
 import { useUpdate } from "@/hooks/useUpdate";
+import { selectDateState, userState } from "@/recoil";
 import SelectDateButton from "../components/SelectDateButton";
 
 /**

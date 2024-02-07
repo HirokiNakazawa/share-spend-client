@@ -35,7 +35,7 @@ const EditSelectTypeContainer: FC<SelectEditTypeContainerProps> = (props: Select
    * @param {SelectChangeEvent<string>} e
    * @returns {void}
    */
-  const handleChangeType = (e: SelectChangeEvent<string>) => {
+  const handleChangeType = (e: SelectChangeEvent<string>): void => {
     setEditSelectType(e.target.value);
   };
 
